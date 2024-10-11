@@ -16,7 +16,9 @@ namespace MSO2
         {
             Board board = Board.GetInstance();
 
-            string[] log = File.ReadAllText(@"C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Hard.txt").Split('\n');
+            string[] log = File.ReadAllText(@"..\..\..\Hard.txt").Split('\n');
+            string[] Basic = { "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Turn left", "Move 5", "Turn left"};
+            string[] Advanced = { "Repeat 2 times", "    Turn left", "    Move 1", "     Turn right", "    Move 1", "Repeat 2 times", "    Turn left", "    Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Repeat 2 times", "    Turn left", "Move 5", "Turn left"};
 
             List<ICommand> commandList = CommandParser.Parse(log);
 
