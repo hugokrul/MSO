@@ -17,10 +17,11 @@ namespace MSO2
             Board board = Board.GetInstance();
 
             string[] log = File.ReadAllText(@"..\..\..\Hard.txt").Split('\n');
-            string[] Basic = { "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Turn left", "Move 5", "Turn left"};
-            string[] Advanced = { "Repeat 2 times", "    Turn left", "    Move 1", "     Turn right", "    Move 1", "Repeat 2 times", "    Turn left", "    Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Repeat 2 times", "    Turn left", "Move 5", "Turn left"};
+            string[] Basic = { "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Turn left", "Move 5", "Turn left" };
+            string[] Advanced = { "Repeat 2 times", "    Turn left", "    Move 1", "     Turn right", "    Move 1", "Repeat 2 times", "    Turn left", "    Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Repeat 2 times", "    Turn left", "Move 5", "Turn left" };
+            string[] Hard = { "Repeat 2 times", "    Move 2" };
 
-            List<ICommand> commandList = CommandParser.Parse(log);
+            List<ICommand> commandList = CommandParser.Parse(Hard);
 
             board.PlayBoard(commandList);
         }

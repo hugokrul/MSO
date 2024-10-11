@@ -9,7 +9,7 @@ namespace MSO2
 {
     internal interface ICommand
     {
-        void Execute(Player player);
+        void Execute(Creature creature);
     }
 
     internal class TurnCommand : ICommand
@@ -21,9 +21,9 @@ namespace MSO2
             _direction = direction;
         }
 
-        public void Execute(Player player)
+        public void Execute(Creature creature)
         {
-            player.Turn(_direction);
+            creature.Turn(_direction);
         }
 
         public override string ToString()
@@ -43,13 +43,13 @@ namespace MSO2
             _times = times;
         }
 
-        public void Execute(Player player)
+        public void Execute(Creature creature)
         {
             for (int i = 0; i < _times; i++)
             {
                 foreach (ICommand command in _commands)
                 {
-                    command.Execute(player);
+                    command.Execute(creature);
                 }
             }
         }
@@ -64,9 +64,9 @@ namespace MSO2
             _steps = steps;
         }
 
-        public void Execute(Player player)
+        public void Execute(Creature creature)
         {
-            player.Move(_steps);
+            creature.Move(_steps);
         }
 
         public override string ToString()
