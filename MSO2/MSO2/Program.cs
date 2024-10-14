@@ -21,7 +21,7 @@ namespace MSO2
             board.PlayBoard(commandList);
 
             // Calculate metrics for the commands.
-            CalculateMetrics.calculateMetrics();
+            CalculateMetrics.calculateMetrics(commandList);
         }
 
         // Retrieves the singleton instance of the board.
