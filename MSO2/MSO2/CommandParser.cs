@@ -1,14 +1,12 @@
 ﻿using MSO2;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MSO2
 {
     internal class CommandParser
     {
+        // Parses command strings and returns a list of ICommand objects.
         public static List<ICommand> Parse(string[] commandStrings, int startIndex = 0, int endIndex = -1)
         {
             List<ICommand> commandResult = new List<ICommand>();
@@ -20,6 +18,7 @@ namespace MSO2
 
                 if (line.StartsWith("Repeat"))
                 {
+                    // Parse repeat count and find block of commands to repeat.
                     string[] parts = line.Split(' ');
                     int repeatCount = int.Parse(parts[1]);
 
@@ -28,27 +27,33 @@ namespace MSO2
 
                     List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
 
+                    // Add repeated commands to the result list.
                     for (int k = 0; k < repeatCount; k++)
                     {
                         commandResult.AddRange(blockActions);
                     }
 
-                    i = j;
+                    i = j;  // Move index to the end of the block.
                 }
                 else if (line.StartsWith("Move"))
                 {
+                    // Create a MoveCommand and add it to the result list.
                     commandResult.Add(new MoveCommand(int.Parse(line.Split(' ')[1])));
                     i++;
                 }
                 else if (line.StartsWith("Turn"))
                 {
+                    // Create a TurnCommand and add it to the result list.
                     commandResult.Add(new TurnCommand(line.Split(' ')[1]));
                     i++;
                 }
-                else i++;
+                else
+                {
+                    i++;  // Skip unrecognized lines.
+                }
             }
 
-            return commandResult;
+            return commandResult;  // Return the list of commands.
         }
     }
 }

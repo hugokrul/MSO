@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MSO2
 {
     internal abstract class Creature
     {
-        protected (int, int) position;
+        protected (int, int) position;  // Current position
         public enum facing { North, East, South, West };
         protected facing currentFacing { get; set; }
 
-        protected List<(int, int)> visitedPositions;
-        protected List<string> log { get; set; }
+        protected List<(int, int)> visitedPositions;  // Tracks all visited positions
+        protected List<string> log { get; set; }  // Logs actions
 
-
+        /// <summary>
+        /// Turns the creature left or right and logs the action.
+        /// </summary>
         public virtual void Turn(string direction)
         {
             switch (direction)
@@ -26,11 +25,14 @@ namespace MSO2
                     break;
                 case "right":
                     currentFacing = (facing)(((int)currentFacing + 1) % 4);
-                    log.Add("Turn Right");
+                    log.Add("Turn right");
                     break;
             }
         }
 
+        /// <summary>
+        /// Moves the creature and logs the movement.
+        /// </summary>
         public virtual void Move(int amountOfSteps)
         {
             switch (currentFacing)
