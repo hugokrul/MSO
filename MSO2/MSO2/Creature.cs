@@ -21,10 +21,12 @@ namespace MSO2
             switch (direction)
             {
                 case "left":
+                    // Iterates through the facing enum backwards
                     currentFacing = (facing)(((int)currentFacing + 3) % 4);
                     log.Add("Turn left");
                     break;
                 case "right":
+                    // Iterates throught the facing enum forwards
                     currentFacing = (facing)(((int)currentFacing + 1) % 4);
                     log.Add("Turn right");
                     break;

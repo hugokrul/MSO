@@ -32,31 +32,6 @@ namespace MSO2
         }
     }
 
-    public class RepeatCommand : ICommand
-    {
-        private List<ICommand> _commands; // List of commands to repeat.
-        private int _times; // Number of times to repeat.
-
-        // Constructor to initialize commands and repeat count.
-        public RepeatCommand(List<ICommand> commands, int times)
-        {
-            _commands = commands;
-            _times = times;
-        }
-
-        // Executes the repeated commands on the creature.
-        public void Execute(Creature creature)
-        {
-            for (int i = 0; i < _times; i++)
-            {
-                foreach (ICommand command in _commands)
-                {
-                    command.Execute(creature);
-                }
-            }
-        }
-    }
-
     public class MoveCommand : ICommand
     {
         private int _steps; // Number of steps to move.

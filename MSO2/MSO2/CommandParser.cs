@@ -25,6 +25,7 @@ namespace MSO2
                     int j = i + 1;
                     while (j < commandStrings.Length && commandStrings[j].StartsWith(" ")) j++;
 
+                    // Recursivly iterates through the commandStrings to add the commands from the repeat command to the commandResults
                     List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
 
                     // Add repeated commands to the result list.

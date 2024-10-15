@@ -23,6 +23,7 @@ namespace MSO2
             return _instance;
         }
 
+        // Also deletes the instance so a user can play multiple games
         public static void DeleteInstance()
         {
             _instance = null;
@@ -37,7 +38,7 @@ namespace MSO2
             player = new Player(); // Create a player instance.
         }
 
-        // Executes a list of commands on the player. And print endstate
+        // Executes a list of commands on the player. And returns endstate
         public string PlayBoard(List<ICommand> commands)
         {
             foreach (ICommand command in commands)
@@ -45,7 +46,7 @@ namespace MSO2
                 command.Execute(player);
             }
 
-            return player.PrintEndState(); // Print the player's final state.
+            return player.PrintEndState(); // returns the player's final state.
         }
 
         // Constrains a position within the board bounds.
