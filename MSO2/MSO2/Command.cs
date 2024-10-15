@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace MSO2
 {
-    internal interface ICommand
+    public interface ICommand
     {
         // Executes the command
         void Execute(Creature creature);
     }
 
-    internal class TurnCommand : ICommand
+    public class TurnCommand : ICommand
     {
         private string _direction;
 
@@ -32,7 +32,7 @@ namespace MSO2
         }
     }
 
-    internal class RepeatCommand : ICommand
+    public class RepeatCommand : ICommand
     {
         private List<ICommand> _commands; // List of commands to repeat.
         private int _times; // Number of times to repeat.
@@ -57,7 +57,7 @@ namespace MSO2
         }
     }
 
-    internal class MoveCommand : ICommand
+    public class MoveCommand : ICommand
     {
         private int _steps; // Number of steps to move.
 

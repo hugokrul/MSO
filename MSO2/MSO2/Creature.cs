@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 namespace MSO2
 {
-    internal abstract class Creature
+    public abstract class Creature
     {
         protected (int, int) position;  // Current position
+
         public enum facing { North, East, South, West };
         protected facing currentFacing { get; set; }
 

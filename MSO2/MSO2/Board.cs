@@ -11,7 +11,7 @@ namespace MSO2
 
         private Player player; 
 
-        private static Board _instance; // Singleton instance of the Board.
+        private static Board? _instance; // Singleton instance of the Board.
 
         // Gets the singleton instance of the Board. Makes sure only one board can be active
         public static Board GetInstance()
@@ -21,6 +21,11 @@ namespace MSO2
                 _instance = new Board();
             }
             return _instance;
+        }
+
+        public static void DeleteInstance()
+        {
+            _instance = null;
         }
 
         // Constructor to initialize board dimensions and player.
@@ -33,14 +38,14 @@ namespace MSO2
         }
 
         // Executes a list of commands on the player. And print endstate
-        internal void PlayBoard(List<ICommand> commands)
+        public string PlayBoard(List<ICommand> commands)
         {
             foreach (ICommand command in commands)
             {
                 command.Execute(player);
             }
 
-            player.PrintEndState(); // Print the player's final state.
+            return player.PrintEndState(); // Print the player's final state.
         }
 
         // Constrains a position within the board bounds.

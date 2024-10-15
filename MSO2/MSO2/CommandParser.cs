@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MSO2
 {
-    internal class CommandParser
+    public class CommandParser
     {
         // Parses command strings and returns a list of ICommand objects.
         public static List<ICommand> Parse(string[] commandStrings, int startIndex = 0, int endIndex = -1)

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="Xunit" />
+    <ProjectReference Include="..\MSO2\MSO2.csproj" />
   </ItemGroup>
 
 </Project>

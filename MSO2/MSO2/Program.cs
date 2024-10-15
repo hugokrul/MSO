@@ -1,81 +1,131 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-
-namespace MSO2
+﻿namespace MSO2
 {
-    internal class Program
+    public class Program
     {
         public string Name;
 
-        static List<string[]> availablePrograms;
+        static List<string[]> availablePrograms = new List<string[]>
+        {
+            // Basic program
+            new string[]
+            {
+                "Turn left", "Move 1", "Turn right", "Move 1",
+                "Turn left", "Move 1", "Turn right", "Move 1",
+                "Turn left", "Move 1", "Turn left", "Move 1",
+                "Turn right", "Move 1", "Turn left", "Move 1",
+                "Turn right", "Move 1", "Turn left", "Turn left",
+                "Move 5", "Turn left"
+            },
+
+            // Hard program
+            new string[]
+            {
+                "Repeat 10 times", "    Turn left", "    Move 1",
+                "    Turn right", "    Move 1", "    Repeat 4 times",
+                "        Turn right", "        Move 1"
+            },
+
+            // Advanced program
+            new string[]
+            {
+                "Repeat 2 times", "    Turn left", "    Move 1",
+                "    Turn right", "    Move 1", "Repeat 2 times",
+                "    Turn left", "    Move 1", "Turn right",
+                "Move 1", "Turn left", "Move 1", "Turn right",
+                "Move 1", "Repeat 2 times", "    Turn left",
+                "Move 5", "Turn left"
+            }
+        };
 
         static void Main(string[] args)
         {
-            GetBoardInstance();
-            ReadFiles();
-
-            string[] chosenprogram = ChooseProgram();
-            List<ICommand> commandList = CommandParser.Parse(chosenprogram);
-
-            board.PlayBoard(commandList);
-
-            // Calculate metrics for the commands.
-            CalculateMetrics.calculateMetrics(commandList);
-        }
-
-        // Retrieves the singleton instance of the board.
-        static void GetBoardInstance()
-        {
-            Board.GetInstance();
-        }
-
-        // Reads programs from hard-coded arrays or text file.
-        static void ReadFiles()
-        {
-            string[] log = File.ReadAllText(@"..\..\..\Hard.txt").Split('\n');
-            string[] Basic = { "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Turn left", "Turn left", "Move 5", "Turn left" };
-            string[] Advanced = { "Repeat 2 times", "    Turn left", "    Move 1", "     Turn right", "    Move 1", "Repeat 2 times", "    Turn left", "    Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Repeat 2 times", "    Turn left", "Move 5", "Turn left" };
-            string[] Hard = { "Repeat 2 times", "    Move 2" };
-
-            availablePrograms = new List<string[]>
+            string[] chosenProgram = ChooseProgram();
+            if (chosenProgram == null)
             {
-                Basic,   // Add Basic commands
-                Hard,     // Add Hard commands
-                Advanced, // Add Advanced commands
-                log     // Add the log commands
-            };
+                Console.WriteLine("No valid program was chosen.");
+                return;
+            }
+
+            List<ICommand> commandList = CommandParser.Parse(chosenProgram);
+            Board board = Board.GetInstance();
+
+            Console.WriteLine("Do you want to execute the program (e), or calculate its metrics (c)?");
+            string choice = GetValidatedChoice();
+
+            switch (choice)
+            {
+                case "e":
+                    Console.WriteLine(board.PlayBoard(commandList));
+                    break;
+                case "c":
+                    CalculateMetrics.calculateMetrics(chosenProgram);
+                    Console.WriteLine(
+                        $"Number of commands: {CalculateMetrics.numberOfCommands}\n" +
+                        $"Nesting level: {CalculateMetrics.nestingLevel}\n" +
+                        $"Number of Repeats: {CalculateMetrics.numberOfRepeat}");
+                    break;
+            }
         }
 
         static string[] ChooseProgram()
         {
-            // Choose program
-            Console.WriteLine("Choose program: basic, hard, advanced or import");
-            string choice = Console.ReadLine().ToLower(); // Read user input
-
-            string[] program;
-
-            switch (choice)
+            while (true)
             {
-                case "basic":
-                    program = availablePrograms[0];
-                    break;
-                case "hard":
-                    program = availablePrograms[1];
-                    break;
-                case "advanced":
-                    program = availablePrograms[2];
-                    break;
-                case "import":
-                    program = availablePrograms[3];
-                    break;
-                case default:
-                    Console.WriteLine("Program not detected, please try again.");
-                    ChooseProgram();
-                    break;
-            }
+                Console.WriteLine("Choose program: basic, advanced, hard or import");
+                string choice = Console.ReadLine().ToLower();
 
-            return program;
+                switch (choice)
+                {
+                    case "basic":
+                        return availablePrograms[0];
+                    case "hard":
+                        return availablePrograms[1];
+                    case "advanced":
+                        return availablePrograms[2];
+                    case "import":
+                        return ImportProgram();
+                    default:
+                        Console.WriteLine("Invalid program choice. Please try again.");
+                        break;
+                }
+            }
+        }
+
+        static string GetValidatedChoice()
+        {
+            string choice = Console.ReadLine().ToLower();
+            while (choice != "e" && choice != "c")
+            {
+                Console.WriteLine("Invalid choice, please enter 'e' to execute or 'c' to calculate metrics:");
+                choice = Console.ReadLine().ToLower();
+            }
+            return choice;
+        }
+
+        static string[] ImportProgram()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Enter the full path to the file:");
+                    string path = Console.ReadLine();
+
+                    if (File.Exists(path))
+                    {
+                        return File.ReadAllLines(path);
+                    }
+                    else
+                    {
+                        Console.WriteLine("File not found. Please try again.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An error occurred while importing the program: {ex.Message}");
+                    // Optionally log the exception here
+                }
+            }
         }
     }
 }

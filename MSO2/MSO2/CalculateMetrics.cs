@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MSO2
 {
-    internal class CalculateMetrics
+    public class CalculateMetrics
     {
         // Metrics properties for tracking command details.
         public static int numberOfCommands { get; private set; }
@@ -11,7 +11,7 @@ namespace MSO2
         public static int numberOfRepeat { get; private set; }
 
         // Calculates various metrics based on the given list of commands.
-        public static void calculateMetrics(List<ICommand> commands)
+        public static void calculateMetrics(string[] commands)
         {
             numberOfCommands = calculateNumberOfCommands(commands);
             nestingLevel = calculateNestingLevel(commands);
@@ -19,24 +19,31 @@ namespace MSO2
         }
 
         // Returns the total number of commands.
-        private static int calculateNumberOfCommands(List<ICommand> commands)
+        private static int calculateNumberOfCommands(string[] commands)
         {
-            return commands.Count;
+            List<ICommand> parsedCommands = CommandParser.Parse(commands);
+            return parsedCommands.Count;
         }
 
-        // Placeholder for calculating the nesting level (currently returns 0).
-        private static int calculateNestingLevel(List<ICommand> commands)
+        // Calculates the maximum indent ("        Move 1") means there are 2 repeat commands, so a nesting level of 2.
+        private static int calculateNestingLevel(string[] commands)
         {
-            return 0;
+            int maxIndent = 0;
+            foreach (string command in commands)
+            {
+                int currentIndent = command.Length - command.TrimStart().Length;
+                maxIndent = Math.Max(maxIndent, currentIndent);
+            }
+            return maxIndent / 4;
         }
 
         // Counts how many 'RepeatCommand' commands are in the list.
-        private static int calculateNumberOfRepeats(List<ICommand> commands)
+        private static int calculateNumberOfRepeats(string[] commands)
         {
             int count = 0;
-            foreach (var command in commands)
+            foreach (string command in commands)
             {
-                if (command.GetType() == typeof(RepeatCommand)) count++;
+                if (command.Trim().Split()[0] == "Repeat") count++;
             }
             return count;
         }
