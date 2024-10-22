@@ -1,0 +1,72 @@
+﻿namespace MSO3
+{
+    partial class Sandbox
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            homeNav = new Button();
+            pageNameSandbox = new Label();
+            SuspendLayout();
+            // 
+            // homeNav
+            // 
+            homeNav.Location = new Point(694, 12);
+            homeNav.Name = "homeNav";
+            homeNav.Size = new Size(94, 29);
+            homeNav.TabIndex = 0;
+            homeNav.Text = "Home";
+            homeNav.UseVisualStyleBackColor = true;
+            homeNav.Click += homeNav_Click;
+            // 
+            // pageNameSandbox
+            // 
+            pageNameSandbox.AutoSize = true;
+            pageNameSandbox.Location = new Point(12, 9);
+            pageNameSandbox.Name = "pageNameSandbox";
+            pageNameSandbox.Size = new Size(67, 20);
+            pageNameSandbox.TabIndex = 2;
+            pageNameSandbox.Text = "Sandbox";
+            // 
+            // Sandbox
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(pageNameSandbox);
+            Controls.Add(homeNav);
+            Name = "Sandbox";
+            Text = "Sandbox";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Button homeNav;
+        private Label pageNameSandbox;
+    }
+}
