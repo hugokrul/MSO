@@ -19,7 +19,7 @@ namespace MSO3
 
         private void homePage_Click(object sender, EventArgs e)
         {
-            Home homePage = new Home();
+            Home homePage = Home.instance;
             homePage.StartPosition = FormStartPosition.CenterScreen;
             homePage.Show();
             this.Hide();

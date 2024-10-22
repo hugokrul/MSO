@@ -9,7 +9,7 @@ namespace MSO2
         public static int boardHeight { get; private set; } // Height of the board.
         public static int boardWidth { get; private set; } // Width of the board.
 
-        private Player player; 
+        public static Player player; 
 
         private static Board? _instance; // Singleton instance of the Board.
 
@@ -32,8 +32,8 @@ namespace MSO2
         // Constructor to initialize board dimensions and player.
         private Board()
         {
-            boardWidth = 100; // Set initial width.
-            boardHeight = 100; // Set initial height.
+            boardWidth = 10; // Set initial width.
+            boardHeight = 10; // Set initial height.
             board = new int[boardHeight, boardWidth]; // Initialize the board.
             player = new Player(); // Create a player instance.
         }

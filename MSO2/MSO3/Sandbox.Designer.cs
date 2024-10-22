@@ -30,6 +30,7 @@
         {
             homeNav = new Button();
             pageNameSandbox = new Label();
+            boardPanel = new Panel();
             SuspendLayout();
             // 
             // homeNav
@@ -51,11 +52,20 @@
             pageNameSandbox.TabIndex = 2;
             pageNameSandbox.Text = "Sandbox";
             // 
+            // boardPanel
+            // 
+            boardPanel.Location = new Point(259, 38);
+            boardPanel.Name = "boardPanel";
+            boardPanel.Size = new Size(400, 400);
+            boardPanel.TabIndex = 3;
+            boardPanel.Paint += boardPanel_Paint;
+            // 
             // Sandbox
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(boardPanel);
             Controls.Add(pageNameSandbox);
             Controls.Add(homeNav);
             Name = "Sandbox";
@@ -68,5 +78,6 @@
 
         private Button homeNav;
         private Label pageNameSandbox;
+        private Panel boardPanel;
     }
 }

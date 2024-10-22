@@ -5,7 +5,7 @@ namespace MSO2
 {
     public abstract class Creature
     {
-        protected (int, int) position;  // Current position
+        public (int, int) position { get; protected set; }  // Current position
 
         public enum facing { North, East, South, West };
         protected facing currentFacing { get; set; }

@@ -9,7 +9,7 @@ namespace MSO2
         // Constructor initializes starting position, direction, log, and visited positions.
         public Player()
         {
-            position = (0, 0);
+            position = (5, 0);
             currentFacing = facing.South;
             log = new List<string>();
             visitedPositions = new List<(int, int)> { (0, 0) };
