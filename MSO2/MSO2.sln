@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSO2", "MSO2\MSO2.csproj", "{BF9DC6CA-0371-44F2-8034-3BC6E59023D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSO2", "MSO2\MSO2.csproj", "{BF9DC6CA-0371-44F2-8034-3BC6E59023D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSO2XUnit", "MSO2XUnit\MSO2XUnit.csproj", "{85B8E3A0-F528-4D72-846E-0B9C3B124E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSO2XUnit", "MSO2XUnit\MSO2XUnit.csproj", "{85B8E3A0-F528-4D72-846E-0B9C3B124E73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSO3", "MSO3\MSO3.csproj", "{E02A5B3B-C8CC-4EDF-AE0B-9A56997A611F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{85B8E3A0-F528-4D72-846E-0B9C3B124E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85B8E3A0-F528-4D72-846E-0B9C3B124E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85B8E3A0-F528-4D72-846E-0B9C3B124E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E02A5B3B-C8CC-4EDF-AE0B-9A56997A611F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E02A5B3B-C8CC-4EDF-AE0B-9A56997A611F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E02A5B3B-C8CC-4EDF-AE0B-9A56997A611F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E02A5B3B-C8CC-4EDF-AE0B-9A56997A611F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
