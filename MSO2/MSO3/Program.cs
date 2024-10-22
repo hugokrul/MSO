@@ -1,4 +1,5 @@
 using MSO2;
+using System.Runtime.InteropServices;
 
 namespace MSO3
 {
@@ -10,10 +11,17 @@ namespace MSO3
         [STAThread]
         static void Main()
         {
+            AllocConsole();
+
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
     }
 }
