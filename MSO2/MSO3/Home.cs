@@ -117,9 +117,6 @@ namespace MSO3
                     y2 = (playerPosition.Item2 * height) + (height / 2);
                     break;
             }
-            
-
-            p.RotateTransform(90, MatrixOrder.Append);
 
             g.DrawLine(p, x1, y1, x2, y2);
 
