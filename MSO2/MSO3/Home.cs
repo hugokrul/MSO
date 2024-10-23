@@ -119,8 +119,6 @@ namespace MSO3
             }
 
             g.DrawLine(p, x1, y1, x2, y2);
-
-            //g.FillEllipse(new SolidBrush(Color.Red), playerPosition.Item1*width, playerPosition.Item2*height, width - 1, height - 1);
         }
     }
 }
