@@ -33,6 +33,7 @@
             boardPanel = new Panel();
             executeBoard = new Button();
             executionWay = new ComboBox();
+            filePathInput = new TextBox();
             SuspendLayout();
             // 
             // homeNav
@@ -75,18 +76,30 @@
             // executionWay
             // 
             executionWay.FormattingEnabled = true;
-            executionWay.Items.AddRange(new object[] { "Basic", "Hard", "Advanced" });
+            executionWay.Items.AddRange(new object[] { "Basic", "Hard", "Advanced", "Import" });
             executionWay.Location = new Point(12, 38);
             executionWay.Name = "executionWay";
             executionWay.Size = new Size(151, 28);
             executionWay.TabIndex = 5;
             executionWay.Text = "Basic";
+            executionWay.SelectedIndexChanged += executionWay_SelectedIndexChanged;
+            // 
+            // filePathInput
+            // 
+            filePathInput.Location = new Point(12, 72);
+            filePathInput.Name = "filePathInput";
+            filePathInput.Size = new Size(223, 27);
+            filePathInput.TabIndex = 6;
+            filePathInput.Text = "full path...";
+            filePathInput.Visible = false;
+            filePathInput.TextChanged += filePathInput_TextChanged;
             // 
             // Sandbox
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(filePathInput);
             Controls.Add(executionWay);
             Controls.Add(executeBoard);
             Controls.Add(boardPanel);
@@ -105,5 +118,6 @@
         private Panel boardPanel;
         private Button executeBoard;
         private ComboBox executionWay;
+        private TextBox filePathInput;
     }
 }

@@ -39,8 +39,6 @@ namespace MSO3
         {
             string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
 
-            Console.WriteLine(difficulty);
-
             string[] programCommands = chosenProgram(difficulty);
 
             List<ICommand> commands = CommandParser.Parse(programCommands);
@@ -59,11 +57,35 @@ namespace MSO3
                     return MSO2.Program.availablePrograms[1];
                 case "Advanced":
                     return MSO2.Program.availablePrograms[2];
-                case "import":
-                    return MSO2.Program.ImportProgram();
+                case "Import":
+                    string path = filePathInput.Text;
+                    return File.ReadAllLines(path);
                 default:
                     return MSO2.Program.availablePrograms[0];
             }
+        }
+
+        private void executionWay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ComboBox cb = (System.Windows.Forms.ComboBox)sender;
+
+            string input = cb.GetItemText(cb.SelectedItem);
+
+            if (input == "Import")
+            {
+                if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false; 
+                else executeBoard.Visible = true; 
+                filePathInput.Visible = true;
+            }
+            else filePathInput.Visible = false;
+
+
+        }
+
+        private void filePathInput_TextChanged(object sender, EventArgs e)
+        {
+            if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false;
+            else executeBoard.Visible = true;
         }
     }
 }
