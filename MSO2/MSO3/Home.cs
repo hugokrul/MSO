@@ -1,4 +1,5 @@
 using MSO2;
+using System.Drawing.Drawing2D;
 
 namespace MSO3
 {
@@ -80,7 +81,49 @@ namespace MSO3
         {
             (int, int) playerPosition = Board.player.position;
 
-            g.FillEllipse(new SolidBrush(Color.Red), playerPosition.Item1*width, playerPosition.Item2*height, width - 1, height - 1);
+            Pen p = new Pen(Color.Red);
+            AdjustableArrowCap arrow = new AdjustableArrowCap(12, 8);
+            p.CustomEndCap = arrow;
+
+            int x1 = 0;
+            int y1 = 0;
+            int x2 = 0;
+            int y2 = 0;
+
+            switch (Board.player.currentFacing)
+            {
+                case Creature.facing.North:
+                    x1 = playerPosition.Item1 + (width / 2);
+                    y1 = (playerPosition.Item2 * height) + height;
+                    x2 = playerPosition.Item1 * width + (width / 2);
+                    y2 = playerPosition.Item2 * height;
+                    break;
+                case Creature.facing.South:
+                    x1 = playerPosition.Item1 * width + (width / 2);
+                    y1 = playerPosition.Item2 * height;
+                    x2 = playerPosition.Item1 + (width / 2);
+                    y2 = (playerPosition.Item2 * height) + height;
+                    break;
+                case Creature.facing.West:
+                    x1 = (playerPosition.Item1 * width) + width;
+                    y1 = (playerPosition.Item2 * height) + (height / 2);
+                    x2 = playerPosition.Item1 * width;
+                    y2 = (playerPosition.Item2 * height) + (height / 2);
+                    break;
+                case Creature.facing.East:
+                    x1 = playerPosition.Item1 * width;
+                    y1 = (playerPosition.Item2 * height) + (height / 2);
+                    x2 = (playerPosition.Item1 * width) + width;
+                    y2 = (playerPosition.Item2 * height) + (height / 2);
+                    break;
+            }
+            
+
+            p.RotateTransform(90, MatrixOrder.Append);
+
+            g.DrawLine(p, x1, y1, x2, y2);
+
+            //g.FillEllipse(new SolidBrush(Color.Red), playerPosition.Item1*width, playerPosition.Item2*height, width - 1, height - 1);
         }
     }
 }
