@@ -60,6 +60,9 @@ namespace MSO3
                 case "Import":
                     string path = filePathInput.Text;
                     return File.ReadAllLines(path);
+                case "Write your own": 
+                    Console.WriteLine(ownProgram.Text.Split('\n').GetType());
+                    return ownProgram.Text.Split('\n');
                 default:
                     return MSO2.Program.availablePrograms[0];
             }

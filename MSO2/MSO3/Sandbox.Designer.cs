@@ -34,6 +34,7 @@
             executeBoard = new Button();
             executionWay = new ComboBox();
             filePathInput = new TextBox();
+            ownProgram = new TextBox();
             SuspendLayout();
             // 
             // homeNav
@@ -75,8 +76,9 @@
             // 
             // executionWay
             // 
+            executionWay.FlatStyle = FlatStyle.Flat;
             executionWay.FormattingEnabled = true;
-            executionWay.Items.AddRange(new object[] { "Basic", "Hard", "Advanced", "Import" });
+            executionWay.Items.AddRange(new object[] { "Basic", "Hard", "Advanced", "Import", "Write your own" });
             executionWay.Location = new Point(12, 38);
             executionWay.Name = "executionWay";
             executionWay.Size = new Size(151, 28);
@@ -94,11 +96,20 @@
             filePathInput.Visible = false;
             filePathInput.TextChanged += filePathInput_TextChanged;
             // 
+            // ownProgram
+            // 
+            ownProgram.Location = new Point(12, 117);
+            ownProgram.Multiline = true;
+            ownProgram.Name = "ownProgram";
+            ownProgram.Size = new Size(223, 312);
+            ownProgram.TabIndex = 7;
+            // 
             // Sandbox
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ownProgram);
             Controls.Add(filePathInput);
             Controls.Add(executionWay);
             Controls.Add(executeBoard);
@@ -119,5 +130,6 @@
         private Button executeBoard;
         private ComboBox executionWay;
         private TextBox filePathInput;
+        private TextBox ownProgram;
     }
 }
