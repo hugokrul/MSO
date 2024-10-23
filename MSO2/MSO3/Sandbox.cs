@@ -34,5 +34,37 @@ namespace MSO3
 
             Home.drawBoard((Panel)sender, g, blackPen);
         }
+
+        private void executeBoard_Click(object sender, EventArgs e)
+        {
+            string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
+
+            Console.WriteLine(difficulty);
+
+            string[] programCommands = chosenProgram(difficulty);
+
+            List<ICommand> commands = CommandParser.Parse(programCommands);
+
+            Home.board.PlayBoard(commands);
+
+            boardPanel.Invalidate();
+        }
+
+        private string[] chosenProgram(string? choice)
+        {
+            switch (choice)
+            {
+                case "Hard":
+                    Console.WriteLine("hard in");
+                    return MSO2.Program.availablePrograms[1];
+                case "Advanced":
+                    return MSO2.Program.availablePrograms[2];
+                case "import":
+                    return MSO2.Program.ImportProgram();
+                default:
+                    return MSO2.Program.availablePrograms[0];
+            }
+        }
     }
 }
+

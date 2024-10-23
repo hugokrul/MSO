@@ -10,7 +10,7 @@ namespace MSO2
         public enum facing { North, East, South, West };
         protected facing currentFacing { get; set; }
 
-        protected List<(int, int)> visitedPositions;  // Tracks all visited positions
+        public List<(int, int)> visitedPositions { get; protected set; }  // Tracks all visited positions
         protected List<string> log { get; set; }  // Logs actions
 
         /// <summary>

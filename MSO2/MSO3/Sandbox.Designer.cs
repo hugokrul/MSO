@@ -31,6 +31,8 @@
             homeNav = new Button();
             pageNameSandbox = new Label();
             boardPanel = new Panel();
+            executeBoard = new Button();
+            executionWay = new ComboBox();
             SuspendLayout();
             // 
             // homeNav
@@ -60,11 +62,33 @@
             boardPanel.TabIndex = 3;
             boardPanel.Paint += boardPanel_Paint;
             // 
+            // executeBoard
+            // 
+            executeBoard.Location = new Point(694, 400);
+            executeBoard.Name = "executeBoard";
+            executeBoard.Size = new Size(94, 29);
+            executeBoard.TabIndex = 4;
+            executeBoard.Text = "Run";
+            executeBoard.UseVisualStyleBackColor = true;
+            executeBoard.Click += executeBoard_Click;
+            // 
+            // executionWay
+            // 
+            executionWay.FormattingEnabled = true;
+            executionWay.Items.AddRange(new object[] { "Basic", "Hard", "Advanced" });
+            executionWay.Location = new Point(12, 38);
+            executionWay.Name = "executionWay";
+            executionWay.Size = new Size(151, 28);
+            executionWay.TabIndex = 5;
+            executionWay.Text = "Basic";
+            // 
             // Sandbox
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(executionWay);
+            Controls.Add(executeBoard);
             Controls.Add(boardPanel);
             Controls.Add(pageNameSandbox);
             Controls.Add(homeNav);
@@ -79,5 +103,7 @@
         private Button homeNav;
         private Label pageNameSandbox;
         private Panel boardPanel;
+        private Button executeBoard;
+        private ComboBox executionWay;
     }
 }

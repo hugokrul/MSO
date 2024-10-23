@@ -54,10 +54,29 @@ namespace MSO3
                 }
             }
 
-            drawPlayer(panel, g, gridWidth, gridHeight);
+            drawPlayer(g, gridWidth, gridHeight);
+            drawLocations(g, gridWidth, gridHeight);
         }
 
-        public static void drawPlayer(Panel panel, Graphics g, int width, int height)
+        public static void drawLocations(Graphics g, int width, int height)
+        {
+            List<(int, int)> visitedPositions = Board.player.visitedPositions;
+
+            for (int i = 0; i < visitedPositions.Count - 1; i++)
+            {
+                (int, int) oldPosition = visitedPositions[i];
+                int oldX = (oldPosition.Item1* width) + (width / 2);
+                int oldY = (oldPosition.Item2 * height) + (height / 2);
+
+                (int, int) currentPosition = visitedPositions[i + 1];
+                int currentX = (currentPosition.Item1 * width) + (width / 2);
+                int currentY = (currentPosition.Item2 * height) + (height / 2);
+
+                g.DrawLine(new Pen(Color.Blue, 5), new Point(oldX, oldY), new Point(currentX, currentY));
+            }
+        }
+
+        public static void drawPlayer(Graphics g, int width, int height)
         {
             (int, int) playerPosition = Board.player.position;
 

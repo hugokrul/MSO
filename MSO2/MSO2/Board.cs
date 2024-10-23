@@ -41,6 +41,8 @@ namespace MSO2
         // Executes a list of commands on the player. And returns endstate
         public string PlayBoard(List<ICommand> commands)
         {
+            DeleteInstance();
+            GetInstance();
             foreach (ICommand command in commands)
             {
                 command.Execute(player);
@@ -52,7 +54,7 @@ namespace MSO2
         // Constrains a position within the board bounds.
         public static (int, int) BoardBounds((int, int) position)
         {
-            (int, int) upperBounds = (Math.Min(position.Item1, boardWidth), Math.Min(position.Item2, boardHeight));
+            (int, int) upperBounds = (Math.Min(position.Item1, boardWidth - 1), Math.Min(position.Item2, boardHeight - 1));
             (int, int) lowerBounds = (Math.Max(upperBounds.Item1, 0), Math.Max(upperBounds.Item2, 0));
             return lowerBounds; // Returns the constrained position.
         }

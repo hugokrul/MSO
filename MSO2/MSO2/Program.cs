@@ -4,17 +4,21 @@
     {
         public string Name;
 
-        static List<string[]> availablePrograms = new List<string[]>
+        public static List<string[]> availablePrograms = new List<string[]>
         {
             // Basic program
+            //new string[]
+            //{
+            //    "Turn left", "Move 1", "Turn right", "Move 1",
+            //    "Turn left", "Move 1", "Turn right", "Move 1",
+            //    "Turn left", "Move 1", "Turn left", "Move 1",
+            //    "Turn right", "Move 1", "Turn left", "Move 1",
+            //    "Turn right", "Move 1", "Turn left", "Turn left",
+            //    "Move 5", "Turn left"
+            //},
             new string[]
             {
-                "Turn left", "Move 1", "Turn right", "Move 1",
-                "Turn left", "Move 1", "Turn right", "Move 1",
-                "Turn left", "Move 1", "Turn left", "Move 1",
-                "Turn right", "Move 1", "Turn left", "Move 1",
-                "Turn right", "Move 1", "Turn left", "Turn left",
-                "Move 5", "Turn left"
+                "Move 1"
             },
 
             // Hard program
@@ -102,7 +106,7 @@
             return choice;
         }
 
-        static string[] ImportProgram()
+        public static string[] ImportProgram()
         {
             while (true)
             {
