@@ -9,28 +9,10 @@ namespace MSO2
         public static int boardHeight { get; private set; } // Height of the board.
         public static int boardWidth { get; private set; } // Width of the board.
 
-        public static Player player; 
-
-        private static Board? _instance; // Singleton instance of the Board.
-
-        // Gets the singleton instance of the Board. Makes sure only one board can be active
-        public static Board GetInstance()
-        {
-            if (_instance == null)
-            {
-                _instance = new Board();
-            }
-            return _instance;
-        }
-
-        // Also deletes the instance so a user can play multiple games
-        public static void DeleteInstance()
-        {
-            _instance = null;
-        }
+        public static Player player;
 
         // Constructor to initialize board dimensions and player.
-        private Board()
+        public Board()
         {
             boardWidth = 10; // Set initial width.
             boardHeight = 10; // Set initial height.
@@ -41,8 +23,6 @@ namespace MSO2
         // Executes a list of commands on the player. And returns endstate
         public string PlayBoard(List<ICommand> commands)
         {
-            DeleteInstance();
-            GetInstance();
             foreach (ICommand command in commands)
             {
                 command.Execute(player);

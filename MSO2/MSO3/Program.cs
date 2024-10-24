@@ -5,8 +5,6 @@ namespace MSO3
 {
     internal static class Program
     {
-        public static Board board = Board.GetInstance();
-
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -19,7 +17,7 @@ namespace MSO3
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Board board = Board.GetInstance();
+            Board board = new Board();
             Home homePage = new Home(board);
             homePage.StartPosition = FormStartPosition.CenterScreen;
             Application.Run(homePage);

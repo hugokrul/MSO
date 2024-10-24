@@ -37,6 +37,8 @@ namespace MSO3
 
         private void executeBoard_Click(object sender, EventArgs e)
         {
+            Home.board = new Board();
+
             string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
 
             string[] programCommands = chosenProgram(difficulty);
@@ -76,12 +78,15 @@ namespace MSO3
 
             if (input == "Import")
             {
-                if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false; 
-                else executeBoard.Visible = true; 
+                if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false;
+                else executeBoard.Visible = true;
                 filePathInput.Visible = true;
             }
-            else filePathInput.Visible = false;
-
+            else
+            {
+                filePathInput.Visible = false;
+                executeBoard.Visible = true;
+            }
 
         }
 

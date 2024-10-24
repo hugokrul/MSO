@@ -47,7 +47,7 @@
             }
 
             List<ICommand> commandList = CommandParser.Parse(chosenProgram);
-            Board board = Board.GetInstance();
+            Board board = new Board();
 
             Console.WriteLine("Do you want to execute the program (e), or calculate its metrics (c)?");
             string choice = GetValidatedChoice();
