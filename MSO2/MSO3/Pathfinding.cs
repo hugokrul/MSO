@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MSO3
 {
-    public partial class Pathfinding : Form
+    public partial class Pathfinding : BaseForm
     {
-        public Pathfinding()
+        public Pathfinding() : base()
         {
             InitializeComponent();
         }

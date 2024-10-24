@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             sandboxNav = new Button();
             shapePage = new Button();
             pathfindingPage = new Button();
@@ -36,7 +37,7 @@
             // 
             // sandboxNav
             // 
-            sandboxNav.Location = new Point(694, 12);
+            sandboxNav.Location = new Point(694, 9);
             sandboxNav.Name = "sandboxNav";
             sandboxNav.Size = new Size(94, 29);
             sandboxNav.TabIndex = 0;
@@ -82,8 +83,9 @@
             Controls.Add(pathfindingPage);
             Controls.Add(shapePage);
             Controls.Add(sandboxNav);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Home";
-            Text = "Home";
+            Load += Home_Load;
             ResumeLayout(false);
             PerformLayout();
         }

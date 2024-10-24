@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pathfinding));
             homePage = new Button();
             pageNamePathfinding = new Label();
             SuspendLayout();
@@ -59,8 +60,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(pageNamePathfinding);
             Controls.Add(homePage);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Pathfinding";
-            Text = "Pathfinding";
             ResumeLayout(false);
             PerformLayout();
         }
