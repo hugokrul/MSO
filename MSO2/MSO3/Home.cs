@@ -93,7 +93,7 @@ namespace MSO3
             switch (Board.player.currentFacing)
             {
                 case Creature.facing.North:
-                    x1 = playerPosition.Item1 + (width / 2);
+                    x1 = playerPosition.Item1 * width + (width / 2);
                     y1 = (playerPosition.Item2 * height) + height;
                     x2 = playerPosition.Item1 * width + (width / 2);
                     y2 = playerPosition.Item2 * height;
@@ -101,7 +101,7 @@ namespace MSO3
                 case Creature.facing.South:
                     x1 = playerPosition.Item1 * width + (width / 2);
                     y1 = playerPosition.Item2 * height;
-                    x2 = playerPosition.Item1 + (width / 2);
+                    x2 = playerPosition.Item1 * width + (width / 2);
                     y2 = (playerPosition.Item2 * height) + height;
                     break;
                 case Creature.facing.West:
