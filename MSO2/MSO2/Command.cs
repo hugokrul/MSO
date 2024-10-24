@@ -54,4 +54,29 @@ namespace MSO2
             return $"Move {_steps}";
         }
     }
+
+    public class RepeatCommand : ICommand
+    {
+        private List<ICommand> commandList;
+        private int _amount;
+
+        public RepeatCommand(List<ICommand> commandList, int amount)
+        {
+            this.commandList = commandList;
+            _amount = amount;
+        }
+
+        public void Execute(Creature creature)
+        {
+            foreach (ICommand command in commandList)
+            {
+                command.Execute(creature);
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Repeat {_amount} times: {string.Join(',', commandList)}";
+        }
+    }
 }

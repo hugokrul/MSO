@@ -21,8 +21,7 @@ namespace MSO2
         // Returns the total number of commands.
         private static int calculateNumberOfCommands(string[] commands)
         {
-            List<ICommand> parsedCommands = CommandParser.Parse(commands);
-            return parsedCommands.Count;
+            return commands.Length;
         }
 
         // Calculates the maximum indent ("        Move 1") means there are 2 repeat commands, so a nesting level of 2.

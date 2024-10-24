@@ -7,18 +7,14 @@
         public static List<string[]> availablePrograms = new List<string[]>
         {
             // Basic program
-            //new string[]
-            //{
-            //    "Turn left", "Move 1", "Turn right", "Move 1",
-            //    "Turn left", "Move 1", "Turn right", "Move 1",
-            //    "Turn left", "Move 1", "Turn left", "Move 1",
-            //    "Turn right", "Move 1", "Turn left", "Move 1",
-            //    "Turn right", "Move 1", "Turn left", "Turn left",
-            //    "Move 5", "Turn left"
-            //},
             new string[]
             {
-                "Move 1"
+                "Turn left", "Move 1", "Turn right", "Move 1",
+                "Turn left", "Move 1", "Turn right", "Move 1",
+                "Turn left", "Move 1", "Turn left", "Move 1",
+                "Turn right", "Move 1", "Turn left", "Move 1",
+                "Turn right", "Move 1", "Turn left", "Turn left",
+                "Move 5", "Turn left"
             },
 
             // Hard program

@@ -18,6 +18,8 @@ namespace MSO2
 
                 if (line.StartsWith("Repeat"))
                 {
+                    List<ICommand> range = new List<ICommand>();
+
                     // Parse repeat count and find block of commands to repeat.
                     string[] parts = line.Split(' ');
                     int repeatCount = int.Parse(parts[1]);
@@ -31,8 +33,10 @@ namespace MSO2
                     // Add repeated commands to the result list.
                     for (int k = 0; k < repeatCount; k++)
                     {
-                        commandResult.AddRange(blockActions);
+                        range.AddRange(blockActions);
                     }
+
+                    commandResult.Add(new RepeatCommand(range, repeatCount));
 
                     i = j;  // Move index to the end of the block.
                 }
