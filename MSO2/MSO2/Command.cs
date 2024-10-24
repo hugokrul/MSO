@@ -57,18 +57,18 @@ namespace MSO2
 
     public class RepeatCommand : ICommand
     {
-        private List<ICommand> commandList;
+        private List<ICommand> _commandList;
         private int _amount;
 
         public RepeatCommand(List<ICommand> commandList, int amount)
         {
-            this.commandList = commandList;
+            _commandList = commandList;
             _amount = amount;
         }
 
         public void Execute(Creature creature)
         {
-            foreach (ICommand command in commandList)
+            foreach (ICommand command in _commandList)
             {
                 command.Execute(creature);
             }
@@ -76,7 +76,7 @@ namespace MSO2
 
         public override string ToString()
         {
-            return $"Repeat {_amount} times: {string.Join(',', commandList)}";
+            return $"Repeat {_amount} times: {string.Join(',', _commandList)}";
         }
     }
 }
