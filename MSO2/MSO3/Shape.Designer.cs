@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Shape));
             homePage = new Button();
             pageNameShape = new Label();
             SuspendLayout();
@@ -58,8 +59,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(pageNameShape);
             Controls.Add(homePage);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Shape";
-            Text = "Shape";
             ResumeLayout(false);
             PerformLayout();
         }

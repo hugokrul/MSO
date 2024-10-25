@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sandbox));
             homeNav = new Button();
             pageNameSandbox = new Label();
             boardPanel = new Panel();
@@ -116,8 +117,8 @@
             Controls.Add(boardPanel);
             Controls.Add(pageNameSandbox);
             Controls.Add(homeNav);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Sandbox";
-            Text = "Sandbox";
             ResumeLayout(false);
             PerformLayout();
         }

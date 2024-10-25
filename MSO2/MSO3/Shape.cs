@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MSO3
 {
-    public partial class Shape : Form
+    public partial class Shape : BaseForm
     {
-        public Shape()
+        public Shape() : base()
         {
             InitializeComponent();
         }

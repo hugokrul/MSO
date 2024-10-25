@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MSO3
 {
-    public partial class Sandbox : Form
+    public partial class Sandbox : BaseForm
     {
-        public Sandbox()
+        public Sandbox() : base()
         {
             InitializeComponent();
         }

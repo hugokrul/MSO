@@ -3,16 +3,25 @@ using System.Drawing.Drawing2D;
 
 namespace MSO3
 {
-    public partial class Home : Form
+    public partial class Home : BaseForm
     {
         public static Home instance;
         public static Board board;
 
-        public Home(Board b)
+        static Image playerImage;
+
+        public Home(Board b) : base()
         {
             InitializeComponent();
             board = b;
             instance = this;
+
+            //Load image from resources folder
+            byte[] imageData = Properties.Resources._whiteRobot;
+            using (MemoryStream ms = new MemoryStream(imageData))
+            {
+                playerImage = Image.FromStream(ms);
+            }
         }
 
         private void sandboxNav_Click(object sender, EventArgs e)
@@ -66,7 +75,7 @@ namespace MSO3
             for (int i = 0; i < visitedPositions.Count - 1; i++)
             {
                 (int, int) oldPosition = visitedPositions[i];
-                int oldX = (oldPosition.Item1* width) + (width / 2);
+                int oldX = (oldPosition.Item1 * width) + (width / 2);
                 int oldY = (oldPosition.Item2 * height) + (height / 2);
 
                 (int, int) currentPosition = visitedPositions[i + 1];
@@ -81,44 +90,42 @@ namespace MSO3
         {
             (int, int) playerPosition = Board.player.position;
 
-            Pen p = new Pen(Color.Red);
-            AdjustableArrowCap arrow = new AdjustableArrowCap(12, 8);
-            p.CustomEndCap = arrow;
-
-            int x1 = 0;
-            int y1 = 0;
-            int x2 = 0;
-            int y2 = 0;
+            int Posx = playerPosition.Item1 * width;
+            int Posy = playerPosition.Item2 * height;
+            float angle = 0;
 
             switch (Board.player.currentFacing)
             {
                 case Creature.facing.North:
-                    x1 = playerPosition.Item1 * width + (width / 2);
-                    y1 = (playerPosition.Item2 * height) + height;
-                    x2 = playerPosition.Item1 * width + (width / 2);
-                    y2 = playerPosition.Item2 * height;
+                    angle = 180;
                     break;
                 case Creature.facing.South:
-                    x1 = playerPosition.Item1 * width + (width / 2);
-                    y1 = playerPosition.Item2 * height;
-                    x2 = playerPosition.Item1 * width + (width / 2);
-                    y2 = (playerPosition.Item2 * height) + height;
+                    angle = 0;
                     break;
                 case Creature.facing.West:
-                    x1 = (playerPosition.Item1 * width) + width;
-                    y1 = (playerPosition.Item2 * height) + (height / 2);
-                    x2 = playerPosition.Item1 * width;
-                    y2 = (playerPosition.Item2 * height) + (height / 2);
+                    angle = 270;
                     break;
                 case Creature.facing.East:
-                    x1 = playerPosition.Item1 * width;
-                    y1 = (playerPosition.Item2 * height) + (height / 2);
-                    x2 = (playerPosition.Item1 * width) + width;
-                    y2 = (playerPosition.Item2 * height) + (height / 2);
+                    angle = 90;
                     break;
             }
 
-            g.DrawLine(p, x1, y1, x2, y2);
+            DrawImageWithRotation(g, playerImage, angle, Posx, Posy, width, height);
+        }
+
+        public static void DrawImageWithRotation(Graphics g, Image image, float angle, int PosX, int Posy, int cellWidth, int CellHeight)
+        {
+            var originalTransform = g.Transform; //Save current graphics transform
+
+            g.TranslateTransform(PosX + cellWidth / 2, Posy + CellHeight / 2); //Get middle of originall image
+            g.RotateTransform(angle); //Rotate graphics with an angle
+            g.DrawImage(image, -cellWidth / 2, -CellHeight / 2, cellWidth, CellHeight); //Draw the image
+            g.Transform = originalTransform; //Reset the original rotation
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
