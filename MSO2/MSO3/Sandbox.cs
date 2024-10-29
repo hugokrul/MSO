@@ -16,6 +16,7 @@ namespace MSO3
     public partial class Sandbox : BaseForm
     {
         private string file = null;
+        private string[] originalCommands;
 
         public Sandbox() : base()
         {
@@ -44,9 +45,9 @@ namespace MSO3
 
             string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
 
-            string[] programCommands = chosenProgram(difficulty);
+            originalCommands = chosenProgram(difficulty);
 
-            List<ICommand> commands = CommandParser.Parse(programCommands);
+            List<ICommand> commands = CommandParser.Parse(originalCommands);
 
             if (file != null) 
             {
@@ -54,7 +55,7 @@ namespace MSO3
             }
             else
             {
-                Home.board.name = programCommands[0].Split(' ')[0] != "Name:" ? null : programCommands[0].Split(' ')[1];
+                Home.board.name = originalCommands[0].Split(' ')[0] != "Name:" ? null : originalCommands[0].Split(' ')[1];
             }
 
             Home.board.PlayBoard(commands);
@@ -62,7 +63,7 @@ namespace MSO3
             boardPanel.Invalidate();
             this.Text = $"Robologic {Home.board.name}";
 
-            if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, programCommands);
+            if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
         }
 
         private string[] chosenProgram(string? choice)
@@ -95,32 +96,42 @@ namespace MSO3
 
         private void executionWay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ownProgram.Text = "";
-            System.Windows.Forms.ComboBox cb = (System.Windows.Forms.ComboBox)sender;
-
-            string input = cb.GetItemText(cb.SelectedItem);
-
-            if (input == "Import")
+            if (!programChanged())
             {
-                if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false;
-                else executeBoard.Visible = true;
-                filePathInput.Visible = true;
+                ownProgram.Text = "";
+                System.Windows.Forms.ComboBox cb = (System.Windows.Forms.ComboBox)sender;
 
-                saveProgram.Visible = true;
-                ownProgram.ReadOnly = false;
+                string input = cb.GetItemText(cb.SelectedItem);
+
+                if (input == "Import")
+                {
+                    if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false;
+                    else executeBoard.Visible = true;
+                    filePathInput.Visible = true;
+
+                    saveProgram.Visible = true;
+                    ownProgram.ReadOnly = false;
+                }
+                else
+                {
+                    saveProgram.Visible = false;
+                    filePathInput.Visible = false;
+                    executeBoard.Visible = true;
+                    ownProgram.ReadOnly = true;
+                }
+
+                if (input == "Write your own")
+                {
+                    saveProgram.Visible = true;
+                    ownProgram.ReadOnly = false;
+                }
             }
             else
             {
-                saveProgram.Visible = false;
-                filePathInput.Visible = false;
-                executeBoard.Visible = true;
-                ownProgram.ReadOnly = true;
-            }
+                executionWay.SelectedIndexChanged -= new EventHandler(executionWay_SelectedIndexChanged);
+                executionWay.Text = "Import";
+                executionWay.SelectedIndexChanged += new EventHandler(executionWay_SelectedIndexChanged);
 
-            if (input == "Write your own")
-            {
-                saveProgram.Visible = true;
-                ownProgram.ReadOnly = false;
             }
         }
 
@@ -163,7 +174,9 @@ namespace MSO3
             if (executionWay.Text == "Import")
             {
                 File.WriteAllText(file, ownProgram.Text);
-                ownProgram.Text = string.Join(Environment.NewLine, File.ReadAllLines(file));
+                string[] newCommands = File.ReadAllLines(file);
+                originalCommands = newCommands;
+                ownProgram.Text = string.Join(Environment.NewLine, newCommands);
             }
             else if (executionWay.Text == "Write your own")
             {
@@ -182,6 +195,20 @@ namespace MSO3
                     MessageBox.Show("The file must have a name");
                 }
             }
+        }
+
+        private bool programChanged()
+        {
+            if (ownProgram.Text == "") return false;
+            if (ownProgram.Text.Split('\n') != originalCommands)
+            {
+                DialogResult result = MessageBox.Show("Are you sure? there are unsaved changes", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
