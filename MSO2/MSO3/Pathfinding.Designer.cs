@@ -62,6 +62,7 @@
             Controls.Add(homePage);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Pathfinding";
+            Load += Pathfinding_Load;
             ResumeLayout(false);
             PerformLayout();
         }

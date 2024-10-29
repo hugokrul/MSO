@@ -9,6 +9,7 @@
             // Basic program
             new string[]
             {
+                "Name: BasicProgram",
                 "Turn left", "Move 1", "Turn right", "Move 1",
                 "Turn left", "Move 1", "Turn right", "Move 1",
                 "Turn left", "Move 1", "Turn left", "Move 1",
@@ -20,6 +21,7 @@
             // Hard program
             new string[]
             {
+                "Name: HardProgram",
                 "Repeat 10 times", "    Turn left", "    Move 1",
                 "    Turn right", "    Move 1", "    Repeat 4 times",
                 "        Turn right", "        Move 1"
@@ -28,6 +30,7 @@
             // Advanced program
             new string[]
             {
+                "Name: AdvancedProgram",
                 "Repeat 2 times", "    Turn left", "    Move 1",
                 "    Turn right", "    Move 1", "Repeat 2 times",
                 "    Turn left", "    Move 1", "Turn right",

@@ -29,5 +29,10 @@ namespace MSO3
         {
 
         }
+
+        private void Pathfinding_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

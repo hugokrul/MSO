@@ -11,6 +11,8 @@ namespace MSO2
 
         public static Player player;
 
+        public string? name = null;
+
         // Constructor to initialize board dimensions and player.
         public Board()
         {

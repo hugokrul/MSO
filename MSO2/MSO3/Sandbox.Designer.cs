@@ -36,6 +36,7 @@
             executionWay = new ComboBox();
             filePathInput = new TextBox();
             ownProgram = new TextBox();
+            saveProgram = new Button();
             SuspendLayout();
             // 
             // homeNav
@@ -102,14 +103,29 @@
             ownProgram.Location = new Point(12, 117);
             ownProgram.Multiline = true;
             ownProgram.Name = "ownProgram";
+            ownProgram.ReadOnly = true;
+            ownProgram.ScrollBars = ScrollBars.Vertical;
             ownProgram.Size = new Size(223, 312);
             ownProgram.TabIndex = 7;
+            ownProgram.TextChanged += ownProgram_TextChanged;
+            // 
+            // saveProgram
+            // 
+            saveProgram.Location = new Point(694, 47);
+            saveProgram.Name = "saveProgram";
+            saveProgram.Size = new Size(94, 29);
+            saveProgram.TabIndex = 0;
+            saveProgram.Text = "Save";
+            saveProgram.UseVisualStyleBackColor = true;
+            saveProgram.Visible = false;
+            saveProgram.Click += saveProgram_Click;
             // 
             // Sandbox
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(saveProgram);
             Controls.Add(ownProgram);
             Controls.Add(filePathInput);
             Controls.Add(executionWay);
@@ -119,6 +135,7 @@
             Controls.Add(homeNav);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Sandbox";
+            Load += Sandbox_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -132,5 +149,6 @@
         private ComboBox executionWay;
         private TextBox filePathInput;
         private TextBox ownProgram;
+        private Button saveProgram;
     }
 }
