@@ -83,7 +83,6 @@ namespace MSO3
                     }
                     else
                     {
-                        Console.WriteLine(file);
                         return ownProgram.Text.Split('\n');
                     }
                 case "Write your own":
@@ -91,6 +90,32 @@ namespace MSO3
                     return ownProgram.Text.Split('\n');
                 default:
                     return MSO2.Program.availablePrograms[0].Skip(1).ToArray();
+            }
+        }
+
+        private void updateButtons(string input)
+        {
+            if (input == "Import")
+            {
+                if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false;
+                else executeBoard.Visible = true;
+                filePathInput.Visible = true;
+
+                saveProgram.Visible = true;
+                ownProgram.ReadOnly = false;
+            }
+            else
+            {
+                saveProgram.Visible = false;
+                filePathInput.Visible = false;
+                executeBoard.Visible = true;
+                ownProgram.ReadOnly = true;
+            }
+
+            if (input == "Write your own")
+            {
+                saveProgram.Visible = true;
+                ownProgram.ReadOnly = false;
             }
         }
 
@@ -102,36 +127,13 @@ namespace MSO3
                 System.Windows.Forms.ComboBox cb = (System.Windows.Forms.ComboBox)sender;
 
                 string input = cb.GetItemText(cb.SelectedItem);
-
-                if (input == "Import")
-                {
-                    if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false;
-                    else executeBoard.Visible = true;
-                    filePathInput.Visible = true;
-
-                    saveProgram.Visible = true;
-                    ownProgram.ReadOnly = false;
-                }
-                else
-                {
-                    saveProgram.Visible = false;
-                    filePathInput.Visible = false;
-                    executeBoard.Visible = true;
-                    ownProgram.ReadOnly = true;
-                }
-
-                if (input == "Write your own")
-                {
-                    saveProgram.Visible = true;
-                    ownProgram.ReadOnly = false;
-                }
+                updateButtons(input);
             }
             else
             {
                 executionWay.SelectedIndexChanged -= new EventHandler(executionWay_SelectedIndexChanged);
                 executionWay.Text = "Import";
                 executionWay.SelectedIndexChanged += new EventHandler(executionWay_SelectedIndexChanged);
-
             }
         }
 
@@ -207,8 +209,13 @@ namespace MSO3
                 {
                     return false;
                 }
+                else
+                {
+                    return true;
+                }
             }
-            return true;
+            return false;
+
         }
     }
 }

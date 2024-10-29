@@ -78,6 +78,7 @@
             // 
             // executionWay
             // 
+            executionWay.DropDownStyle = ComboBoxStyle.DropDownList;
             executionWay.FlatStyle = FlatStyle.Flat;
             executionWay.FormattingEnabled = true;
             executionWay.Items.AddRange(new object[] { "Basic", "Hard", "Advanced", "Import", "Write your own" });
@@ -85,7 +86,6 @@
             executionWay.Name = "executionWay";
             executionWay.Size = new Size(151, 28);
             executionWay.TabIndex = 5;
-            executionWay.Text = "Basic";
             executionWay.SelectedIndexChanged += executionWay_SelectedIndexChanged;
             // 
             // filePathInput
