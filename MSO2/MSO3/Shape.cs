@@ -35,8 +35,8 @@ namespace MSO3
         private void importBoard_Click(object sender, EventArgs e)
         {
 
-            //string boardFile = Interaction.InputBox("Give the full path of the file where the board is stored", "Board file");
-            string boardFile = @"C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\board.txt";
+            string boardFile = Interaction.InputBox("Give the full path of the file where the board is stored", "Board file");
+            //string boardFile = @"C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\board.txt";
             string[] boardArray = File.ReadAllLines(boardFile);
 
 
