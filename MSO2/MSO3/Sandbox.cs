@@ -17,6 +17,7 @@ namespace MSO3
         private string file = null;
         private List<string> originalCommands = new List<string>();
         private string previousExecutionWay;
+        private Board board;
 
         public Sandbox() : base()
         {
@@ -36,22 +37,22 @@ namespace MSO3
             Graphics g = e.Graphics;
             Pen blackPen = new Pen(Color.Black, 1);
 
-            Drawer.drawBoard((Panel)sender, g, blackPen);
+            Drawer.drawBoard((Panel)sender, g, blackPen, board);
         }
 
         private void executeBoard_Click(object sender, EventArgs e)
         {
-            Home.board = new Board();
+            board = new Board(10, 10);
             string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
             originalCommands = chosenProgram(difficulty);
             List<ICommand> commands = CommandParser.Parse(originalCommands.ToArray());
 
-            if (file != null) Home.board.name = Path.GetFileName(file);
+            if (file != null) board.name = Path.GetFileName(file);
 
-            Home.board.PlayBoard(commands);
+            board.PlayBoard(commands);
 
             boardPanel.Invalidate();
-            this.Text = $"Robologic {Home.board.name}";
+            this.Text = $"Robologic {board.name}";
 
             if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
         }
@@ -151,9 +152,10 @@ namespace MSO3
 
         private void Sandbox_Load(object sender, EventArgs e)
         {
+            board = new Board(10, 10);
             file = null;
-            this.Text = $"Robologic {Home.board.name}";
-            switch (Home.board.name)
+            this.Text = $"Robologic {board.name}";
+            switch (board.name)
             {
                 case "BasicProgram":
                     executionWay.Text = "Basic";

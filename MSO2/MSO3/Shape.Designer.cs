@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Shape));
             homePage = new Button();
             pageNameShape = new Label();
+            boardPanel = new Panel();
+            ExecuteBoard = new Button();
+            importBoard = new Button();
+            ownProgram = new TextBox();
             SuspendLayout();
             // 
             // homePage
@@ -52,11 +56,53 @@
             pageNameShape.TabIndex = 2;
             pageNameShape.Text = "Shape";
             // 
+            // boardPanel
+            // 
+            boardPanel.Location = new Point(259, 38);
+            boardPanel.Name = "boardPanel";
+            boardPanel.Size = new Size(400, 400);
+            boardPanel.TabIndex = 4;
+            boardPanel.Paint += boardPanel_Paint;
+            // 
+            // ExecuteBoard
+            // 
+            ExecuteBoard.Location = new Point(694, 400);
+            ExecuteBoard.Name = "ExecuteBoard";
+            ExecuteBoard.Size = new Size(94, 29);
+            ExecuteBoard.TabIndex = 5;
+            ExecuteBoard.Text = "Execute";
+            ExecuteBoard.UseVisualStyleBackColor = true;
+            ExecuteBoard.Click += ExecuteBoard_Click;
+            // 
+            // importBoard
+            // 
+            importBoard.Location = new Point(694, 47);
+            importBoard.Name = "importBoard";
+            importBoard.Size = new Size(94, 29);
+            importBoard.TabIndex = 6;
+            importBoard.Text = "Board";
+            importBoard.TextImageRelation = TextImageRelation.ImageBeforeText;
+            importBoard.UseVisualStyleBackColor = true;
+            importBoard.Click += importBoard_Click;
+            // 
+            // ownProgram
+            // 
+            ownProgram.Location = new Point(12, 38);
+            ownProgram.Multiline = true;
+            ownProgram.Name = "ownProgram";
+            ownProgram.ScrollBars = ScrollBars.Vertical;
+            ownProgram.Size = new Size(223, 391);
+            ownProgram.TabIndex = 9;
+            // 
             // Shape
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ownProgram);
+            Controls.Add(importBoard);
+            Controls.Add(ExecuteBoard);
+            Controls.Add(boardPanel);
             Controls.Add(pageNameShape);
             Controls.Add(homePage);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -69,5 +115,9 @@
 
         private Button homePage;
         private Label pageNameShape;
+        private Panel boardPanel;
+        private Button ExecuteBoard;
+        private Button importBoard;
+        private TextBox ownProgram;
     }
 }

@@ -7,12 +7,12 @@ namespace MSO2
     public class Player : Creature
     {
         // Constructor initializes starting position, direction, log, and visited positions.
-        public Player()
+        public Player((int, int) pos)
         {
-            position = (0, 0);
+            position = pos;
             currentFacing = facing.South;
             log = new List<string>();
-            visitedPositions = new List<(int, int)> { (0, 0) };
+            visitedPositions = new List<(int, int)> { pos };
         }
 
         // Prints the player's log and final state (position and direction).

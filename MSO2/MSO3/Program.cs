@@ -17,8 +17,7 @@ namespace MSO3
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Board board = new Board();
-            Home homePage = new Home(board);
+            Home homePage = new Home();
             homePage.StartPosition = FormStartPosition.CenterScreen;
             Application.Run(homePage);
         }

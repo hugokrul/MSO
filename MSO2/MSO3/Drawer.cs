@@ -9,7 +9,7 @@ namespace MSO3
 {
     internal class Drawer
     {
-        public static void drawBoard(Panel panel, Graphics g, Pen p)
+        public static void drawBoard(Panel panel, Graphics g, Pen p, Board board, bool characterVisible = true)
         {
             int boardHeight = Board.boardHeight;
             int boardWidth = Board.boardWidth;
@@ -22,16 +22,17 @@ namespace MSO3
                 for (int j = 0; j < boardHeight; j++)
                 {
                     g.DrawRectangle(p, i * gridWidth, j * gridHeight, gridWidth - 1, gridHeight - 1);
+                    if (board != null && board.boardArray[i, j] == "+") g.FillRectangle(new SolidBrush(Color.Orange), i * gridWidth, j * gridHeight, gridWidth - 1, gridHeight - 1);
                 }
             }
 
-            drawPlayer(g, gridWidth, gridHeight);
-            drawLocations(g, gridWidth, gridHeight);
+            if (characterVisible) drawPlayer(g, gridWidth, gridHeight, board);
+            drawLocations(g, gridWidth, gridHeight, board);
         }
 
-        public static void drawLocations(Graphics g, int width, int height)
+        public static void drawLocations(Graphics g, int width, int height, Board board)
         {
-            List<(int, int)> visitedPositions = Board.player.visitedPositions;
+            List<(int, int)> visitedPositions = board.player.visitedPositions;
 
             for (int i = 0; i < visitedPositions.Count - 1; i++)
             {
@@ -47,15 +48,15 @@ namespace MSO3
             }
         }
 
-        public static void drawPlayer(Graphics g, int width, int height)
+        public static void drawPlayer(Graphics g, int width, int height, Board board)
         {
-            (int, int) playerPosition = Board.player.position;
+            (int, int) playerPosition = board.player.position;
 
             int Posx = playerPosition.Item1 * width;
             int Posy = playerPosition.Item2 * height;
             float angle = 0;
 
-            switch (Board.player.currentFacing)
+            switch (board.player.currentFacing)
             {
                 case Creature.facing.North:
                     angle = 180;

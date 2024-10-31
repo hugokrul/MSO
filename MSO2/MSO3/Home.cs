@@ -6,14 +6,12 @@ namespace MSO3
     public partial class Home : BaseForm
     {
         public static Home instance;
-        public static Board board;
 
         public static Image playerImage;
 
-        public Home(Board b) : base()
+        public Home() : base()
         {
             InitializeComponent();
-            board = b;
             instance = this;
 
             //Load image from resources folder
