@@ -169,8 +169,6 @@ namespace MSO3
         {
         }
 
-
-        //Next: warning if file editted
         private void saveProgram_Click(object sender, EventArgs e)
         {
             if (executionWay.Text == "Import")
@@ -202,7 +200,9 @@ namespace MSO3
         private bool programChanged()
         {
             if (ownProgram.Text == "") return false;
-            if (ownProgram.Text.Split('\n') != originalCommands)
+            if (ownProgram.ReadOnly) return false;
+            //Console.WriteLine(!hardcodedPrograms.Contains(executionWay.Text));
+            if (ownProgram.Text.Split('\n') != originalCommands);
             {
                 DialogResult result = MessageBox.Show("Are you sure? there are unsaved changes", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
