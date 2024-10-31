@@ -107,7 +107,6 @@
             ownProgram.ScrollBars = ScrollBars.Vertical;
             ownProgram.Size = new Size(223, 312);
             ownProgram.TabIndex = 7;
-            ownProgram.TextChanged += ownProgram_TextChanged;
             // 
             // saveProgram
             // 

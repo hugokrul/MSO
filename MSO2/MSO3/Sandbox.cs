@@ -68,12 +68,11 @@ namespace MSO3
                     return MSO2.Program.availablePrograms[2].Skip(1).ToList();
                 case "Import":
                     return runImportedProgram();
-                    
                 case "Write your own":
                     ownProgram.ReadOnly = false;
                     return ownProgram.Text.Split('\n').ToList();
             }
-            return null;
+            return new List<string>();
         }
 
         private List<string> runImportedProgram()
@@ -169,10 +168,6 @@ namespace MSO3
                     executionWay.Text = "";
                     break;
             }
-        }
-
-        private void ownProgram_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private bool programChanged()
