@@ -36,7 +36,7 @@ namespace MSO3
             Graphics g = e.Graphics;
             Pen blackPen = new Pen(Color.Black, 1);
 
-            Home.drawBoard((Panel)sender, g, blackPen);
+            Drawer.drawBoard((Panel)sender, g, blackPen);
         }
 
         private void executeBoard_Click(object sender, EventArgs e)
