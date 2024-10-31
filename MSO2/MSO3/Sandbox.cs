@@ -26,10 +26,13 @@ namespace MSO3
 
         private void homeNav_Click(object sender, EventArgs e)
         {
-            Home homePage = Home.instance;
-            homePage.StartPosition = FormStartPosition.CenterScreen;
-            homePage.Show();
-            this.Hide();
+            if (!programChanged())
+            {
+                Home homePage = Home.instance;
+                homePage.StartPosition = FormStartPosition.CenterScreen;
+                homePage.Show();
+                this.Hide();
+            }
         }
 
         private void boardPanel_Paint(object sender, PaintEventArgs e)
