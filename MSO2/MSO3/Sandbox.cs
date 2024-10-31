@@ -214,8 +214,6 @@ namespace MSO3
                     return true;
                 }
             }
-            return false;
-
         }
     }
 }
