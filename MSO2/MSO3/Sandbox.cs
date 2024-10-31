@@ -15,7 +15,7 @@ namespace MSO3
     public partial class Sandbox : BaseForm
     {
         private string file = null;
-        private List<string> originalCommands;
+        private List<string> originalCommands = new List<string>();
         private string previousExecutionWay;
 
         public Sandbox() : base()
@@ -206,7 +206,10 @@ namespace MSO3
                     File.Create(@"..\..\..\" + name + ".txt").Close();
                     file = Path.GetFullPath(@"..\..\..\" + name + ".txt");
                     File.WriteAllText(file, ownProgram.Text);
+                    executionWay.SelectedIndexChanged -= new EventHandler(executionWay_SelectedIndexChanged);
+                    filePathInput.Visible = true;
                     executionWay.Text = "Import";
+                    executionWay.SelectedIndexChanged += new EventHandler(executionWay_SelectedIndexChanged);
                     ownProgram.Text = string.Join(Environment.NewLine, File.ReadAllText(file));
                     filePathInput.Text = file;
                 }
