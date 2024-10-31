@@ -105,5 +105,44 @@ namespace MSO3
             }
             return (-1, -1);
         }
+
+        private void checkShape_Click(object sender, EventArgs e)
+        {
+            if (board != null)
+            {
+                List<(int,int)> correctVisitedPlaces = new List<(int,int)>();
+                (int, int) startPosition = (-1, -1);
+                for (int i = 0; i < board.boardArray.GetLength(0); i++)
+                {
+                    for (int j = 0; j < board.boardArray.GetLength(1); j++)
+                    {
+                        if (board.boardArray[i, j] == "s" || board.boardArray[i, j] == "o")
+                        {
+                            correctVisitedPlaces.Add((j, i));
+                        }
+                        if (board.boardArray[i, j] == "s") startPosition = (j, i);
+                    }
+                }
+
+                correctVisitedPlaces.Add(startPosition);
+
+                if (sameShapes(board.player.visitedPositions, correctVisitedPlaces))
+                {
+                    MessageBox.Show("Shape is correct!");
+                }
+                else
+                {
+                    MessageBox.Show("Shape is incorrect!");
+                }
+            }
+        }
+
+        private bool sameShapes(List<(int, int)> list1,  List<(int, int)> list2)
+        {
+            list1.Sort();
+            list2.Sort();
+
+            return list1.SequenceEqual(list2);
+        }
     }
 }

@@ -38,22 +38,25 @@ namespace MSO2
         /// </summary>
         public virtual void Move(int amountOfSteps)
         {
-            switch (currentFacing)
+            for (int i = 0; i < amountOfSteps; i++)
             {
-                case facing.North:
-                    position = Board.BoardBounds((position.Item1, position.Item2 - amountOfSteps));
-                    break;
-                case facing.South:
-                    position = Board.BoardBounds((position.Item1, position.Item2 + amountOfSteps));
-                    break;
-                case facing.East:
-                    position = Board.BoardBounds((position.Item1 + amountOfSteps, position.Item2));
-                    break;
-                case facing.West:
-                    position = Board.BoardBounds((position.Item1 - amountOfSteps, position.Item2));
-                    break;
+                switch (currentFacing)
+                {
+                    case facing.North:
+                        position = Board.BoardBounds((position.Item1, position.Item2 - 1));
+                        break;
+                    case facing.South:
+                        position = Board.BoardBounds((position.Item1, position.Item2 + 1));
+                        break;
+                    case facing.East:
+                        position = Board.BoardBounds((position.Item1 + 1, position.Item2));
+                        break;
+                    case facing.West:
+                        position = Board.BoardBounds((position.Item1 - 1, position.Item2));
+                        break;
+                }
+                visitedPositions.Add(position);
             }
-            visitedPositions.Add(position);
             log.Add($"Move {amountOfSteps}");
         }
     }

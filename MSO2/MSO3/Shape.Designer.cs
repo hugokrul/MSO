@@ -35,6 +35,7 @@
             ExecuteBoard = new Button();
             importBoard = new Button();
             ownProgram = new TextBox();
+            checkShape = new Button();
             SuspendLayout();
             // 
             // homePage
@@ -94,11 +95,22 @@
             ownProgram.Size = new Size(223, 391);
             ownProgram.TabIndex = 9;
             // 
+            // checkShape
+            // 
+            checkShape.Location = new Point(694, 82);
+            checkShape.Name = "checkShape";
+            checkShape.Size = new Size(94, 29);
+            checkShape.TabIndex = 10;
+            checkShape.Text = "Check";
+            checkShape.UseVisualStyleBackColor = true;
+            checkShape.Click += checkShape_Click;
+            // 
             // Shape
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(checkShape);
             Controls.Add(ownProgram);
             Controls.Add(importBoard);
             Controls.Add(ExecuteBoard);
@@ -119,5 +131,6 @@
         private Button ExecuteBoard;
         private Button importBoard;
         private TextBox ownProgram;
+        private Button checkShape;
     }
 }
