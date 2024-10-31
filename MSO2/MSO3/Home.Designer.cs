@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             sandboxNav = new Button();
             shapePage = new Button();
-            pathfindingPage = new Button();
             pageNameHome = new Label();
             SuspendLayout();
             // 
@@ -55,16 +54,6 @@
             shapePage.UseVisualStyleBackColor = true;
             shapePage.Click += shapePage_Click;
             // 
-            // pathfindingPage
-            // 
-            pathfindingPage.Location = new Point(694, 82);
-            pathfindingPage.Name = "pathfindingPage";
-            pathfindingPage.Size = new Size(94, 27);
-            pathfindingPage.TabIndex = 2;
-            pathfindingPage.Text = "Pathfinding";
-            pathfindingPage.UseVisualStyleBackColor = true;
-            pathfindingPage.Click += pathfindingPage_Click;
-            // 
             // pageNameHome
             // 
             pageNameHome.AutoSize = true;
@@ -80,7 +69,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(pageNameHome);
-            Controls.Add(pathfindingPage);
             Controls.Add(shapePage);
             Controls.Add(sandboxNav);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -94,7 +82,6 @@
 
         private Button sandboxNav;
         private Button shapePage;
-        private Button pathfindingPage;
         private Label pageNameHome;
     }
 }

@@ -40,14 +40,6 @@ namespace MSO3
             this.Hide();
         }
 
-        private void pathfindingPage_Click(object sender, EventArgs e)
-        {
-            Pathfinding pathfindingPage = new Pathfinding();
-            pathfindingPage.StartPosition = FormStartPosition.CenterScreen;
-            pathfindingPage.Show();
-            this.Hide();
-        }
-
         private void Home_Load(object sender, EventArgs e)
         {
             
