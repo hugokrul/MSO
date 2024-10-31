@@ -15,7 +15,7 @@ namespace MSO3
     public partial class Sandbox : BaseForm
     {
         private string file = null;
-        private string[] originalCommands;
+        private List<string> originalCommands;
         private string previousExecutionWay;
 
         public Sandbox() : base()
@@ -44,7 +44,7 @@ namespace MSO3
             Home.board = new Board();
             string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
             originalCommands = chosenProgram(difficulty);
-            List<ICommand> commands = CommandParser.Parse(originalCommands);
+            List<ICommand> commands = CommandParser.Parse(originalCommands.ToArray());
 
             if (file != null) Home.board.name = Path.GetFileName(file);
 
@@ -56,41 +56,44 @@ namespace MSO3
             if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
         }
 
-        private string[] chosenProgram(string? choice)
+        private List<string> chosenProgram(string? choice)
         {
             switch (choice)
             {
                 case "Basic":
-                    return MSO2.Program.availablePrograms[0].Skip(1).ToArray();
+                    return MSO2.Program.availablePrograms[0].Skip(1).ToList();
                 case "Hard":
-                    return MSO2.Program.availablePrograms[1].Skip(1).ToArray();
+                    return MSO2.Program.availablePrograms[1].Skip(1).ToList();
                 case "Advanced":
-                    return MSO2.Program.availablePrograms[2].Skip(1).ToArray();
+                    return MSO2.Program.availablePrograms[2].Skip(1).ToList();
                 case "Import":
-                    if (file == null)
-                    {
-                        string path = filePathInput.Text;
-                        file = path;
-                        return File.ReadAllLines(path);
-                    }
-                    else return ownProgram.Text.Split('\n');
+                    return runImportedProgram();
+                    
                 case "Write your own":
                     ownProgram.ReadOnly = false;
-                    return ownProgram.Text.Split('\n');
+                    return ownProgram.Text.Split('\n').ToList();
             }
             return null;
+        }
+
+        private List<string> runImportedProgram()
+        {
+            if (file != null && ownProgram.Text != "")
+            {
+                save();
+            }
+            string path = filePathInput.Text;
+            file = path;
+            return File.ReadAllLines(path).ToList();
         }
 
         private void updateButtons(string input)
         {
             if (input == "Import")
             {
-                if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false;
-                else executeBoard.Visible = true;
+                fileExistence();
                 filePathInput.Visible = true;
-
                 saveProgram.Visible = true;
-                ownProgram.ReadOnly = false;
             }
             else
             {
@@ -127,9 +130,24 @@ namespace MSO3
 
         private void filePathInput_TextChanged(object sender, EventArgs e)
         {
+            fileExistence();
+        }
 
-            if (!File.Exists(filePathInput.Text)) executeBoard.Visible = false;
-            else executeBoard.Visible = true;
+        private void fileExistence()
+        {
+            string[] allowedFiles = { ".txt" };
+            if (!File.Exists(filePathInput.Text) || !allowedFiles.Contains(Path.GetExtension(filePathInput.Text)))
+            {
+                saveProgram.Visible = false;
+                ownProgram.ReadOnly = true;
+                executeBoard.Visible = false;
+            }
+            else
+            {
+                saveProgram.Visible = true;
+                ownProgram.ReadOnly = false;
+                executeBoard.Visible = true;
+            }
         }
 
         private void Sandbox_Load(object sender, EventArgs e)
@@ -157,12 +175,26 @@ namespace MSO3
         {
         }
 
-        private void saveProgram_Click(object sender, EventArgs e)
+        private bool programChanged()
+        {
+            if (ownProgram.Text == "") return false;
+            if (ownProgram.ReadOnly) return false;
+            if (ownProgram.Text != string.Join(Environment.NewLine, originalCommands))
+            {
+                DialogResult result = MessageBox.Show("Are you sure? there are unsaved changes", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes) return false;
+                else return true;
+            }
+            else return false;
+        }
+
+        private void save()
         {
             if (executionWay.Text == "Import")
             {
+                file = filePathInput.Text;
                 File.WriteAllText(file, ownProgram.Text);
-                string[] newCommands = File.ReadAllLines(file);
+                List<string> newCommands = File.ReadAllLines(file).ToList();
                 originalCommands = newCommands;
                 ownProgram.Text = string.Join(Environment.NewLine, newCommands);
             }
@@ -185,23 +217,9 @@ namespace MSO3
             }
         }
 
-        private bool programChanged()
+        private void saveProgram_clicked(object sender, EventArgs e)
         {
-            if (ownProgram.Text == "") return false;
-            if (ownProgram.ReadOnly) return false;
-            //Console.WriteLine(!hardcodedPrograms.Contains(executionWay.Text));
-            if (ownProgram.Text.Split('\n') != originalCommands) ;
-            {
-                DialogResult result = MessageBox.Show("Are you sure? there are unsaved changes", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
+            save();
         }
     }
 }

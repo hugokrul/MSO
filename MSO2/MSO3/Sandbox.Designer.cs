@@ -118,7 +118,7 @@
             saveProgram.Text = "Save";
             saveProgram.UseVisualStyleBackColor = true;
             saveProgram.Visible = false;
-            saveProgram.Click += saveProgram_Click;
+            saveProgram.Click += saveProgram_clicked;
             // 
             // Sandbox
             // 
