@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MSO2;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Microsoft.VisualBasic;
 
 namespace MSO3
@@ -17,6 +16,7 @@ namespace MSO3
     {
         private string file = null;
         private string[] originalCommands;
+        private string previousExecutionWay;
 
         public Sandbox() : base()
         {
@@ -42,21 +42,11 @@ namespace MSO3
         private void executeBoard_Click(object sender, EventArgs e)
         {
             Home.board = new Board();
-
             string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
-
             originalCommands = chosenProgram(difficulty);
-
             List<ICommand> commands = CommandParser.Parse(originalCommands);
 
-            if (file != null) 
-            {
-                Home.board.name = Path.GetFileName(file);
-            }
-            else
-            {
-                Home.board.name = originalCommands[0].Split(' ')[0] != "Name:" ? null : originalCommands[0].Split(' ')[1];
-            }
+            if (file != null) Home.board.name = Path.GetFileName(file);
 
             Home.board.PlayBoard(commands);
 
@@ -70,6 +60,8 @@ namespace MSO3
         {
             switch (choice)
             {
+                case "Basic":
+                    return MSO2.Program.availablePrograms[0].Skip(1).ToArray();
                 case "Hard":
                     return MSO2.Program.availablePrograms[1].Skip(1).ToArray();
                 case "Advanced":
@@ -81,16 +73,12 @@ namespace MSO3
                         file = path;
                         return File.ReadAllLines(path);
                     }
-                    else
-                    {
-                        return ownProgram.Text.Split('\n');
-                    }
+                    else return ownProgram.Text.Split('\n');
                 case "Write your own":
                     ownProgram.ReadOnly = false;
                     return ownProgram.Text.Split('\n');
-                default:
-                    return MSO2.Program.availablePrograms[0].Skip(1).ToArray();
             }
+            return null;
         }
 
         private void updateButtons(string input)
@@ -124,15 +112,15 @@ namespace MSO3
             if (!programChanged())
             {
                 ownProgram.Text = "";
-                System.Windows.Forms.ComboBox cb = (System.Windows.Forms.ComboBox)sender;
 
-                string input = cb.GetItemText(cb.SelectedItem);
+                string input = executionWay.Text;
+                previousExecutionWay = input;
                 updateButtons(input);
             }
             else
             {
                 executionWay.SelectedIndexChanged -= new EventHandler(executionWay_SelectedIndexChanged);
-                executionWay.Text = "Import";
+                executionWay.Text = previousExecutionWay;
                 executionWay.SelectedIndexChanged += new EventHandler(executionWay_SelectedIndexChanged);
             }
         }
@@ -202,7 +190,7 @@ namespace MSO3
             if (ownProgram.Text == "") return false;
             if (ownProgram.ReadOnly) return false;
             //Console.WriteLine(!hardcodedPrograms.Contains(executionWay.Text));
-            if (ownProgram.Text.Split('\n') != originalCommands);
+            if (ownProgram.Text.Split('\n') != originalCommands) ;
             {
                 DialogResult result = MessageBox.Show("Are you sure? there are unsaved changes", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
