@@ -68,7 +68,7 @@ namespace MSO3
                 Graphics g = e.Graphics;
                 Pen blackPen = new Pen(Color.Black, 1);
 
-                Drawer.drawBoard((Panel)sender, g, blackPen, board);
+                Drawer.drawBoard((Panel)sender, g, blackPen, board, false);
             }
         }
 
@@ -111,7 +111,7 @@ namespace MSO3
             if (board != null)
             {
                 List<(int,int)> correctVisitedPlaces = new List<(int,int)>();
-                (int, int) startPosition = (-1, -1);
+                (int, int) startPosition = (0, 0);
                 for (int i = 0; i < board.boardArray.GetLength(0); i++)
                 {
                     for (int j = 0; j < board.boardArray.GetLength(1); j++)
