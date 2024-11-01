@@ -80,10 +80,13 @@ namespace MSO3
                 board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
                 board.boardArray = tempBoard;
 
-
-                List<ICommand> commands = CommandParser.Parse(ownProgram.Text.Split('\n'));
+                string[] commandArray = ownProgram.Text.Split('\n');
+                List<ICommand> commands = CommandParser.Parse(commandArray);
                 board.PlayBoard(commands);
+
                 boardPanel.Invalidate();
+
+                Sandbox.showMetrics(commandArray);
             }
             else
             {

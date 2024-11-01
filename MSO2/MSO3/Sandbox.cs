@@ -58,6 +58,23 @@ namespace MSO3
             this.Text = $"Robologic {board.name}";
 
             if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
+
+            showMetrics(originalCommands.ToArray());
+        }
+
+        public static void showMetrics(string[] commands)
+        {
+            DialogResult calculateMetrics = MessageBox.Show("Do you want to see the metrics", "Calculate metrics", MessageBoxButtons.YesNo);
+
+            if (calculateMetrics == DialogResult.Yes)
+            {
+                CalculateMetrics.calculateMetrics(commands);
+                MessageBox.Show(
+                        $"Number of commands: {CalculateMetrics.numberOfCommands}\n" +
+                        $"Nesting level: {CalculateMetrics.nestingLevel}\n" +
+                        $"Number of Repeats: {CalculateMetrics.numberOfRepeat}"
+                    );
+            }
         }
 
         private List<string> chosenProgram(string? choice)
