@@ -22,18 +22,49 @@ namespace MSO3
             InitializeComponent();
         }
 
-        private void HomePage_Click(object sender, EventArgs e)
+        private void BoardPanel_Paint(object sender, PaintEventArgs e)
+        {
+            if (board != null)
+            {
+                Graphics? g = e.Graphics;
+                Pen? whitepen = new Pen(Color.White, 1);
+
+                Drawer.DrawBoard((Panel)sender, g, whitepen, board, false);
+            }
+        }
+
+        private static (int, int) FindStartPosition(string[,] b)
+        {
+            for (int i = 0; i < b.GetLength(0); i++)
+            {
+                for (int j = 0; j < b.GetLength(1); j++)
+                {
+                    if (b[i, j] == "s")
+                    {
+                        return (i, j); // Return the position as a tuple
+                    }
+                }
+            }
+            return (-1, -1);
+        }
+
+        private static bool SameShapes(List<(int, int)> list1, List<(int, int)> list2)
+        {
+            list1.Sort();
+            list2.Sort();
+
+            return list1.SequenceEqual(list2);
+        }
+
+        private void HomeButton_Click(object sender, EventArgs e)
         {
             Home.instance.StartPosition = FormStartPosition.CenterScreen;
             Home.instance.Show();
             this.Hide();
         }
 
-
-
-        private void ImportBoard_Click(object sender, EventArgs e)
+        private void importBoard_Click_1(object sender, EventArgs e)
         {
-
             string? boardFile = Interaction.InputBox("Give the full path of the file where the board is stored", "Board file");
             string[] boardArray = File.ReadAllLines(boardFile);
 
@@ -59,59 +90,11 @@ namespace MSO3
             boardPanel.Invalidate();
         }
 
-        private void BoardPanel_Paint(object sender, PaintEventArgs e)
+        private void checkBoard_Click(object sender, EventArgs e)
         {
             if (board != null)
             {
-                Graphics? g = e.Graphics;
-                Pen? blackPen = new Pen(Color.Black, 1);
-
-                Drawer.DrawBoard((Panel)sender, g, blackPen, board, false);
-            }
-        }
-
-        private void ExecuteBoard_Click(object sender, EventArgs e)
-        {
-            if (board != null)
-            {
-                (int, int) playerPosition = FindStartPosition(tempBoard);
-                board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
-                board.BoardArray = tempBoard;
-
-                string[] commandArray = ownProgram.Text.Split('\n');
-                List<ICommand>? commands = CommandParser.Parse(commandArray);
-                board.PlayBoard(commands);
-
-                boardPanel.Invalidate();
-
-                Sandbox.ShowMetrics(commandArray);
-            }
-            else
-            {
-                MessageBox.Show("Import a board first.");
-            }
-        }
-
-        private static (int, int) FindStartPosition(string[,] b)
-        {
-            for (int i = 0; i < b.GetLength(0); i++)
-            {
-                for (int j = 0; j < b.GetLength(1); j++)
-                {
-                    if (b[i, j] == "s")
-                    {
-                        return (i, j); // Return the position as a tuple
-                    }
-                }
-            }
-            return (-1, -1);
-        }
-
-        private void CheckShape_Click(object sender, EventArgs e)
-        {
-            if (board != null)
-            {
-                List<(int, int)>? correctVisitedPlaces = new List<(int,int)>();
+                List<(int, int)>? correctVisitedPlaces = new List<(int, int)>();
                 (int, int) startPosition = (0, 0);
                 for (int i = 0; i < board.BoardArray.GetLength(0); i++)
                 {
@@ -138,12 +121,26 @@ namespace MSO3
             }
         }
 
-        private static bool SameShapes(List<(int, int)> list1,  List<(int, int)> list2)
+        private void ExecuteBoard_Click_1(object sender, EventArgs e)
         {
-            list1.Sort();
-            list2.Sort();
+            if (board != null)
+            {
+                (int, int) playerPosition = FindStartPosition(tempBoard);
+                board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
+                board.BoardArray = tempBoard;
 
-            return list1.SequenceEqual(list2);
+                string[] commandArray = ownProgram.Text.Split('\n');
+                List<ICommand>? commands = CommandParser.Parse(commandArray);
+                board.PlayBoard(commands);
+
+                boardPanel.Invalidate();
+
+                Sandbox.ShowMetrics(commandArray);
+            }
+            else
+            {
+                MessageBox.Show("Import a board first.");
+            }
         }
     }
 }

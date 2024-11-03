@@ -26,8 +26,8 @@ namespace MSO3
                 }
             }
 
-            if (characterVisible) DrawPlayer(g, gridWidth, gridHeight, board);
             DrawLocations(g, gridWidth, gridHeight, board);
+            if (characterVisible) DrawPlayer(g, gridWidth, gridHeight, board);
         }
 
         public static void DrawLocations(Graphics g, int width, int height, Board board)
@@ -44,7 +44,7 @@ namespace MSO3
                 int currentX = (currentPosition.Item1 * width) + (width / 2);
                 int currentY = (currentPosition.Item2 * height) + (height / 2);
 
-                g.DrawLine(new Pen(Color.Blue, 5), new Point(oldX, oldY), new Point(currentX, currentY));
+                g.DrawLine(new Pen(Color.FromArgb(253, 203, 110), 5), new Point(oldX, oldY), new Point(currentX, currentY));
             }
         }
 

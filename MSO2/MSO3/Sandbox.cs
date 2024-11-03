@@ -24,42 +24,12 @@ namespace MSO3
             InitializeComponent();
         }
 
-        private void HomeNav_Click(object sender, EventArgs e)
-        {
-            if (!ProgramChanged())
-            {
-                Home homePage = Home.instance;
-                homePage.StartPosition = FormStartPosition.CenterScreen;
-                homePage.Show();
-                this.Hide();
-            }
-        }
-
         private void BoardPanel_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen blackPen = new Pen(Color.Black, 1);
+            Pen whitePen = new Pen(Color.White, 1);
 
-            Drawer.DrawBoard((Panel)sender, g, blackPen, board);
-        }
-
-        private void ExecuteBoard_Click(object sender, EventArgs e)
-        {
-            board = new Board(10, 10);
-            string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
-            originalCommands = ChosenProgram(difficulty);
-            List<ICommand> commands = CommandParser.Parse(originalCommands.ToArray());
-
-            if (file != null) board.Name = Path.GetFileName(file);
-
-            board.PlayBoard(commands);
-
-            boardPanel.Invalidate();
-            this.Text = $"Robologic {board.Name}";
-
-            if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
-
-            ShowMetrics(originalCommands.ToArray());
+            Drawer.DrawBoard((Panel)sender, g, whitePen, board);
         }
 
         public static void ShowMetrics(string[] commands)
@@ -237,9 +207,39 @@ namespace MSO3
             }
         }
 
-        private void SaveProgram_clicked(object sender, EventArgs e)
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            if (!ProgramChanged())
+            {
+                Home homePage = Home.instance;
+                homePage.StartPosition = FormStartPosition.CenterScreen;
+                homePage.Show();
+                this.Hide();
+            }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             Save();
+        }
+
+        private async void executeBoard_Click_1(object sender, EventArgs e)
+        {
+            board = new Board(10, 10);
+            string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
+            originalCommands = ChosenProgram(difficulty);
+            List<ICommand> commands = CommandParser.Parse(originalCommands.ToArray());
+
+            if (file != null) board.Name = Path.GetFileName(file);
+
+            board.PlayBoard(commands);
+
+            boardPanel.Invalidate();
+            this.Text = $"Robologic {board.Name}";
+
+            if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
+
+            ShowMetrics(originalCommands.ToArray());
         }
     }
 }
