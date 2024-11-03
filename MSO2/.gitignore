@@ -19,6 +19,7 @@ x64/
 
 # sonarqube
 .sonarqube/
+.github/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
