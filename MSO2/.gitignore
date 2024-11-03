@@ -17,6 +17,9 @@ x64/
 # .vs map
 .vs/
 
+# sonarqube
+.sonarqube/
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
