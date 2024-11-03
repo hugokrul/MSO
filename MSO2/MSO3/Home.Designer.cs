@@ -29,48 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            sandboxNav = new Button();
-            shapePage = new Button();
-            pageNameHome = new Label();
+            labelRoboLogic = new Label();
+            PlayButton = new Button();
+            QuitButton = new Button();
             SuspendLayout();
             // 
-            // sandboxNav
+            // labelRoboLogic
             // 
-            sandboxNav.Location = new Point(694, 9);
-            sandboxNav.Name = "sandboxNav";
-            sandboxNav.Size = new Size(94, 29);
-            sandboxNav.TabIndex = 0;
-            sandboxNav.Text = "Sandbox";
-            sandboxNav.UseVisualStyleBackColor = true;
-            sandboxNav.Click += sandboxNav_Click;
+            labelRoboLogic.AutoSize = true;
+            labelRoboLogic.BackColor = Color.Transparent;
+            labelRoboLogic.Font = new Font("Showcard Gothic", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            labelRoboLogic.ForeColor = Color.FromArgb(223, 230, 233);
+            labelRoboLogic.Location = new Point(263, 25);
+            labelRoboLogic.Name = "labelRoboLogic";
+            labelRoboLogic.Size = new Size(246, 50);
+            labelRoboLogic.TabIndex = 4;
+            labelRoboLogic.Text = "RoboLogic";
             // 
-            // shapePage
+            // PlayButton
             // 
-            shapePage.Location = new Point(694, 47);
-            shapePage.Name = "shapePage";
-            shapePage.Size = new Size(94, 29);
-            shapePage.TabIndex = 1;
-            shapePage.Text = "Shape";
-            shapePage.UseVisualStyleBackColor = true;
-            shapePage.Click += shapePage_Click;
+            PlayButton.BackgroundImage = Properties.Resources.gradient_img__7_;
+            PlayButton.Font = new Font("Snap ITC", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PlayButton.ForeColor = Color.FromArgb(223, 230, 233);
+            PlayButton.Location = new Point(301, 161);
+            PlayButton.Name = "PlayButton";
+            PlayButton.Size = new Size(172, 54);
+            PlayButton.TabIndex = 5;
+            PlayButton.Text = "Play";
+            PlayButton.UseVisualStyleBackColor = true;
+            PlayButton.Click += PlayButton_Click;
             // 
-            // pageNameHome
+            // QuitButton
             // 
-            pageNameHome.AutoSize = true;
-            pageNameHome.Location = new Point(12, 9);
-            pageNameHome.Name = "pageNameHome";
-            pageNameHome.Size = new Size(50, 20);
-            pageNameHome.TabIndex = 3;
-            pageNameHome.Text = "Home";
+            QuitButton.BackgroundImage = Properties.Resources.gradient_img__7_;
+            QuitButton.Font = new Font("Snap ITC", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            QuitButton.ForeColor = Color.FromArgb(223, 230, 233);
+            QuitButton.Location = new Point(301, 243);
+            QuitButton.Name = "QuitButton";
+            QuitButton.Size = new Size(172, 54);
+            QuitButton.TabIndex = 6;
+            QuitButton.Text = "Quit";
+            QuitButton.UseVisualStyleBackColor = true;
+            QuitButton.Click += button1_Click;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.gradient_img__7_;
             ClientSize = new Size(800, 450);
-            Controls.Add(pageNameHome);
-            Controls.Add(shapePage);
-            Controls.Add(sandboxNav);
+            Controls.Add(QuitButton);
+            Controls.Add(PlayButton);
+            Controls.Add(labelRoboLogic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Home";
             Load += Home_Load;
@@ -79,9 +89,8 @@
         }
 
         #endregion
-
-        private Button sandboxNav;
-        private Button shapePage;
-        private Label pageNameHome;
+        private Label labelRoboLogic;
+        private Button PlayButton;
+        private Button QuitButton;
     }
 }
