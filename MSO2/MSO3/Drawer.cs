@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace MSO3
 {
-    internal class Drawer
+    internal static class Drawer
     {
-        public static void drawBoard(Panel panel, Graphics g, Pen p, Board board, bool characterVisible = true)
+        public static void DrawBoard(Panel panel, Graphics g, Pen p, Board board, bool characterVisible = true)
         {
-            int boardHeight = Board.boardHeight;
-            int boardWidth = Board.boardWidth;
+            int boardHeight = Board.BoardHeight;
+            int boardWidth = Board.BoardWidth;
 
             int gridWidth = panel.Width / boardWidth;
             int gridHeight = panel.Height / boardHeight;
@@ -22,17 +22,17 @@ namespace MSO3
                 for (int j = 0; j < boardHeight; j++)
                 {
                     g.DrawRectangle(p, i * gridWidth, j * gridHeight, gridWidth - 1, gridHeight - 1);
-                    if (board != null && board.boardArray[i, j] == "+") g.FillRectangle(new SolidBrush(Color.Orange), i * gridWidth, j * gridHeight, gridWidth - 1, gridHeight - 1);
+                    if (board != null && board.BoardArray[i, j] == "+") g.FillRectangle(new SolidBrush(Color.Orange), i * gridWidth, j * gridHeight, gridWidth - 1, gridHeight - 1);
                 }
             }
 
-            if (characterVisible) drawPlayer(g, gridWidth, gridHeight, board);
-            drawLocations(g, gridWidth, gridHeight, board);
+            if (characterVisible) DrawPlayer(g, gridWidth, gridHeight, board);
+            DrawLocations(g, gridWidth, gridHeight, board);
         }
 
-        public static void drawLocations(Graphics g, int width, int height, Board board)
+        public static void DrawLocations(Graphics g, int width, int height, Board board)
         {
-            List<(int, int)> visitedPositions = board.player.visitedPositions;
+            List<(int, int)> visitedPositions = board.Player.VisitedPositions;
 
             for (int i = 0; i < visitedPositions.Count - 1; i++)
             {
@@ -48,27 +48,27 @@ namespace MSO3
             }
         }
 
-        public static void drawPlayer(Graphics g, int width, int height, Board board)
+        public static void DrawPlayer(Graphics g, int width, int height, Board board)
         {
-            (int, int) playerPosition = board.player.position;
+            (int, int) playerPosition = board.Player.Position;
 
             int Posx = playerPosition.Item1 * width;
             int Posy = playerPosition.Item2 * height;
             float angle = 0;
 
-            switch (board.player.currentFacing)
+            switch (board.Player.CurrentFacing)
             {
-                case Creature.facing.North:
+                case Creature.Facing.North:
                     angle = 180;
                     break;
-                case Creature.facing.South:
+                case Creature.Facing.South:
                     angle = 0;
                     break;
-                case Creature.facing.West:
-                    angle = 270;
-                    break;
-                case Creature.facing.East:
+                case Creature.Facing.West:
                     angle = 90;
+                    break;
+                case Creature.Facing.East:
+                    angle = 270;
                     break;
             }
 

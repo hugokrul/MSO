@@ -5,21 +5,20 @@ namespace MSO2
 {
     public class Board
     {
-        public string[,] boardArray { get; set; } // 2D array of the board (grid)
-        public static int boardHeight { get; set; } // Height of the board.
-        public static int boardWidth { get; set; } // Width of the board.
+        public string[,] BoardArray { get; set; } // 2D array of the board (grid)
+        public static int BoardHeight { get; set; } // Height of the board.
+        public static int BoardWidth { get; set; } // Width of the board.
 
-        public Player player;
-
-        public string? name = null;
+        public string Name { get; set; } = "";
+        public Player Player { get; private set; }
 
         // Constructor to initialize board dimensions and player.
         public Board(int width, int height, int playerx = 0, int playery = 0)
         {
-            boardArray = new string[width, height]; // Initialize the board.
-            boardHeight = height;
-            boardWidth = width;
-            player = new Player((playerx, playery)); // Create a player instance.
+            BoardArray = new string[width, height]; // Initialize the board.
+            BoardHeight = height;
+            BoardWidth = width;
+            Player = new Player((playerx, playery)); // Create a player instance.
         }
 
         // Executes a list of commands on the player. And returns endstate
@@ -27,27 +26,27 @@ namespace MSO2
         {
             foreach (ICommand command in commands)
             {
-                command.Execute(player);
+                command.Execute(Player);
             }
 
-            return player.PrintEndState(); // returns the player's final state.
+            return Player.PrintEndState(); // returns the player's final state.
         }
 
         // Constrains a position within the board bounds.
         public static (int, int) BoardBounds((int, int) position)
         {
-            (int, int) upperBounds = (Math.Min(position.Item1, boardWidth - 1), Math.Min(position.Item2, boardHeight - 1));
+            (int, int) upperBounds = (Math.Min(position.Item1, BoardWidth - 1), Math.Min(position.Item2, BoardHeight - 1));
             (int, int) lowerBounds = (Math.Max(upperBounds.Item1, 0), Math.Max(upperBounds.Item2, 0));
             return lowerBounds; // Returns the constrained position.
         }
 
         public void printBoard()
         {
-            for (int i = 0; i < boardWidth; i++)
+            for (int i = 0; i < BoardWidth; i++)
             {
-                for (int j = 0; j < boardHeight; j++)
+                for (int j = 0; j < BoardHeight; j++)
                 {
-                    Console.Write(boardArray[i, j]);
+                    Console.Write(BoardArray[i, j]);
                 }
                 Console.WriteLine();
             }

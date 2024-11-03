@@ -16,31 +16,28 @@ namespace MSO3
 
             //Load image from resources folder
             byte[] imageData = Properties.Resources._whiteRobot;
-            using (MemoryStream ms = new MemoryStream(imageData))
-            {
-                playerImage = Image.FromStream(ms);
-            }
+            using MemoryStream ms = new MemoryStream(imageData);
+            playerImage = Image.FromStream(ms);
         }
 
-        private void sandboxNav_Click(object sender, EventArgs e)
+        private void SandboxNav_Click(object sender, EventArgs e)
         {
-            Sandbox sandboxPage = new Sandbox();
-            sandboxPage.StartPosition = FormStartPosition.CenterScreen;
+            Sandbox sandboxPage = new Sandbox
+            {
+                StartPosition = FormStartPosition.CenterScreen
+            };
             sandboxPage.Show();
             this.Hide();
         }
 
-        private void shapePage_Click(object sender, EventArgs e)
+        private void ShapePage_Click(object sender, EventArgs e)
         {
-            Shape shapePage = new Shape();
-            shapePage.StartPosition = FormStartPosition.CenterScreen;
-            shapePage.Show();
+            Shape shapePageFromHome = new Shape
+            {
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            shapePageFromHome.Show();
             this.Hide();
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

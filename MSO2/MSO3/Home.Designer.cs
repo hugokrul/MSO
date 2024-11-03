@@ -42,7 +42,7 @@
             sandboxNav.TabIndex = 0;
             sandboxNav.Text = "Sandbox";
             sandboxNav.UseVisualStyleBackColor = true;
-            sandboxNav.Click += sandboxNav_Click;
+            sandboxNav.Click += SandboxNav_Click;
             // 
             // shapePage
             // 
@@ -52,7 +52,7 @@
             shapePage.TabIndex = 1;
             shapePage.Text = "Shape";
             shapePage.UseVisualStyleBackColor = true;
-            shapePage.Click += shapePage_Click;
+            shapePage.Click += ShapePage_Click;
             // 
             // pageNameHome
             // 
@@ -73,7 +73,6 @@
             Controls.Add(sandboxNav);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Home";
-            Load += Home_Load;
             ResumeLayout(false);
             PerformLayout();
         }
