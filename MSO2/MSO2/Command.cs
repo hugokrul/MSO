@@ -50,15 +50,18 @@ namespace MSO2
 
         public void Execute(Creature creature)
         {
-            foreach (ICommand command in _commandList)
+            for (int i = 0; i < _amount; i++)
             {
-                command.Execute(creature);
+                foreach (ICommand command in _commandList)
+                {
+                    command.Execute(creature);
+                }
             }
         }
 
         public override string ToString()
         {
-            return $"Repeat {_amount} times: {string.Join(',', _commandList)}";
+            return $"Repeat {_amount} times: {string.Join(", ", _commandList)}";
         }
     }
 }

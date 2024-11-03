@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using Xunit;
 using MSO2;
 
@@ -39,6 +40,27 @@ namespace MSO2XUnit
 
 
             Assert.Equal("End state (0, 0) facing East", lastWords);
+        }
+
+        [Fact]
+        public void ToStringTest()
+        {
+            Board board = new Board(10, 10);
+            List<ICommand> Commands = CommandParser.Parse(File.ReadAllText(@"..\..\..\moveCommands\testMoveWithRepeat.txt").Split('\n'));
+
+            StringBuilder sb = new StringBuilder();
+            foreach (ICommand command in Commands)
+            {
+                sb.Append($"{command.ToString()}, ");
+            }
+
+            Console.WriteLine(sb.ToString());
+
+            string result = "Turn left, Repeat 4 times: Move 10, Turn right, ";
+
+            Assert.Equal(result, sb.ToString());
+
+            
         }
     }
 }
