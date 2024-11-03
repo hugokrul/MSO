@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 namespace MSO2
 {
-    public class CalculateMetrics
+    public static class CalculateMetrics
     {
         // Metrics properties for tracking command details.
-        public static int numberOfCommands { get; private set; }
-        public static int nestingLevel { get; private set; }
-        public static int numberOfRepeat { get; private set; }
+        public static int NumberOfCommands { get; private set; }
+        public static int NestingLevel { get; private set; }
+        public static int NumberOfRepeat { get; private set; }
 
         // Calculates various metrics based on the given list of commands.
         public static void calculateMetrics(string[] commands)
         {
-            numberOfCommands = calculateNumberOfCommands(commands);
-            nestingLevel = calculateNestingLevel(commands);
-            numberOfRepeat = calculateNumberOfRepeats(commands);
+            NumberOfCommands = calculateNumberOfCommands(commands);
+            NestingLevel = calculateNestingLevel(commands);
+            NumberOfRepeat = calculateNumberOfRepeats(commands);
         }
 
         // Returns the total number of commands.

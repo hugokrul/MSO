@@ -7,27 +7,35 @@ namespace MSO2XUnit
     public class MetricsTest
     {
         string[] input = { "Repeat 2 times", "    Turn left", "    Repeat 4 times", "        Turn left", "    Move 1", "    Turn right", "    Move 1", "Repeat 2 times", "    Turn left", "    Move 1", "Turn right", "Move 1", "Turn left", "Move 1", "Turn right", "Move 1", "Repeat 2 times", "    Turn left", "Move 5", "Turn left" };
-        
+
         [Fact]
         public void TestNumberOfCommands()
         {
-            List<ICommand> commands = CommandParser.Parse(input);
+            int expected = input.Length;
             CalculateMetrics.calculateMetrics(input);
-            Assert.Equal(commands.Count, CalculateMetrics.numberOfCommands);
+
+            int result = CalculateMetrics.NumberOfCommands;
+
+            Assert.Equal(expected, result);
         }
 
         [Fact]
         public void TestNumberOfRepeats()
         {
+            int expected = 4;
             CalculateMetrics.calculateMetrics(input);
-            Assert.Equal(4, CalculateMetrics.numberOfRepeat);
+            int result = CalculateMetrics.NumberOfRepeat;
+
+            Assert.Equal(expected, result);
         }
 
         [Fact]
         public void TestNestingLevel()
         {
+            int expected = 2;
             CalculateMetrics.calculateMetrics(input);
-            Assert.Equal(2, CalculateMetrics.nestingLevel);
+            int result = CalculateMetrics.NestingLevel;
+            Assert.Equal(expected, result);
         }
     }
 }

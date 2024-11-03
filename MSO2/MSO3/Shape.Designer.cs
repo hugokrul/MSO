@@ -46,7 +46,7 @@
             homePage.TabIndex = 0;
             homePage.Text = "Home";
             homePage.UseVisualStyleBackColor = true;
-            homePage.Click += homePage_Click;
+            homePage.Click += HomePage_Click;
             // 
             // pageNameShape
             // 
@@ -63,7 +63,7 @@
             boardPanel.Name = "boardPanel";
             boardPanel.Size = new Size(400, 400);
             boardPanel.TabIndex = 4;
-            boardPanel.Paint += boardPanel_Paint;
+            boardPanel.Paint += BoardPanel_Paint;
             // 
             // ExecuteBoard
             // 
@@ -84,7 +84,7 @@
             importBoard.Text = "Board";
             importBoard.TextImageRelation = TextImageRelation.ImageBeforeText;
             importBoard.UseVisualStyleBackColor = true;
-            importBoard.Click += importBoard_Click;
+            importBoard.Click += ImportBoard_Click;
             // 
             // ownProgram
             // 
@@ -103,7 +103,7 @@
             checkShape.TabIndex = 10;
             checkShape.Text = "Check";
             checkShape.UseVisualStyleBackColor = true;
-            checkShape.Click += checkShape_Click;
+            checkShape.Click += CheckShape_Click;
             // 
             // Shape
             // 

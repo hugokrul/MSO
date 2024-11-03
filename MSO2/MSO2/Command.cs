@@ -9,15 +9,9 @@ namespace MSO2
         void Execute(Creature creature);
     }
 
-    public class TurnCommand : ICommand
+    public class TurnCommand(string direction) : ICommand
     {
-        private string _direction;
-
-        // Constructor to initialize the turn direction.
-        public TurnCommand(string direction)
-        {
-            _direction = direction;
-        }
+        private readonly string _direction = direction;
 
         // Executes the turn command.
         public void Execute(Creature creature)
@@ -32,15 +26,9 @@ namespace MSO2
         }
     }
 
-    public class MoveCommand : ICommand
+    public class MoveCommand(int steps) : ICommand
     {
-        private int _steps; // Number of steps to move.
-
-        // Constructor to initialize the number of steps.
-        public MoveCommand(int steps)
-        {
-            _steps = steps;
-        }
+        private readonly int _steps = steps; // Number of steps to move.
 
         // Executes the move command.
         public void Execute(Creature creature)
@@ -55,28 +43,25 @@ namespace MSO2
         }
     }
 
-    public class RepeatCommand : ICommand
+    public class RepeatCommand(List<ICommand> commandList, int amount) : ICommand
     {
-        private List<ICommand> _commandList;
-        private int _amount;
-
-        public RepeatCommand(List<ICommand> commandList, int amount)
-        {
-            _commandList = commandList;
-            _amount = amount;
-        }
+        private readonly List<ICommand> _commandList = commandList;
+        private readonly int _amount = amount;
 
         public void Execute(Creature creature)
         {
-            foreach (ICommand command in _commandList)
+            for (int i = 0; i < _amount; i++)
             {
-                command.Execute(creature);
+                foreach (ICommand command in _commandList)
+                {
+                    command.Execute(creature);
+                }
             }
         }
 
         public override string ToString()
         {
-            return $"Repeat {_amount} times: {string.Join(',', _commandList)}";
+            return $"Repeat {_amount} times: {string.Join(", ", _commandList)}";
         }
     }
 }

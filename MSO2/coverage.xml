@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<results>
+  <modules>
+    <module id="6381A03DFF7CFC4E95B8A1E47C679F1A966B9D98" name="MSO2XUnit.dll" path="MSO2XUnit.dll" block_coverage="100.00" line_coverage="100.00" blocks_covered="76" blocks_not_covered="0" lines_covered="67" lines_partially_covered="0" lines_not_covered="0">
+      <functions>
+        <function id="8284" token="0x6000003" name="OutOfLowerBounds()" namespace="MSO2XUnit" type_name="BoardTests" block_coverage="100.00" line_coverage="100.00" blocks_covered="5" blocks_not_covered="0" lines_covered="4" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="11" end_line="11" start_column="9" end_column="10" covered="yes" />
+            <range source_id="0" start_line="12" end_line="12" start_column="13" end_column="66" covered="yes" />
+            <range source_id="0" start_line="13" end_line="13" start_column="13" end_column="47" covered="yes" />
+            <range source_id="0" start_line="14" end_line="14" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8336" token="0x6000005" name="UnchangedFacing()" namespace="MSO2XUnit" type_name="FacingTests" block_coverage="100.00" line_coverage="100.00" blocks_covered="10" blocks_not_covered="0" lines_covered="8" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="12" end_line="12" start_column="9" end_column="10" covered="yes" />
+            <range source_id="1" start_line="13" end_line="13" start_column="13" end_column="45" covered="yes" />
+            <range source_id="1" start_line="15" end_line="15" start_column="13" end_column="64" covered="yes" />
+            <range source_id="1" start_line="17" end_line="17" start_column="13" end_column="55" covered="yes" />
+            <range source_id="1" start_line="19" end_line="19" start_column="13" end_column="93" covered="yes" />
+            <range source_id="1" start_line="20" end_line="20" start_column="13" end_column="102" covered="yes" />
+            <range source_id="1" start_line="23" end_line="23" start_column="13" end_column="53" covered="yes" />
+            <range source_id="1" start_line="24" end_line="24" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8436" token="0x6000006" name="FacingMoveInSquare()" namespace="MSO2XUnit" type_name="FacingTests" block_coverage="100.00" line_coverage="100.00" blocks_covered="12" blocks_not_covered="0" lines_covered="8" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="29" end_line="29" start_column="9" end_column="10" covered="yes" />
+            <range source_id="1" start_line="30" end_line="30" start_column="13" end_column="45" covered="yes" />
+            <range source_id="1" start_line="32" end_line="32" start_column="13" end_column="136" covered="yes" />
+            <range source_id="1" start_line="34" end_line="34" start_column="13" end_column="55" covered="yes" />
+            <range source_id="1" start_line="36" end_line="36" start_column="13" end_column="93" covered="yes" />
+            <range source_id="1" start_line="37" end_line="37" start_column="13" end_column="102" covered="yes" />
+            <range source_id="1" start_line="40" end_line="40" start_column="13" end_column="52" covered="yes" />
+            <range source_id="1" start_line="41" end_line="41" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8565" token="0x6000008" name="FacingTests()" namespace="MSO2XUnit" type_name="FacingTests" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="9" end_line="9" start_column="9" end_column="57" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8584" token="0x6000009" name="TestNumberOfCommands()" namespace="MSO2XUnit" type_name="MetricsTest" block_coverage="100.00" line_coverage="100.00" blocks_covered="4" blocks_not_covered="0" lines_covered="6" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="13" end_line="13" start_column="9" end_column="10" covered="yes" />
+            <range source_id="2" start_line="14" end_line="14" start_column="13" end_column="41" covered="yes" />
+            <range source_id="2" start_line="15" end_line="15" start_column="13" end_column="54" covered="yes" />
+            <range source_id="2" start_line="17" end_line="17" start_column="13" end_column="60" covered="yes" />
+            <range source_id="2" start_line="19" end_line="19" start_column="13" end_column="44" covered="yes" />
+            <range source_id="2" start_line="20" end_line="20" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8636" token="0x600000a" name="TestNumberOfRepeats()" namespace="MSO2XUnit" type_name="MetricsTest" block_coverage="100.00" line_coverage="100.00" blocks_covered="4" blocks_not_covered="0" lines_covered="6" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="24" end_line="24" start_column="9" end_column="10" covered="yes" />
+            <range source_id="2" start_line="25" end_line="25" start_column="13" end_column="30" covered="yes" />
+            <range source_id="2" start_line="26" end_line="26" start_column="13" end_column="54" covered="yes" />
+            <range source_id="2" start_line="27" end_line="27" start_column="13" end_column="58" covered="yes" />
+            <range source_id="2" start_line="29" end_line="29" start_column="13" end_column="44" covered="yes" />
+            <range source_id="2" start_line="30" end_line="30" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8680" token="0x600000b" name="TestNestingLevel()" namespace="MSO2XUnit" type_name="MetricsTest" block_coverage="100.00" line_coverage="100.00" blocks_covered="4" blocks_not_covered="0" lines_covered="6" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="34" end_line="34" start_column="9" end_column="10" covered="yes" />
+            <range source_id="2" start_line="35" end_line="35" start_column="13" end_column="30" covered="yes" />
+            <range source_id="2" start_line="36" end_line="36" start_column="13" end_column="54" covered="yes" />
+            <range source_id="2" start_line="37" end_line="37" start_column="13" end_column="56" covered="yes" />
+            <range source_id="2" start_line="38" end_line="38" start_column="13" end_column="44" covered="yes" />
+            <range source_id="2" start_line="39" end_line="39" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8724" token="0x600000c" name="MetricsTest()" namespace="MSO2XUnit" type_name="MetricsTest" block_coverage="100.00" line_coverage="100.00" blocks_covered="2" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="9" end_line="9" start_column="9" end_column="331" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8928" token="0x600000d" name="RepeatTest()" namespace="MSO2XUnit" type_name="MoveTests" block_coverage="100.00" line_coverage="100.00" blocks_covered="12" blocks_not_covered="0" lines_covered="9" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="3" start_line="13" end_line="13" start_column="9" end_column="10" covered="yes" />
+            <range source_id="3" start_line="14" end_line="14" start_column="13" end_column="45" covered="yes" />
+            <range source_id="3" start_line="16" end_line="16" start_column="13" end_column="149" covered="yes" />
+            <range source_id="3" start_line="17" end_line="17" start_column="13" end_column="148" covered="yes" />
+            <range source_id="3" start_line="19" end_line="19" start_column="13" end_column="81" covered="yes" />
+            <range source_id="3" start_line="21" end_line="21" start_column="13" end_column="39" covered="yes" />
+            <range source_id="3" start_line="23" end_line="23" start_column="13" end_column="75" covered="yes" />
+            <range source_id="3" start_line="25" end_line="25" start_column="13" end_column="65" covered="yes" />
+            <range source_id="3" start_line="26" end_line="26" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9044" token="0x600000e" name="MoveTest()" namespace="MSO2XUnit" type_name="MoveTests" block_coverage="100.00" line_coverage="100.00" blocks_covered="14" blocks_not_covered="0" lines_covered="8" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="3" start_line="30" end_line="30" start_column="9" end_column="10" covered="yes" />
+            <range source_id="3" start_line="31" end_line="31" start_column="13" end_column="45" covered="yes" />
+            <range source_id="3" start_line="33" end_line="33" start_column="13" end_column="136" covered="yes" />
+            <range source_id="3" start_line="35" end_line="35" start_column="13" end_column="55" covered="yes" />
+            <range source_id="3" start_line="37" end_line="37" start_column="13" end_column="105" covered="yes" />
+            <range source_id="3" start_line="38" end_line="38" start_column="13" end_column="107" covered="yes" />
+            <range source_id="3" start_line="41" end_line="41" start_column="13" end_column="69" covered="yes" />
+            <range source_id="3" start_line="42" end_line="42" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9192" token="0x6000010" name="TestParseWithRepeat()" namespace="MSO2XUnit" type_name="ParserTests" block_coverage="100.00" line_coverage="100.00" blocks_covered="4" blocks_not_covered="0" lines_covered="5" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="11" end_line="11" start_column="9" end_column="10" covered="yes" />
+            <range source_id="4" start_line="12" end_line="12" start_column="13" end_column="335" covered="yes" />
+            <range source_id="4" start_line="13" end_line="13" start_column="13" end_column="66" covered="yes" />
+            <range source_id="4" start_line="14" end_line="14" start_column="13" end_column="57" covered="yes" />
+            <range source_id="4" start_line="15" end_line="15" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9416" token="0x6000011" name="TestParseNoRepeat()" namespace="MSO2XUnit" type_name="ParserTests" block_coverage="100.00" line_coverage="100.00" blocks_covered="4" blocks_not_covered="0" lines_covered="5" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="19" end_line="19" start_column="9" end_column="10" covered="yes" />
+            <range source_id="4" start_line="20" end_line="20" start_column="13" end_column="362" covered="yes" />
+            <range source_id="4" start_line="21" end_line="21" start_column="13" end_column="66" covered="yes" />
+            <range source_id="4" start_line="22" end_line="22" start_column="13" end_column="56" covered="yes" />
+            <range source_id="4" start_line="23" end_line="23" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+      </functions>
+      <source_files>
+        <source_file id="0" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\BoardTests.cs" checksum_type="SHA256" checksum="0120D55AD49296669D8CE245A5F9552C134CB80F8A8CB891FEEA1B410879315D" />
+        <source_file id="1" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\FacingTests.cs" checksum_type="SHA256" checksum="E8851325F62D6FAF422B7B2E4D3E16DCAC056EF02CDA85D3EE373382BA991BC9" />
+        <source_file id="2" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\MetricsTest.cs" checksum_type="SHA256" checksum="5D6BD4B04317E95575DF3A15CAC2B29876716F70530274A336C121CB7E3693F0" />
+        <source_file id="3" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\MoveTests.cs" checksum_type="SHA256" checksum="8F3CA90457B842ED2306C035A0E1CD36291C80698E27C7EED2247F2C33F4D093" />
+        <source_file id="4" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\ParserTests.cs" checksum_type="SHA256" checksum="10F149A929A15DCE8AB7BC9B3384D2C1D09A949D96E32409889015284318E9B0" />
+      </source_files>
+      <skipped_functions>
+        <skipped_function id="8272" original_id="8272" token="0x6000001" name="Main(string[])" type_name="AutoGeneratedProgram" reason="attribute_excluded" />
+      </skipped_functions>
+    </module>
+    <module id="7CF24F3D500ED84DB3C6D6CF8392D6F45AC94FAF" name="MSO2.dll" path="MSO2.dll" block_coverage="64.00" line_coverage="56.52" blocks_covered="224" blocks_not_covered="126" lines_covered="156" lines_partially_covered="0" lines_not_covered="120">
+      <functions>
+        <function id="8272" token="0x6000001" name="get_BoardArray()" namespace="MSO2" type_name="Board" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="1" lines_covered="0" lines_partially_covered="0" lines_not_covered="1">
+          <ranges>
+            <range source_id="0" start_line="8" end_line="8" start_column="39" end_column="43" covered="no" />
+          </ranges>
+        </function>
+        <function id="8280" token="0x6000002" name="set_BoardArray(string[0...,0...])" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="8" end_line="8" start_column="44" end_column="48" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8289" token="0x6000003" name="get_BoardHeight()" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="9" end_line="9" start_column="41" end_column="45" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8296" token="0x6000004" name="set_BoardHeight(int)" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="9" end_line="9" start_column="46" end_column="50" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8304" token="0x6000005" name="get_BoardWidth()" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="10" end_line="10" start_column="40" end_column="44" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8311" token="0x6000006" name="set_BoardWidth(int)" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="10" end_line="10" start_column="45" end_column="49" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8319" token="0x6000007" name="get_Name()" namespace="MSO2" type_name="Board" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="1" lines_covered="0" lines_partially_covered="0" lines_not_covered="1">
+          <ranges>
+            <range source_id="0" start_line="12" end_line="12" start_column="30" end_column="34" covered="no" />
+          </ranges>
+        </function>
+        <function id="8327" token="0x6000008" name="set_Name(string)" namespace="MSO2" type_name="Board" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="1" lines_covered="0" lines_partially_covered="0" lines_not_covered="1">
+          <ranges>
+            <range source_id="0" start_line="12" end_line="12" start_column="35" end_column="39" covered="no" />
+          </ranges>
+        </function>
+        <function id="8336" token="0x6000009" name="get_Player()" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="13" end_line="13" start_column="32" end_column="36" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8344" token="0x600000a" name="set_Player(MSO2.Player)" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="13" end_line="13" start_column="37" end_column="49" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8356" token="0x600000b" name="Board(int, int, int, int)" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="9" blocks_not_covered="0" lines_covered="8" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="12" end_line="12" start_column="44" end_column="46" covered="yes" />
+            <range source_id="0" start_line="16" end_line="16" start_column="9" end_column="78" covered="yes" />
+            <range source_id="0" start_line="17" end_line="17" start_column="9" end_column="10" covered="yes" />
+            <range source_id="0" start_line="18" end_line="18" start_column="13" end_column="52" covered="yes" />
+            <range source_id="0" start_line="19" end_line="19" start_column="13" end_column="34" covered="yes" />
+            <range source_id="0" start_line="20" end_line="20" start_column="13" end_column="32" covered="yes" />
+            <range source_id="0" start_line="21" end_line="21" start_column="13" end_column="53" covered="yes" />
+            <range source_id="0" start_line="22" end_line="22" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8436" token="0x600000c" name="PlayBoard(System.Collections.Generic.List&lt;MSO2.ICommand&gt;)" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="13" blocks_not_covered="0" lines_covered="7" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="26" end_line="26" start_column="9" end_column="10" covered="yes" />
+            <range source_id="0" start_line="27" end_line="27" start_column="13" end_column="20" covered="yes" />
+            <range source_id="0" start_line="27" end_line="27" start_column="42" end_column="50" covered="yes" />
+            <range source_id="0" start_line="27" end_line="27" start_column="22" end_column="38" covered="yes" />
+            <range source_id="0" start_line="28" end_line="28" start_column="13" end_column="14" covered="yes" />
+            <range source_id="0" start_line="29" end_line="29" start_column="17" end_column="41" covered="yes" />
+            <range source_id="0" start_line="30" end_line="30" start_column="13" end_column="14" covered="yes" />
+            <range source_id="0" start_line="27" end_line="27" start_column="39" end_column="41" covered="yes" />
+            <range source_id="0" start_line="32" end_line="32" start_column="13" end_column="43" covered="yes" />
+            <range source_id="0" start_line="33" end_line="33" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8540" token="0x600000d" name="BoardBounds(System.ValueTuple&lt;int, int&gt;)" namespace="MSO2" type_name="Board" block_coverage="100.00" line_coverage="100.00" blocks_covered="10" blocks_not_covered="0" lines_covered="5" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="0" start_line="37" end_line="37" start_column="9" end_column="10" covered="yes" />
+            <range source_id="0" start_line="38" end_line="38" start_column="13" end_column="124" covered="yes" />
+            <range source_id="0" start_line="39" end_line="39" start_column="13" end_column="103" covered="yes" />
+            <range source_id="0" start_line="40" end_line="40" start_column="13" end_column="32" covered="yes" />
+            <range source_id="0" start_line="41" end_line="41" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8636" token="0x600000e" name="printBoard()" namespace="MSO2" type_name="Board" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="13" lines_covered="0" lines_partially_covered="0" lines_not_covered="10">
+          <ranges>
+            <range source_id="0" start_line="44" end_line="44" start_column="9" end_column="10" covered="no" />
+            <range source_id="0" start_line="45" end_line="45" start_column="18" end_column="27" covered="no" />
+            <range source_id="0" start_line="46" end_line="46" start_column="13" end_column="14" covered="no" />
+            <range source_id="0" start_line="47" end_line="47" start_column="22" end_column="31" covered="no" />
+            <range source_id="0" start_line="48" end_line="48" start_column="17" end_column="18" covered="no" />
+            <range source_id="0" start_line="49" end_line="49" start_column="21" end_column="53" covered="no" />
+            <range source_id="0" start_line="50" end_line="50" start_column="17" end_column="18" covered="no" />
+            <range source_id="0" start_line="47" end_line="47" start_column="50" end_column="53" covered="no" />
+            <range source_id="0" start_line="47" end_line="47" start_column="33" end_column="48" covered="no" />
+            <range source_id="0" start_line="51" end_line="51" start_column="17" end_column="37" covered="no" />
+            <range source_id="0" start_line="52" end_line="52" start_column="13" end_column="14" covered="no" />
+            <range source_id="0" start_line="45" end_line="45" start_column="45" end_column="48" covered="no" />
+            <range source_id="0" start_line="45" end_line="45" start_column="29" end_column="43" covered="no" />
+            <range source_id="0" start_line="53" end_line="53" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+        <function id="8719" token="0x600000f" name="get_NumberOfCommands()" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="9" end_line="9" start_column="46" end_column="50" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8726" token="0x6000010" name="set_NumberOfCommands(int)" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="9" end_line="9" start_column="51" end_column="63" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8734" token="0x6000011" name="get_NestingLevel()" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="10" end_line="10" start_column="42" end_column="46" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8741" token="0x6000012" name="set_NestingLevel(int)" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="10" end_line="10" start_column="47" end_column="59" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8749" token="0x6000013" name="get_NumberOfRepeat()" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="11" end_line="11" start_column="44" end_column="48" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8756" token="0x6000014" name="set_NumberOfRepeat(int)" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="11" end_line="11" start_column="49" end_column="61" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8764" token="0x6000015" name="calculateMetrics(string[])" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="7" blocks_not_covered="0" lines_covered="5" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="15" end_line="15" start_column="9" end_column="10" covered="yes" />
+            <range source_id="1" start_line="16" end_line="16" start_column="13" end_column="68" covered="yes" />
+            <range source_id="1" start_line="17" end_line="17" start_column="13" end_column="60" covered="yes" />
+            <range source_id="1" start_line="18" end_line="18" start_column="13" end_column="65" covered="yes" />
+            <range source_id="1" start_line="19" end_line="19" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8804" token="0x6000016" name="calculateNumberOfCommands(string[])" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="2" blocks_not_covered="0" lines_covered="3" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="23" end_line="23" start_column="9" end_column="10" covered="yes" />
+            <range source_id="1" start_line="24" end_line="24" start_column="13" end_column="36" covered="yes" />
+            <range source_id="1" start_line="25" end_line="25" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8828" token="0x6000017" name="calculateNestingLevel(string[])" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="9" blocks_not_covered="0" lines_covered="9" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="29" end_line="29" start_column="9" end_column="10" covered="yes" />
+            <range source_id="1" start_line="30" end_line="30" start_column="13" end_column="31" covered="yes" />
+            <range source_id="1" start_line="31" end_line="31" start_column="13" end_column="20" covered="yes" />
+            <range source_id="1" start_line="31" end_line="31" start_column="40" end_column="48" covered="yes" />
+            <range source_id="1" start_line="31" end_line="31" start_column="22" end_column="36" covered="yes" />
+            <range source_id="1" start_line="32" end_line="32" start_column="13" end_column="14" covered="yes" />
+            <range source_id="1" start_line="33" end_line="33" start_column="17" end_column="81" covered="yes" />
+            <range source_id="1" start_line="34" end_line="34" start_column="17" end_column="64" covered="yes" />
+            <range source_id="1" start_line="35" end_line="35" start_column="13" end_column="14" covered="yes" />
+            <range source_id="1" start_line="31" end_line="31" start_column="37" end_column="39" covered="yes" />
+            <range source_id="1" start_line="36" end_line="36" start_column="13" end_column="34" covered="yes" />
+            <range source_id="1" start_line="37" end_line="37" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8908" token="0x6000018" name="calculateNumberOfRepeats(string[])" namespace="MSO2" type_name="CalculateMetrics" block_coverage="100.00" line_coverage="100.00" blocks_covered="11" blocks_not_covered="0" lines_covered="8" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="1" start_line="41" end_line="41" start_column="9" end_column="10" covered="yes" />
+            <range source_id="1" start_line="42" end_line="42" start_column="13" end_column="27" covered="yes" />
+            <range source_id="1" start_line="43" end_line="43" start_column="13" end_column="20" covered="yes" />
+            <range source_id="1" start_line="43" end_line="43" start_column="40" end_column="48" covered="yes" />
+            <range source_id="1" start_line="43" end_line="43" start_column="22" end_column="36" covered="yes" />
+            <range source_id="1" start_line="44" end_line="44" start_column="13" end_column="14" covered="yes" />
+            <range source_id="1" start_line="45" end_line="45" start_column="17" end_column="59" covered="yes" />
+            <range source_id="1" start_line="45" end_line="45" start_column="60" end_column="68" covered="yes" />
+            <range source_id="1" start_line="46" end_line="46" start_column="13" end_column="14" covered="yes" />
+            <range source_id="1" start_line="43" end_line="43" start_column="37" end_column="39" covered="yes" />
+            <range source_id="1" start_line="47" end_line="47" start_column="13" end_column="26" covered="yes" />
+            <range source_id="1" start_line="48" end_line="48" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="8992" token="0x600001a" name="TurnCommand(string)" namespace="MSO2" type_name="TurnCommand" block_coverage="100.00" line_coverage="100.00" blocks_covered="2" blocks_not_covered="0" lines_covered="2" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="14" end_line="14" start_column="9" end_column="56" covered="yes" />
+            <range source_id="2" start_line="12" end_line="12" start_column="18" end_column="47" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9008" token="0x600001b" name="Execute(MSO2.Creature)" namespace="MSO2" type_name="TurnCommand" block_coverage="100.00" line_coverage="100.00" blocks_covered="2" blocks_not_covered="0" lines_covered="3" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="18" end_line="18" start_column="9" end_column="10" covered="yes" />
+            <range source_id="2" start_line="19" end_line="19" start_column="13" end_column="39" covered="yes" />
+            <range source_id="2" start_line="20" end_line="20" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9024" token="0x600001c" name="ToString()" namespace="MSO2" type_name="TurnCommand" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="3" lines_covered="0" lines_partially_covered="0" lines_not_covered="3">
+          <ranges>
+            <range source_id="2" start_line="24" end_line="24" start_column="9" end_column="10" covered="no" />
+            <range source_id="2" start_line="25" end_line="25" start_column="13" end_column="41" covered="no" />
+            <range source_id="2" start_line="26" end_line="26" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+        <function id="9058" token="0x600001d" name="MoveCommand(int)" namespace="MSO2" type_name="MoveCommand" block_coverage="100.00" line_coverage="100.00" blocks_covered="2" blocks_not_covered="0" lines_covered="2" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="31" end_line="31" start_column="9" end_column="45" covered="yes" />
+            <range source_id="2" start_line="29" end_line="29" start_column="18" end_column="40" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9074" token="0x600001e" name="Execute(MSO2.Creature)" namespace="MSO2" type_name="MoveCommand" block_coverage="100.00" line_coverage="100.00" blocks_covered="2" blocks_not_covered="0" lines_covered="3" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="35" end_line="35" start_column="9" end_column="10" covered="yes" />
+            <range source_id="2" start_line="36" end_line="36" start_column="13" end_column="35" covered="yes" />
+            <range source_id="2" start_line="37" end_line="37" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9092" token="0x600001f" name="ToString()" namespace="MSO2" type_name="MoveCommand" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="6" lines_covered="0" lines_partially_covered="0" lines_not_covered="3">
+          <ranges>
+            <range source_id="2" start_line="41" end_line="41" start_column="9" end_column="10" covered="no" />
+            <range source_id="2" start_line="42" end_line="42" start_column="13" end_column="37" covered="no" />
+            <range source_id="2" start_line="43" end_line="43" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+        <function id="9153" token="0x6000020" name="RepeatCommand(System.Collections.Generic.List&lt;MSO2.ICommand&gt;, int)" namespace="MSO2" type_name="RepeatCommand" block_coverage="100.00" line_coverage="100.00" blocks_covered="2" blocks_not_covered="0" lines_covered="3" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="48" end_line="48" start_column="9" end_column="68" covered="yes" />
+            <range source_id="2" start_line="49" end_line="49" start_column="9" end_column="47" covered="yes" />
+            <range source_id="2" start_line="46" end_line="46" start_column="18" end_column="71" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9176" token="0x6000021" name="Execute(MSO2.Creature)" namespace="MSO2" type_name="RepeatCommand" block_coverage="100.00" line_coverage="100.00" blocks_covered="9" blocks_not_covered="0" lines_covered="6" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="2" start_line="52" end_line="52" start_column="9" end_column="10" covered="yes" />
+            <range source_id="2" start_line="53" end_line="53" start_column="13" end_column="20" covered="yes" />
+            <range source_id="2" start_line="53" end_line="53" start_column="42" end_column="54" covered="yes" />
+            <range source_id="2" start_line="53" end_line="53" start_column="22" end_column="38" covered="yes" />
+            <range source_id="2" start_line="54" end_line="54" start_column="13" end_column="14" covered="yes" />
+            <range source_id="2" start_line="55" end_line="55" start_column="17" end_column="43" covered="yes" />
+            <range source_id="2" start_line="56" end_line="56" start_column="13" end_column="14" covered="yes" />
+            <range source_id="2" start_line="53" end_line="53" start_column="39" end_column="41" covered="yes" />
+            <range source_id="2" start_line="57" end_line="57" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9268" token="0x6000022" name="ToString()" namespace="MSO2" type_name="RepeatCommand" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="9" lines_covered="0" lines_partially_covered="0" lines_not_covered="3">
+          <ranges>
+            <range source_id="2" start_line="60" end_line="60" start_column="9" end_column="10" covered="no" />
+            <range source_id="2" start_line="61" end_line="61" start_column="13" end_column="80" covered="no" />
+            <range source_id="2" start_line="62" end_line="62" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+        <function id="9364" token="0x6000023" name="Parse(string[], int, int)" namespace="MSO2" type_name="CommandParser" block_coverage="97.73" line_coverage="91.89" blocks_covered="43" blocks_not_covered="1" lines_covered="34" lines_partially_covered="0" lines_not_covered="3">
+          <ranges>
+            <range source_id="3" start_line="11" end_line="11" start_column="9" end_column="10" covered="yes" />
+            <range source_id="3" start_line="12" end_line="12" start_column="13" end_column="47" covered="yes" />
+            <range source_id="3" start_line="13" end_line="13" start_column="13" end_column="32" covered="yes" />
+            <range source_id="3" start_line="16" end_line="16" start_column="13" end_column="14" covered="yes" />
+            <range source_id="3" start_line="17" end_line="17" start_column="17" end_column="56" covered="yes" />
+            <range source_id="3" start_line="19" end_line="19" start_column="17" end_column="47" covered="yes" />
+            <range source_id="3" start_line="20" end_line="20" start_column="17" end_column="18" covered="yes" />
+            <range source_id="3" start_line="21" end_line="21" start_column="21" end_column="47" covered="yes" />
+            <range source_id="3" start_line="24" end_line="24" start_column="21" end_column="54" covered="yes" />
+            <range source_id="3" start_line="25" end_line="25" start_column="21" end_column="59" covered="yes" />
+            <range source_id="3" start_line="27" end_line="27" start_column="21" end_column="35" covered="yes" />
+            <range source_id="3" start_line="28" end_line="28" start_column="92" end_column="96" covered="yes" />
+            <range source_id="3" start_line="28" end_line="28" start_column="21" end_column="91" covered="yes" />
+            <range source_id="3" start_line="31" end_line="31" start_column="21" end_column="83" covered="yes" />
+            <range source_id="3" start_line="34" end_line="34" start_column="26" end_column="35" covered="yes" />
+            <range source_id="3" start_line="35" end_line="35" start_column="21" end_column="22" covered="yes" />
+            <range source_id="3" start_line="36" end_line="36" start_column="25" end_column="54" covered="yes" />
+            <range source_id="3" start_line="37" end_line="37" start_column="21" end_column="22" covered="yes" />
+            <range source_id="3" start_line="34" end_line="34" start_column="54" end_column="57" covered="yes" />
+            <range source_id="3" start_line="34" end_line="34" start_column="37" end_column="52" covered="yes" />
+            <range source_id="3" start_line="39" end_line="39" start_column="21" end_column="78" covered="yes" />
+            <range source_id="3" start_line="41" end_line="41" start_column="21" end_column="27" covered="yes" />
+            <range source_id="3" start_line="42" end_line="42" start_column="17" end_column="18" covered="yes" />
+            <range source_id="3" start_line="43" end_line="43" start_column="22" end_column="50" covered="yes" />
+            <range source_id="3" start_line="44" end_line="44" start_column="17" end_column="18" covered="yes" />
+            <range source_id="3" start_line="46" end_line="46" start_column="21" end_column="87" covered="yes" />
+            <range source_id="3" start_line="47" end_line="47" start_column="21" end_column="25" covered="yes" />
+            <range source_id="3" start_line="48" end_line="48" start_column="17" end_column="18" covered="yes" />
+            <range source_id="3" start_line="49" end_line="49" start_column="22" end_column="50" covered="yes" />
+            <range source_id="3" start_line="50" end_line="50" start_column="17" end_column="18" covered="yes" />
+            <range source_id="3" start_line="52" end_line="52" start_column="21" end_column="76" covered="yes" />
+            <range source_id="3" start_line="53" end_line="53" start_column="21" end_column="25" covered="yes" />
+            <range source_id="3" start_line="54" end_line="54" start_column="17" end_column="18" covered="yes" />
+            <range source_id="3" start_line="56" end_line="56" start_column="17" end_column="18" covered="no" />
+            <range source_id="3" start_line="57" end_line="57" start_column="21" end_column="25" covered="no" />
+            <range source_id="3" start_line="58" end_line="58" start_column="17" end_column="18" covered="no" />
+            <range source_id="3" start_line="59" end_line="59" start_column="13" end_column="14" covered="yes" />
+            <range source_id="3" start_line="15" end_line="15" start_column="13" end_column="76" covered="yes" />
+            <range source_id="3" start_line="61" end_line="61" start_column="13" end_column="34" covered="yes" />
+            <range source_id="3" start_line="62" end_line="62" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9696" token="0x6000024" name="get_Position()" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="8" end_line="8" start_column="38" end_column="42" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9704" token="0x6000025" name="set_Position(System.ValueTuple&lt;int, int&gt;)" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="8" end_line="8" start_column="43" end_column="47" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9713" token="0x6000026" name="get_CurrentFacing()" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="11" end_line="11" start_column="39" end_column="43" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9721" token="0x6000027" name="set_CurrentFacing(MSO2.Creature.Facing)" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="11" end_line="11" start_column="44" end_column="58" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9730" token="0x6000028" name="get_VisitedPositions()" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="13" end_line="13" start_column="52" end_column="56" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9738" token="0x6000029" name="set_VisitedPositions(System.Collections.Generic.List&lt;System.ValueTuple&lt;int, int&gt;&gt;)" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="13" end_line="13" start_column="57" end_column="71" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9747" token="0x600002a" name="get_Log()" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="14" end_line="14" start_column="38" end_column="42" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9755" token="0x600002b" name="set_Log(System.Collections.Generic.List&lt;string&gt;)" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="1" blocks_not_covered="0" lines_covered="1" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="14" end_line="14" start_column="43" end_column="47" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9764" token="0x600002c" name="Turn(string)" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="12" blocks_not_covered="0" lines_covered="9" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="20" end_line="20" start_column="9" end_column="10" covered="yes" />
+            <range source_id="4" start_line="21" end_line="21" start_column="13" end_column="31" covered="yes" />
+            <range source_id="4" start_line="25" end_line="25" start_column="21" end_column="76" covered="yes" />
+            <range source_id="4" start_line="26" end_line="26" start_column="21" end_column="42" covered="yes" />
+            <range source_id="4" start_line="27" end_line="27" start_column="21" end_column="27" covered="yes" />
+            <range source_id="4" start_line="30" end_line="30" start_column="21" end_column="76" covered="yes" />
+            <range source_id="4" start_line="31" end_line="31" start_column="21" end_column="43" covered="yes" />
+            <range source_id="4" start_line="32" end_line="32" start_column="21" end_column="27" covered="yes" />
+            <range source_id="4" start_line="34" end_line="34" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="9884" token="0x600002d" name="Move(int)" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="39" blocks_not_covered="0" lines_covered="16" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="40" end_line="40" start_column="9" end_column="10" covered="yes" />
+            <range source_id="4" start_line="41" end_line="41" start_column="18" end_column="27" covered="yes" />
+            <range source_id="4" start_line="42" end_line="42" start_column="13" end_column="14" covered="yes" />
+            <range source_id="4" start_line="43" end_line="43" start_column="17" end_column="39" covered="yes" />
+            <range source_id="4" start_line="46" end_line="46" start_column="25" end_column="92" covered="yes" />
+            <range source_id="4" start_line="47" end_line="47" start_column="25" end_column="31" covered="yes" />
+            <range source_id="4" start_line="49" end_line="49" start_column="25" end_column="92" covered="yes" />
+            <range source_id="4" start_line="50" end_line="50" start_column="25" end_column="31" covered="yes" />
+            <range source_id="4" start_line="52" end_line="52" start_column="25" end_column="92" covered="yes" />
+            <range source_id="4" start_line="53" end_line="53" start_column="25" end_column="31" covered="yes" />
+            <range source_id="4" start_line="55" end_line="55" start_column="25" end_column="92" covered="yes" />
+            <range source_id="4" start_line="56" end_line="56" start_column="25" end_column="31" covered="yes" />
+            <range source_id="4" start_line="58" end_line="58" start_column="17" end_column="48" covered="yes" />
+            <range source_id="4" start_line="59" end_line="59" start_column="13" end_column="14" covered="yes" />
+            <range source_id="4" start_line="41" end_line="41" start_column="48" end_column="51" covered="yes" />
+            <range source_id="4" start_line="41" end_line="41" start_column="29" end_column="46" covered="yes" />
+            <range source_id="4" start_line="60" end_line="60" start_column="13" end_column="46" covered="yes" />
+            <range source_id="4" start_line="61" end_line="61" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="10201" token="0x600002e" name="Creature()" namespace="MSO2" type_name="Creature" block_coverage="100.00" line_coverage="100.00" blocks_covered="4" blocks_not_covered="0" lines_covered="2" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="4" start_line="13" end_line="13" start_column="76" end_column="78" covered="yes" />
+            <range source_id="4" start_line="14" end_line="14" start_column="52" end_column="54" covered="yes" />
+          </ranges>
+        </function>
+        <function id="10232" token="0x600002f" name="Player(System.ValueTuple&lt;int, int&gt;)" namespace="MSO2" type_name="Player" block_coverage="100.00" line_coverage="100.00" blocks_covered="11" blocks_not_covered="0" lines_covered="7" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="5" start_line="10" end_line="10" start_column="9" end_column="38" covered="yes" />
+            <range source_id="5" start_line="11" end_line="11" start_column="9" end_column="10" covered="yes" />
+            <range source_id="5" start_line="12" end_line="12" start_column="13" end_column="28" covered="yes" />
+            <range source_id="5" start_line="13" end_line="13" start_column="13" end_column="42" covered="yes" />
+            <range source_id="5" start_line="14" end_line="14" start_column="13" end_column="22" covered="yes" />
+            <range source_id="5" start_line="15" end_line="15" start_column="13" end_column="38" covered="yes" />
+            <range source_id="5" start_line="16" end_line="16" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="10332" token="0x6000030" name="PrintEndState()" namespace="MSO2" type_name="Player" block_coverage="100.00" line_coverage="100.00" blocks_covered="14" blocks_not_covered="0" lines_covered="3" lines_partially_covered="0" lines_not_covered="0">
+          <ranges>
+            <range source_id="5" start_line="20" end_line="20" start_column="9" end_column="10" covered="yes" />
+            <range source_id="5" start_line="21" end_line="21" start_column="13" end_column="98" covered="yes" />
+            <range source_id="5" start_line="22" end_line="22" start_column="9" end_column="10" covered="yes" />
+          </ranges>
+        </function>
+        <function id="10458" token="0x6000031" name="get_AvailablePrograms()" namespace="MSO2" type_name="Program" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="1" lines_covered="0" lines_partially_covered="0" lines_not_covered="1">
+          <ranges>
+            <range source_id="6" start_line="5" end_line="5" start_column="58" end_column="62" covered="no" />
+          </ranges>
+        </function>
+        <function id="10465" token="0x6000032" name="set_AvailablePrograms(System.Collections.Generic.List&lt;string[]&gt;)" namespace="MSO2" type_name="Program" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="1" lines_covered="0" lines_partially_covered="0" lines_not_covered="1">
+          <ranges>
+            <range source_id="6" start_line="5" end_line="5" start_column="63" end_column="75" covered="no" />
+          </ranges>
+        </function>
+        <function id="10476" token="0x6000033" name="Main(string[])" namespace="MSO2" type_name="Program" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="29" lines_covered="0" lines_partially_covered="0" lines_not_covered="20">
+          <ranges>
+            <range source_id="6" start_line="39" end_line="39" start_column="9" end_column="10" covered="no" />
+            <range source_id="6" start_line="40" end_line="40" start_column="13" end_column="54" covered="no" />
+            <range source_id="6" start_line="41" end_line="41" start_column="13" end_column="39" covered="no" />
+            <range source_id="6" start_line="42" end_line="42" start_column="13" end_column="14" covered="no" />
+            <range source_id="6" start_line="43" end_line="43" start_column="17" end_column="67" covered="no" />
+            <range source_id="6" start_line="44" end_line="44" start_column="17" end_column="24" covered="no" />
+            <range source_id="6" start_line="47" end_line="47" start_column="13" end_column="77" covered="no" />
+            <range source_id="6" start_line="48" end_line="48" start_column="13" end_column="45" covered="no" />
+            <range source_id="6" start_line="50" end_line="50" start_column="13" end_column="104" covered="no" />
+            <range source_id="6" start_line="51" end_line="51" start_column="13" end_column="50" covered="no" />
+            <range source_id="6" start_line="53" end_line="53" start_column="13" end_column="28" covered="no" />
+            <range source_id="6" start_line="56" end_line="56" start_column="21" end_column="69" covered="no" />
+            <range source_id="6" start_line="57" end_line="57" start_column="21" end_column="27" covered="no" />
+            <range source_id="6" start_line="59" end_line="59" start_column="21" end_column="70" covered="no" />
+            <range source_id="6" start_line="60" end_line="63" start_column="21" end_column="82" covered="no" />
+            <range source_id="6" start_line="64" end_line="64" start_column="21" end_column="27" covered="no" />
+            <range source_id="6" start_line="66" end_line="66" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+        <function id="10756" token="0x6000034" name="ChooseProgram()" namespace="MSO2" type_name="Program" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="21" lines_covered="0" lines_partially_covered="0" lines_not_covered="14">
+          <ranges>
+            <range source_id="6" start_line="69" end_line="69" start_column="9" end_column="10" covered="no" />
+            <range source_id="6" start_line="71" end_line="71" start_column="13" end_column="14" covered="no" />
+            <range source_id="6" start_line="72" end_line="72" start_column="17" end_column="86" covered="no" />
+            <range source_id="6" start_line="73" end_line="73" start_column="17" end_column="62" covered="no" />
+            <range source_id="6" start_line="75" end_line="75" start_column="17" end_column="32" covered="no" />
+            <range source_id="6" start_line="78" end_line="78" start_column="25" end_column="53" covered="no" />
+            <range source_id="6" start_line="80" end_line="80" start_column="25" end_column="53" covered="no" />
+            <range source_id="6" start_line="82" end_line="82" start_column="25" end_column="53" covered="no" />
+            <range source_id="6" start_line="84" end_line="84" start_column="25" end_column="48" covered="no" />
+            <range source_id="6" start_line="86" end_line="86" start_column="25" end_column="88" covered="no" />
+            <range source_id="6" start_line="87" end_line="87" start_column="25" end_column="31" covered="no" />
+            <range source_id="6" start_line="89" end_line="89" start_column="13" end_column="14" covered="no" />
+            <range source_id="6" start_line="70" end_line="70" start_column="13" end_column="25" covered="no" />
+            <range source_id="6" start_line="90" end_line="90" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+        <function id="10932" token="0x6000035" name="GetValidatedChoice()" namespace="MSO2" type_name="Program" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="15" lines_covered="0" lines_partially_covered="0" lines_not_covered="9">
+          <ranges>
+            <range source_id="6" start_line="93" end_line="93" start_column="9" end_column="10" covered="no" />
+            <range source_id="6" start_line="94" end_line="94" start_column="13" end_column="58" covered="no" />
+            <range source_id="6" start_line="96" end_line="96" start_column="13" end_column="14" covered="no" />
+            <range source_id="6" start_line="97" end_line="97" start_column="17" end_column="111" covered="no" />
+            <range source_id="6" start_line="98" end_line="98" start_column="17" end_column="55" covered="no" />
+            <range source_id="6" start_line="99" end_line="99" start_column="13" end_column="14" covered="no" />
+            <range source_id="6" start_line="95" end_line="95" start_column="13" end_column="51" covered="no" />
+            <range source_id="6" start_line="100" end_line="100" start_column="13" end_column="27" covered="no" />
+            <range source_id="6" start_line="101" end_line="101" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+        <function id="11020" token="0x6000036" name="ImportProgram()" namespace="MSO2" type_name="Program" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="17" lines_covered="0" lines_partially_covered="0" lines_not_covered="19">
+          <ranges>
+            <range source_id="6" start_line="104" end_line="104" start_column="9" end_column="10" covered="no" />
+            <range source_id="6" start_line="106" end_line="106" start_column="13" end_column="14" covered="no" />
+            <range source_id="6" start_line="108" end_line="108" start_column="17" end_column="18" covered="no" />
+            <range source_id="6" start_line="109" end_line="109" start_column="21" end_column="75" covered="no" />
+            <range source_id="6" start_line="110" end_line="110" start_column="21" end_column="54" covered="no" />
+            <range source_id="6" start_line="112" end_line="112" start_column="21" end_column="43" covered="no" />
+            <range source_id="6" start_line="113" end_line="113" start_column="21" end_column="22" covered="no" />
+            <range source_id="6" start_line="114" end_line="114" start_column="25" end_column="56" covered="no" />
+            <range source_id="6" start_line="117" end_line="117" start_column="21" end_column="22" covered="no" />
+            <range source_id="6" start_line="118" end_line="118" start_column="25" end_column="80" covered="no" />
+            <range source_id="6" start_line="119" end_line="119" start_column="21" end_column="22" covered="no" />
+            <range source_id="6" start_line="120" end_line="120" start_column="17" end_column="18" covered="no" />
+            <range source_id="6" start_line="121" end_line="121" start_column="17" end_column="37" covered="no" />
+            <range source_id="6" start_line="122" end_line="122" start_column="17" end_column="18" covered="no" />
+            <range source_id="6" start_line="123" end_line="123" start_column="21" end_column="103" covered="no" />
+            <range source_id="6" start_line="125" end_line="125" start_column="17" end_column="18" covered="no" />
+            <range source_id="6" start_line="126" end_line="126" start_column="13" end_column="14" covered="no" />
+            <range source_id="6" start_line="105" end_line="105" start_column="13" end_column="25" covered="no" />
+            <range source_id="6" start_line="127" end_line="127" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+        <function id="11144" token="0x6000037" name="Program()" namespace="MSO2" type_name="Program" block_coverage="0.00" line_coverage="0.00" blocks_covered="0" blocks_not_covered="7" lines_covered="0" lines_partially_covered="0" lines_not_covered="31">
+          <ranges>
+            <range source_id="6" start_line="6" end_line="36" start_column="9" end_column="10" covered="no" />
+          </ranges>
+        </function>
+      </functions>
+      <source_files>
+        <source_file id="0" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Board.cs" checksum_type="SHA256" checksum="0FE6FF9C21ADBED608AAC5DDE9C764A5983560F6BD184D83E7A74051855B6032" />
+        <source_file id="1" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\CalculateMetrics.cs" checksum_type="SHA256" checksum="050CAE49C1BD82F1E5B8BA50D640609D049C37379522B42BEF5200F584BB1081" />
+        <source_file id="2" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Command.cs" checksum_type="SHA256" checksum="486FBE49217E50C07C3EE6F8AF8C6F4E19204274433C8C7F26A6C78EBA780481" />
+        <source_file id="3" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\CommandParser.cs" checksum_type="SHA256" checksum="3CD5CBC8781C5C6BED1EF55C9D06A87DC73D7C9A0EB52D04E9DFAB0DBCE69671" />
+        <source_file id="4" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Creature.cs" checksum_type="SHA256" checksum="2C4F9F6CCD9256AAE5BD32D0ACFC4C5A5B388913E9E4A973218B708D5DFA4F8F" />
+        <source_file id="5" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Player.cs" checksum_type="SHA256" checksum="1D8D86C02F16BFFEE1ACF5E6281BF22E8DB4B5C8219E78450D9451AA49CD48CB" />
+        <source_file id="6" path="C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Program.cs" checksum_type="SHA256" checksum="BFC5BFABD6C8F83BF3412F0BE4BBB654631992B875561196213B985B9ABED7F4" />
+      </source_files>
+      <skipped_functions />
+    </module>
+  </modules>
+  <skipped_modules>
+    <skipped_module name="system.private.corelib.dll" path="system.private.corelib.dll" reason="no_symbols" />
+    <skipped_module name="dotnet.dll" path="dotnet.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.dll" path="system.runtime.dll" reason="no_symbols" />
+    <skipped_module name="system.console.dll" path="system.console.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.dll" path="system.threading.dll" reason="no_symbols" />
+    <skipped_module name="system.text.encoding.extensions.dll" path="system.text.encoding.extensions.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.dotnet.cli.utils.dll" path="microsoft.dotnet.cli.utils.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.interopservices.dll" path="system.runtime.interopservices.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.process.dll" path="system.diagnostics.process.dll" reason="no_symbols" />
+    <skipped_module name="system.componentmodel.primitives.dll" path="system.componentmodel.primitives.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.win32.primitives.dll" path="microsoft.win32.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.tracing.dll" path="system.diagnostics.tracing.dll" reason="no_symbols" />
+    <skipped_module name="system.text.encoding.codepages.dll" path="system.text.encoding.codepages.dll" reason="no_symbols" />
+    <skipped_module name="system.collections.dll" path="system.collections.dll" reason="no_symbols" />
+    <skipped_module name="system.commandline.dll" path="system.commandline.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.dotnet.configurer.dll" path="microsoft.dotnet.configurer.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.dotnet.internalabstractions.dll" path="microsoft.dotnet.internalabstractions.dll" reason="no_symbols" />
+    <skipped_module name="netstandard.dll" path="netstandard.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.templateengine.cli.dll" path="microsoft.templateengine.cli.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.templateengine.edge.dll" path="microsoft.templateengine.edge.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.templateengine.abstractions.dll" path="microsoft.templateengine.abstractions.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.extensions.logging.abstractions.dll" path="microsoft.extensions.logging.abstractions.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.templatesearch.common.dll" path="microsoft.templatesearch.common.dll" reason="no_symbols" />
+    <skipped_module name="system.linq.dll" path="system.linq.dll" reason="no_symbols" />
+    <skipped_module name="nuget.configuration.dll" path="nuget.configuration.dll" reason="no_symbols" />
+    <skipped_module name="nuget.protocol.dll" path="nuget.protocol.dll" reason="no_symbols" />
+    <skipped_module name="system.private.uri.dll" path="system.private.uri.dll" reason="no_symbols" />
+    <skipped_module name="nuget.common.dll" path="nuget.common.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.applicationinsights.dll" path="microsoft.applicationinsights.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.diagnosticsource.dll" path="system.diagnostics.diagnosticsource.dll" reason="no_symbols" />
+    <skipped_module name="system.security.cryptography.dll" path="system.security.cryptography.dll" reason="no_symbols" />
+    <skipped_module name="system.memory.dll" path="system.memory.dll" reason="no_symbols" />
+    <skipped_module name="system.io.memorymappedfiles.dll" path="system.io.memorymappedfiles.dll" reason="no_symbols" />
+    <skipped_module name="system.collections.concurrent.dll" path="system.collections.concurrent.dll" reason="no_symbols" />
+    <skipped_module name="system.net.http.dll" path="system.net.http.dll" reason="no_symbols" />
+    <skipped_module name="system.net.primitives.dll" path="system.net.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.xml.xdocument.dll" path="system.xml.xdocument.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.build.framework.dll" path="microsoft.build.framework.dll" reason="no_symbols" />
+    <skipped_module name="system.private.xml.linq.dll" path="system.private.xml.linq.dll" reason="no_symbols" />
+    <skipped_module name="system.net.security.dll" path="system.net.security.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.thread.dll" path="system.threading.thread.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.dotnet.templatelocator.dll" path="microsoft.dotnet.templatelocator.dll" reason="no_symbols" />
+    <skipped_module name="system.net.requests.dll" path="system.net.requests.dll" reason="no_symbols" />
+    <skipped_module name="system.xml.readerwriter.dll" path="system.xml.readerwriter.dll" reason="no_symbols" />
+    <skipped_module name="msbuild.dll" path="msbuild.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.deployment.dotnet.releases.dll" path="microsoft.deployment.dotnet.releases.dll" reason="no_symbols" />
+    <skipped_module name="system.net.networkinformation.dll" path="system.net.networkinformation.dll" reason="no_symbols" />
+    <skipped_module name="system.private.xml.dll" path="system.private.xml.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.build.dll" path="microsoft.build.dll" reason="no_symbols" />
+    <skipped_module name="system.text.json.dll" path="system.text.json.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.win32.registry.dll" path="microsoft.win32.registry.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.intrinsics.dll" path="system.runtime.intrinsics.dll" reason="no_symbols" />
+    <skipped_module name="system.text.regularexpressions.dll" path="system.text.regularexpressions.dll" reason="no_symbols" />
+    <skipped_module name="system.net.nameresolution.dll" path="system.net.nameresolution.dll" reason="no_symbols" />
+    <skipped_module name="system.io.compression.dll" path="system.io.compression.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.loader.dll" path="system.runtime.loader.dll" reason="no_symbols" />
+    <skipped_module name="system.collections.immutable.dll" path="system.collections.immutable.dll" reason="no_symbols" />
+    <skipped_module name="nuget.credentials.dll" path="nuget.credentials.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.fileversioninfo.dll" path="system.diagnostics.fileversioninfo.dll" reason="no_symbols" />
+    <skipped_module name="system.serviceprocess.servicecontroller.dll" path="system.serviceprocess.servicecontroller.dll" reason="no_symbols" />
+    <skipped_module name="system.net.sockets.dll" path="system.net.sockets.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.overlapped.dll" path="system.threading.overlapped.dll" reason="no_symbols" />
+    <skipped_module name="system.collections.nongeneric.dll" path="system.collections.nongeneric.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.threadpool.dll" path="system.threading.threadpool.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.tasks.dataflow.dll" path="system.threading.tasks.dataflow.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.emit.lightweight.dll" path="system.reflection.emit.lightweight.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.emit.ilgeneration.dll" path="system.reflection.emit.ilgeneration.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.primitives.dll" path="system.reflection.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.security.principal.windows.dll" path="system.security.principal.windows.dll" reason="no_symbols" />
+    <skipped_module name="system.security.claims.dll" path="system.security.claims.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.net.stringtools.dll" path="microsoft.net.stringtools.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.tasks.parallel.dll" path="system.threading.tasks.parallel.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.build.tasks.core.dll" path="microsoft.build.tasks.core.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.build.utilities.core.dll" path="microsoft.build.utilities.core.dll" reason="no_symbols" />
+    <skipped_module name="nuget.build.tasks.dll" path="nuget.build.tasks.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.metadata.dll" path="system.reflection.metadata.dll" reason="no_symbols" />
+    <skipped_module name="nuget.commands.dll" path="nuget.commands.dll" reason="no_symbols" />
+    <skipped_module name="nuget.projectmodel.dll" path="nuget.projectmodel.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.build.nugetsdkresolver.dll" path="microsoft.build.nugetsdkresolver.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.net.sdk.workloadmsbuildsdkresolver.dll" path="microsoft.net.sdk.workloadmsbuildsdkresolver.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.net.sdk.workloadmanifestreader.dll" path="microsoft.net.sdk.workloadmanifestreader.dll" reason="no_symbols" />
+    <skipped_module name="system.io.pipes.dll" path="system.io.pipes.dll" reason="no_symbols" />
+    <skipped_module name="nuget.frameworks.dll" path="nuget.frameworks.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.tracesource.dll" path="system.diagnostics.tracesource.dll" reason="no_symbols" />
+    <skipped_module name="system.security.accesscontrol.dll" path="system.security.accesscontrol.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.net.build.tasks.dll" path="microsoft.net.build.tasks.dll" reason="no_symbols" />
+    <skipped_module name="nuget.packaging.dll" path="nuget.packaging.dll" reason="no_symbols" />
+    <skipped_module name="system.io.filesystem.dll" path="system.io.filesystem.dll" reason="no_symbols" />
+    <skipped_module name="newtonsoft.json.dll" path="newtonsoft.json.dll" reason="no_symbols" />
+    <skipped_module name="system.linq.expressions.dll" path="system.linq.expressions.dll" reason="no_symbols" />
+    <skipped_module name="system.componentmodel.typeconverter.dll" path="system.componentmodel.typeconverter.dll" reason="no_symbols" />
+    <skipped_module name="system.objectmodel.dll" path="system.objectmodel.dll" reason="no_symbols" />
+    <skipped_module name="nuget.librarymodel.dll" path="nuget.librarymodel.dll" reason="no_symbols" />
+    <skipped_module name="nuget.versioning.dll" path="nuget.versioning.dll" reason="no_symbols" />
+    <skipped_module name="nuget.dependencyresolver.core.dll" path="nuget.dependencyresolver.core.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.serialization.primitives.dll" path="system.runtime.serialization.primitives.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.numerics.dll" path="system.runtime.numerics.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.build.dll" path="microsoft.testplatform.build.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.build.tasks.codeanalysis.dll" path="microsoft.build.tasks.codeanalysis.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.build.tasks.git.dll" path="microsoft.build.tasks.git.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.sourcelink.common.dll" path="microsoft.sourcelink.common.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.sourcelink.github.dll" path="microsoft.sourcelink.github.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.sourcelink.gitlab.dll" path="microsoft.sourcelink.gitlab.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.sourcelink.azurerepos.git.dll" path="microsoft.sourcelink.azurerepos.git.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.sourcelink.bitbucket.git.dll" path="microsoft.sourcelink.bitbucket.git.dll" reason="no_symbols" />
+    <skipped_module name="sonarscanner.msbuild.tasks.dll" path="sonarscanner.msbuild.tasks.dll" reason="no_symbols" />
+    <skipped_module name="sonarscanner.msbuild.common.dll" path="sonarscanner.msbuild.common.dll" reason="no_symbols" />
+    <skipped_module name="system.xml.xmlserializer.dll" path="system.xml.xmlserializer.dll" reason="no_symbols" />
+    <skipped_module name="system.collections.specialized.dll" path="system.collections.specialized.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.emit.dll" path="system.reflection.emit.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.net.hostmodel.dll" path="microsoft.net.hostmodel.dll" reason="no_symbols" />
+    <skipped_module name="vstest.console.dll" path="vstest.console.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.testplatform.coreutilities.dll" path="microsoft.testplatform.coreutilities.dll" reason="path_is_excluded" />
+    <skipped_module name="system.runtime.extensions.dll" path="system.runtime.extensions.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.platformabstractions.dll" path="microsoft.testplatform.platformabstractions.dll" reason="path_is_excluded" />
+    <skipped_module name="system.diagnostics.debug.dll" path="system.diagnostics.debug.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.visualstudio.testplatform.objectmodel.dll" path="microsoft.visualstudio.testplatform.objectmodel.dll" reason="path_is_excluded" />
+    <skipped_module name="system.resources.resourcemanager.dll" path="system.resources.resourcemanager.dll" reason="no_symbols" />
+    <skipped_module name="system.runtime.interopservices.runtimeinformation.dll" path="system.runtime.interopservices.runtimeinformation.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.visualstudio.testplatform.common.dll" path="microsoft.visualstudio.testplatform.common.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.testplatform.utilities.dll" path="microsoft.testplatform.utilities.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.extensions.filesystemglobbing.dll" path="microsoft.extensions.filesystemglobbing.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.crossplatengine.dll" path="microsoft.testplatform.crossplatengine.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.client.dll" path="microsoft.visualstudio.testplatform.client.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.diagnostics.netcore.client.dll" path="microsoft.diagnostics.netcore.client.dll" reason="no_symbols" />
+    <skipped_module name="system.threading.tasks.extensions.dll" path="system.threading.tasks.extensions.dll" reason="no_symbols" />
+    <skipped_module name="system.diagnostics.stacktrace.dll" path="system.diagnostics.stacktrace.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.extensions.blamedatacollector.dll" path="microsoft.testplatform.extensions.blamedatacollector.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.testplatform.extensions.eventlogcollector.dll" path="microsoft.testplatform.extensions.eventlogcollector.dll" reason="path_is_excluded" />
+    <skipped_module name="mscorlib.dll" path="mscorlib.dll" reason="path_is_excluded" />
+    <skipped_module name="system.xml.dll" path="system.xml.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.testhostruntimeprovider.dll" path="microsoft.testplatform.testhostruntimeprovider.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.extensions.html.testlogger.dll" path="microsoft.visualstudio.testplatform.extensions.html.testlogger.dll" reason="path_is_excluded" />
+    <skipped_module name="microsoft.visualstudio.testplatform.extensions.trx.testlogger.dll" path="microsoft.visualstudio.testplatform.extensions.trx.testlogger.dll" reason="path_is_excluded" />
+    <skipped_module name="system.threading.tasks.dll" path="system.threading.tasks.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.communicationutilities.dll" path="microsoft.testplatform.communicationutilities.dll" reason="path_is_excluded" />
+    <skipped_module name="system.runtime.serialization.formatters.dll" path="system.runtime.serialization.formatters.dll" reason="no_symbols" />
+    <skipped_module name="microsoft.testplatform.vstestconsole.translationlayer.dll" path="microsoft.testplatform.vstestconsole.translationlayer.dll" reason="path_is_excluded" />
+    <skipped_module name="testhost.dll" path="testhost.dll" reason="path_is_excluded" />
+    <skipped_module name="system.data.common.dll" path="system.data.common.dll" reason="no_symbols" />
+    <skipped_module name="system.componentmodel.dll" path="system.componentmodel.dll" reason="no_symbols" />
+    <skipped_module name="xunit.runner.visualstudio.dotnetcore.testadapter.dll" path="xunit.runner.visualstudio.dotnetcore.testadapter.dll" reason="path_is_excluded" />
+    <skipped_module name="xunit.runner.utility.netcoreapp10.dll" path="xunit.runner.utility.netcoreapp10.dll" reason="public_key_token_is_excluded" />
+    <skipped_module name="xunit.abstractions.dll" path="xunit.abstractions.dll" reason="public_key_token_is_excluded" />
+    <skipped_module name="system.io.dll" path="system.io.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.dll" path="system.reflection.dll" reason="no_symbols" />
+    <skipped_module name="system.reflection.typeextensions.dll" path="system.reflection.typeextensions.dll" reason="no_symbols" />
+    <skipped_module name="xunit.runner.reporters.netcoreapp10.dll" path="xunit.runner.reporters.netcoreapp10.dll" reason="public_key_token_is_excluded" />
+    <skipped_module name="system.reflection.extensions.dll" path="system.reflection.extensions.dll" reason="no_symbols" />
+    <skipped_module name="xunit.execution.dotnet.dll" path="xunit.execution.dotnet.dll" reason="public_key_token_is_excluded" />
+    <skipped_module name="xunit.core.dll" path="xunit.core.dll" reason="public_key_token_is_excluded" />
+    <skipped_module name="system.globalization.dll" path="system.globalization.dll" reason="no_symbols" />
+    <skipped_module name="system.text.encoding.dll" path="system.text.encoding.dll" reason="no_symbols" />
+    <skipped_module name="system.security.cryptography.algorithms.dll" path="system.security.cryptography.algorithms.dll" reason="no_symbols" />
+    <skipped_module name="system.security.cryptography.primitives.dll" path="system.security.cryptography.primitives.dll" reason="no_symbols" />
+    <skipped_module name="xunit.assert.dll" path="xunit.assert.dll" reason="public_key_token_is_excluded" />
+    <skipped_module name="system.text.encodings.web.dll" path="system.text.encodings.web.dll" reason="no_symbols" />
+    <skipped_module name="system.numerics.vectors.dll" path="system.numerics.vectors.dll" reason="no_symbols" />
+  </skipped_modules>
+</results>

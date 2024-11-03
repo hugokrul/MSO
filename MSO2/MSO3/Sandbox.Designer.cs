@@ -47,7 +47,7 @@
             homeNav.TabIndex = 0;
             homeNav.Text = "Home";
             homeNav.UseVisualStyleBackColor = true;
-            homeNav.Click += homeNav_Click;
+            homeNav.Click += HomeNav_Click;
             // 
             // pageNameSandbox
             // 
@@ -64,7 +64,7 @@
             boardPanel.Name = "boardPanel";
             boardPanel.Size = new Size(400, 400);
             boardPanel.TabIndex = 3;
-            boardPanel.Paint += boardPanel_Paint;
+            boardPanel.Paint += BoardPanel_Paint;
             // 
             // executeBoard
             // 
@@ -74,7 +74,7 @@
             executeBoard.TabIndex = 4;
             executeBoard.Text = "Run";
             executeBoard.UseVisualStyleBackColor = true;
-            executeBoard.Click += executeBoard_Click;
+            executeBoard.Click += ExecuteBoard_Click;
             // 
             // executionWay
             // 
@@ -86,7 +86,7 @@
             executionWay.Name = "executionWay";
             executionWay.Size = new Size(151, 28);
             executionWay.TabIndex = 5;
-            executionWay.SelectedIndexChanged += executionWay_SelectedIndexChanged;
+            executionWay.SelectedIndexChanged += ExecutionWay_SelectedIndexChanged;
             // 
             // filePathInput
             // 
@@ -96,7 +96,7 @@
             filePathInput.TabIndex = 6;
             filePathInput.Text = "full path...";
             filePathInput.Visible = false;
-            filePathInput.TextChanged += filePathInput_TextChanged;
+            filePathInput.TextChanged += FilePathInput_TextChanged;
             // 
             // ownProgram
             // 
@@ -117,7 +117,7 @@
             saveProgram.Text = "Save";
             saveProgram.UseVisualStyleBackColor = true;
             saveProgram.Visible = false;
-            saveProgram.Click += saveProgram_clicked;
+            saveProgram.Click += SaveProgram_clicked;
             // 
             // Sandbox
             // 

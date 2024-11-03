@@ -14,29 +14,27 @@ namespace MSO3
 {
     public partial class Shape : BaseForm
     {
-        private Board board;
-        string[,] tempBoard;
+        private Board? board;
+        string[,] tempBoard = { { } };
 
         public Shape() : base()
         {
             InitializeComponent();
         }
 
-        private void homePage_Click(object sender, EventArgs e)
+        private void HomePage_Click(object sender, EventArgs e)
         {
-            Home homePage = Home.instance;
-            homePage.StartPosition = FormStartPosition.CenterScreen;
-            homePage.Show();
+            Home.instance.StartPosition = FormStartPosition.CenterScreen;
+            Home.instance.Show();
             this.Hide();
         }
 
 
 
-        private void importBoard_Click(object sender, EventArgs e)
+        private void ImportBoard_Click(object sender, EventArgs e)
         {
 
-            string boardFile = Interaction.InputBox("Give the full path of the file where the board is stored", "Board file");
-            //string boardFile = @"C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\board.txt";
+            string? boardFile = Interaction.InputBox("Give the full path of the file where the board is stored", "Board file");
             string[] boardArray = File.ReadAllLines(boardFile);
 
 
@@ -54,21 +52,21 @@ namespace MSO3
                 }
             }
 
-            (int, int) playerPosition = findStartPosition(tempBoard);
+            (int, int) playerPosition = FindStartPosition(tempBoard);
             board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
-            board.boardArray = tempBoard;
+            board.BoardArray = tempBoard;
 
             boardPanel.Invalidate();
         }
 
-        private void boardPanel_Paint(object sender, PaintEventArgs e)
+        private void BoardPanel_Paint(object sender, PaintEventArgs e)
         {
             if (board != null)
             {
-                Graphics g = e.Graphics;
-                Pen blackPen = new Pen(Color.Black, 1);
+                Graphics? g = e.Graphics;
+                Pen? blackPen = new Pen(Color.Black, 1);
 
-                Drawer.drawBoard((Panel)sender, g, blackPen, board);
+                Drawer.DrawBoard((Panel)sender, g, blackPen, board, false);
             }
         }
 
@@ -76,14 +74,17 @@ namespace MSO3
         {
             if (board != null)
             {
-                (int, int) playerPosition = findStartPosition(tempBoard);
+                (int, int) playerPosition = FindStartPosition(tempBoard);
                 board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
-                board.boardArray = tempBoard;
+                board.BoardArray = tempBoard;
 
-
-                List<ICommand> commands = CommandParser.Parse(ownProgram.Text.Split('\n'));
+                string[] commandArray = ownProgram.Text.Split('\n');
+                List<ICommand>? commands = CommandParser.Parse(commandArray);
                 board.PlayBoard(commands);
+
                 boardPanel.Invalidate();
+
+                Sandbox.ShowMetrics(commandArray);
             }
             else
             {
@@ -91,7 +92,7 @@ namespace MSO3
             }
         }
 
-        private (int, int) findStartPosition(string[,] b)
+        private static (int, int) FindStartPosition(string[,] b)
         {
             for (int i = 0; i < b.GetLength(0); i++)
             {
@@ -106,27 +107,27 @@ namespace MSO3
             return (-1, -1);
         }
 
-        private void checkShape_Click(object sender, EventArgs e)
+        private void CheckShape_Click(object sender, EventArgs e)
         {
             if (board != null)
             {
-                List<(int,int)> correctVisitedPlaces = new List<(int,int)>();
-                (int, int) startPosition = (-1, -1);
-                for (int i = 0; i < board.boardArray.GetLength(0); i++)
+                List<(int, int)>? correctVisitedPlaces = new List<(int,int)>();
+                (int, int) startPosition = (0, 0);
+                for (int i = 0; i < board.BoardArray.GetLength(0); i++)
                 {
-                    for (int j = 0; j < board.boardArray.GetLength(1); j++)
+                    for (int j = 0; j < board.BoardArray.GetLength(1); j++)
                     {
-                        if (board.boardArray[i, j] == "s" || board.boardArray[i, j] == "o")
+                        if (board.BoardArray[i, j] == "s" || board.BoardArray[i, j] == "o")
                         {
                             correctVisitedPlaces.Add((j, i));
                         }
-                        if (board.boardArray[i, j] == "s") startPosition = (j, i);
+                        if (board.BoardArray[i, j] == "s") startPosition = (j, i);
                     }
                 }
 
                 correctVisitedPlaces.Add(startPosition);
 
-                if (sameShapes(board.player.visitedPositions, correctVisitedPlaces))
+                if (SameShapes(board.Player.VisitedPositions, correctVisitedPlaces))
                 {
                     MessageBox.Show("Shape is correct!");
                 }
@@ -137,7 +138,7 @@ namespace MSO3
             }
         }
 
-        private bool sameShapes(List<(int, int)> list1,  List<(int, int)> list2)
+        private static bool SameShapes(List<(int, int)> list1,  List<(int, int)> list2)
         {
             list1.Sort();
             list2.Sort();

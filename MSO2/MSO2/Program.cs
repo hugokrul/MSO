@@ -1,14 +1,11 @@
 ﻿namespace MSO2
 {
-    public class Program
+    public static class Program
     {
-        public string Name;
-
-        public static List<string[]> availablePrograms = new List<string[]>
-        {
+        public static List<string[]> AvailablePrograms { get; private set; } =
+        [
             // Basic program
-            new string[]
-            {
+            [
                 "Name: BasicProgram",
                 "Turn left", "Move 1", "Turn right", "Move 1",
                 "Turn left", "Move 1", "Turn right", "Move 1",
@@ -16,20 +13,18 @@
                 "Turn right", "Move 1", "Turn left", "Move 1",
                 "Turn right", "Move 1", "Turn left", "Turn left",
                 "Move 5", "Turn left"
-            },
+            ],
 
             // Hard program
-            new string[]
-            {
+            [
                 "Name: HardProgram",
                 "Repeat 10 times", "    Turn left", "    Move 1",
                 "    Turn right", "    Move 1", "    Repeat 4 times",
                 "        Turn right", "        Move 1"
-            },
+            ],
 
             // Advanced program
-            new string[]
-            {
+            [
                 "Name: AdvancedProgram",
                 "Repeat 2 times", "    Turn left", "    Move 1",
                 "    Turn right", "    Move 1", "Repeat 2 times",
@@ -37,8 +32,8 @@
                 "Move 1", "Turn left", "Move 1", "Turn right",
                 "Move 1", "Repeat 2 times", "    Turn left",
                 "Move 5", "Turn left"
-            }
-        };
+            ]
+        ];
 
         static void Main(string[] args)
         {
@@ -63,9 +58,9 @@
                 case "c":
                     CalculateMetrics.calculateMetrics(chosenProgram);
                     Console.WriteLine(
-                        $"Number of commands: {CalculateMetrics.numberOfCommands}\n" +
-                        $"Nesting level: {CalculateMetrics.nestingLevel}\n" +
-                        $"Number of Repeats: {CalculateMetrics.numberOfRepeat}");
+                        $"Number of commands: {CalculateMetrics.NumberOfCommands}\n" +
+                        $"Nesting level: {CalculateMetrics.NestingLevel}\n" +
+                        $"Number of Repeats: {CalculateMetrics.NumberOfRepeat}");
                     break;
             }
         }
@@ -80,11 +75,11 @@
                 switch (choice)
                 {
                     case "basic":
-                        return availablePrograms[0];
+                        return AvailablePrograms[0];
                     case "hard":
-                        return availablePrograms[1];
+                        return AvailablePrograms[1];
                     case "advanced":
-                        return availablePrograms[2];
+                        return AvailablePrograms[2];
                     case "import":
                         return ImportProgram();
                     default:

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace MSO2
 {
-    public class CommandParser
+    public static class CommandParser
     {
         // Parses command strings and returns a list of ICommand objects.
         public static List<ICommand> Parse(string[] commandStrings, int startIndex = 0, int endIndex = -1)
         {
-            List<ICommand> commandResult = new List<ICommand>();
+            List<ICommand> commandResult = [];
             int i = startIndex;
 
             while (i < (endIndex == -1 ? commandStrings.Length : endIndex))
@@ -18,25 +18,17 @@ namespace MSO2
 
                 if (line.StartsWith("Repeat"))
                 {
-                    List<ICommand> range = new List<ICommand>();
-
                     // Parse repeat count and find block of commands to repeat.
                     string[] parts = line.Split(' ');
                     int repeatCount = int.Parse(parts[1]);
 
                     int j = i + 1;
-                    while (j < commandStrings.Length && commandStrings[j].StartsWith(" ")) j++;
+                    while (j < commandStrings.Length && commandStrings[j].StartsWith(' ')) j++;
 
                     // Recursivly iterates through the commandStrings to add the commands from the repeat command to the commandResults
                     List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
 
-                    // Add repeated commands to the result list.
-                    for (int k = 0; k < repeatCount; k++)
-                    {
-                        range.AddRange(blockActions);
-                    }
-
-                    commandResult.Add(new RepeatCommand(range, repeatCount));
+                    commandResult.Add(new RepeatCommand(blockActions, repeatCount));
 
                     i = j;  // Move index to the end of the block.
                 }

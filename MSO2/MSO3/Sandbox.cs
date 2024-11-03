@@ -14,19 +14,19 @@ namespace MSO3
 {
     public partial class Sandbox : BaseForm
     {
-        private string file = null;
-        private List<string> originalCommands = new List<string>();
-        private string previousExecutionWay;
-        private Board board;
+        private string? file;
+        private List<string> originalCommands = [];
+        private string? previousExecutionWay;
+        private Board board = new(10, 10);
 
         public Sandbox() : base()
         {
             InitializeComponent();
         }
 
-        private void homeNav_Click(object sender, EventArgs e)
+        private void HomeNav_Click(object sender, EventArgs e)
         {
-            if (!programChanged())
+            if (!ProgramChanged())
             {
                 Home homePage = Home.instance;
                 homePage.StartPosition = FormStartPosition.CenterScreen;
@@ -35,43 +35,60 @@ namespace MSO3
             }
         }
 
-        private void boardPanel_Paint(object sender, PaintEventArgs e)
+        private void BoardPanel_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             Pen blackPen = new Pen(Color.Black, 1);
 
-            Drawer.drawBoard((Panel)sender, g, blackPen, board);
+            Drawer.DrawBoard((Panel)sender, g, blackPen, board);
         }
 
-        private void executeBoard_Click(object sender, EventArgs e)
+        private void ExecuteBoard_Click(object sender, EventArgs e)
         {
             board = new Board(10, 10);
             string? difficulty = executionWay.GetItemText(executionWay.SelectedItem);
-            originalCommands = chosenProgram(difficulty);
+            originalCommands = ChosenProgram(difficulty);
             List<ICommand> commands = CommandParser.Parse(originalCommands.ToArray());
 
-            if (file != null) board.name = Path.GetFileName(file);
+            if (file != null) board.Name = Path.GetFileName(file);
 
             board.PlayBoard(commands);
 
             boardPanel.Invalidate();
-            this.Text = $"Robologic {board.name}";
+            this.Text = $"Robologic {board.Name}";
 
             if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
+
+            ShowMetrics(originalCommands.ToArray());
         }
 
-        private List<string> chosenProgram(string? choice)
+        public static void ShowMetrics(string[] commands)
+        {
+            DialogResult calculateMetrics = MessageBox.Show("Do you want to see the metrics", "Calculate metrics", MessageBoxButtons.YesNo);
+
+            if (calculateMetrics == DialogResult.Yes)
+            {
+                CalculateMetrics.calculateMetrics(commands);
+                MessageBox.Show(
+                        $"Number of commands: {CalculateMetrics.NumberOfCommands}\n" +
+                        $"Nesting level: {CalculateMetrics.NestingLevel}\n" +
+                        $"Number of Repeats: {CalculateMetrics.NumberOfRepeat}"
+                    );
+            }
+        }
+
+        private List<string> ChosenProgram(string? choice)
         {
             switch (choice)
             {
                 case "Basic":
-                    return MSO2.Program.availablePrograms[0].Skip(1).ToList();
+                    return MSO2.Program.AvailablePrograms[0].Skip(1).ToList();
                 case "Hard":
-                    return MSO2.Program.availablePrograms[1].Skip(1).ToList();
+                    return MSO2.Program.AvailablePrograms[1].Skip(1).ToList();
                 case "Advanced":
-                    return MSO2.Program.availablePrograms[2].Skip(1).ToList();
+                    return MSO2.Program.AvailablePrograms[2].Skip(1).ToList();
                 case "Import":
-                    return runImportedProgram();
+                    return RunImportedProgram();
                 case "Write your own":
                     ownProgram.ReadOnly = false;
                     return ownProgram.Text.Split('\n').ToList();
@@ -79,22 +96,22 @@ namespace MSO3
             return new List<string>();
         }
 
-        private List<string> runImportedProgram()
+        private List<string> RunImportedProgram()
         {
             if (file != null && ownProgram.Text != "")
             {
-                save();
+                Save();
             }
             string path = filePathInput.Text;
             file = path;
             return File.ReadAllLines(path).ToList();
         }
 
-        private void updateButtons(string input)
+        private void UpdateButtons(string input)
         {
             if (input == "Import")
             {
-                fileExistence();
+                FileExistence();
                 filePathInput.Visible = true;
                 saveProgram.Visible = true;
             }
@@ -113,30 +130,30 @@ namespace MSO3
             }
         }
 
-        private void executionWay_SelectedIndexChanged(object sender, EventArgs e)
+        private void ExecutionWay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!programChanged())
+            if (!ProgramChanged())
             {
                 ownProgram.Text = "";
 
                 string input = executionWay.Text;
                 previousExecutionWay = input;
-                updateButtons(input);
+                UpdateButtons(input);
             }
             else
             {
-                executionWay.SelectedIndexChanged -= new EventHandler(executionWay_SelectedIndexChanged);
+                executionWay.SelectedIndexChanged -= new EventHandler(ExecutionWay_SelectedIndexChanged);
                 executionWay.Text = previousExecutionWay;
-                executionWay.SelectedIndexChanged += new EventHandler(executionWay_SelectedIndexChanged);
+                executionWay.SelectedIndexChanged += new EventHandler(ExecutionWay_SelectedIndexChanged);
             }
         }
 
-        private void filePathInput_TextChanged(object sender, EventArgs e)
+        private void FilePathInput_TextChanged(object sender, EventArgs e)
         {
-            fileExistence();
+            FileExistence();
         }
 
-        private void fileExistence()
+        private void FileExistence()
         {
             string[] allowedFiles = { ".txt" };
             if (!File.Exists(filePathInput.Text) || !allowedFiles.Contains(Path.GetExtension(filePathInput.Text)))
@@ -157,8 +174,8 @@ namespace MSO3
         {
             board = new Board(10, 10);
             file = null;
-            this.Text = $"Robologic {board.name}";
-            switch (board.name)
+            this.Text = $"Robologic {board.Name}";
+            switch (board.Name)
             {
                 case "BasicProgram":
                     executionWay.Text = "Basic";
@@ -175,7 +192,7 @@ namespace MSO3
             }
         }
 
-        private bool programChanged()
+        private bool ProgramChanged()
         {
             if (ownProgram.Text == "") return false;
             if (ownProgram.ReadOnly) return false;
@@ -188,7 +205,7 @@ namespace MSO3
             else return false;
         }
 
-        private void save()
+        private void Save()
         {
             if (executionWay.Text == "Import")
             {
@@ -206,10 +223,10 @@ namespace MSO3
                     File.Create(@"..\..\..\" + name + ".txt").Close();
                     file = Path.GetFullPath(@"..\..\..\" + name + ".txt");
                     File.WriteAllText(file, ownProgram.Text);
-                    executionWay.SelectedIndexChanged -= new EventHandler(executionWay_SelectedIndexChanged);
+                    executionWay.SelectedIndexChanged -= new EventHandler(ExecutionWay_SelectedIndexChanged);
                     filePathInput.Visible = true;
                     executionWay.Text = "Import";
-                    executionWay.SelectedIndexChanged += new EventHandler(executionWay_SelectedIndexChanged);
+                    executionWay.SelectedIndexChanged += new EventHandler(ExecutionWay_SelectedIndexChanged);
                     ownProgram.Text = string.Join(Environment.NewLine, File.ReadAllText(file));
                     filePathInput.Text = file;
                 }
@@ -220,9 +237,9 @@ namespace MSO3
             }
         }
 
-        private void saveProgram_clicked(object sender, EventArgs e)
+        private void SaveProgram_clicked(object sender, EventArgs e)
         {
-            save();
+            Save();
         }
     }
 }
