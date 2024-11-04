@@ -1,0 +1,656 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.11.0.0",
+        "fileVersion": "4.11.0-3.24468.6 (b4e5d1dd)",
+        "semanticVersion": "4.11.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 33,
+                  "endLine": 73,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 29,
+                  "endLine": 94,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 98,
+                  "startColumn": 26,
+                  "endLine": 98,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8600",
+          "level": "warning",
+          "message": "Converting null literal or possible null value to non-nullable type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 110,
+                  "startColumn": 35,
+                  "endLine": 110,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Turn left' 10 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 17,
+                  "endLine": 10,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 17,
+                  "endLine": 11,
+                  "endColumn": 28
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 17,
+                  "endLine": 12,
+                  "endColumn": 28
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 40,
+                  "endLine": 12,
+                  "endColumn": 51
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 41,
+                  "endLine": 13,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 41,
+                  "endLine": 14,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 54,
+                  "endLine": 14,
+                  "endColumn": 65
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 27,
+                  "endLine": 15,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 27,
+                  "endLine": 32,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 27,
+                  "endLine": 34,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Move 1' 12 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 30,
+                  "endLine": 10,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 54,
+                  "endLine": 10,
+                  "endColumn": 62
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 30,
+                  "endLine": 11,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 54,
+                  "endLine": 11,
+                  "endColumn": 62
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 30,
+                  "endLine": 12,
+                  "endColumn": 38
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 53,
+                  "endLine": 12,
+                  "endColumn": 61
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 31,
+                  "endLine": 13,
+                  "endColumn": 39
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 54,
+                  "endLine": 13,
+                  "endColumn": 62
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 31,
+                  "endLine": 14,
+                  "endColumn": 39
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 17,
+                  "endLine": 32,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 40,
+                  "endLine": 32,
+                  "endColumn": 48
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 17,
+                  "endLine": 33,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "10": null,
+              "2": null,
+              "3": null,
+              "4": null,
+              "5": null,
+              "6": null,
+              "7": null,
+              "8": null,
+              "9": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Turn right' 6 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 40,
+                  "endLine": 10,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 40,
+                  "endLine": 11,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 17,
+                  "endLine": 13,
+                  "endColumn": 29
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 17,
+                  "endLine": 14,
+                  "endColumn": 29
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 48,
+                  "endLine": 31,
+                  "endColumn": 60
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 50,
+                  "endLine": 32,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal '    Turn left' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 36,
+                  "endLine": 21,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 35,
+                  "endLine": 29,
+                  "endColumn": 50
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 17,
+                  "endLine": 31,
+                  "endColumn": 32
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 45,
+                  "endLine": 33,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal '    Move 1' 5 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 53,
+                  "endLine": 21,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 35,
+                  "endLine": 22,
+                  "endColumn": 47
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 52,
+                  "endLine": 29,
+                  "endColumn": 64
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 35,
+                  "endLine": 30,
+                  "endColumn": 47
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO2/Program.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 34,
+                  "endLine": 31,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null,
+              "3": null
+            }
+          }
+        }
+      ],
+      "rules": {
+        "CS8600": {
+          "id": "CS8600",
+          "shortDescription": "Converting null literal or possible null value to non-nullable type.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8600)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Dereference of a possibly null reference.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1192": {
+          "id": "S1192",
+          "shortDescription": "String literals should not be duplicated",
+          "fullDescription": "Duplicated string literals make the process of refactoring complex and error-prone, as any change would need to be propagated on all occurrences.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1192",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

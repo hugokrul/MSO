@@ -1,0 +1,1154 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.11.0.0",
+        "fileVersion": "4.11.0-3.24468.6 (b4e5d1dd)",
+        "semanticVersion": "4.11.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field 'menuStrip' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 16,
+                  "endLine": 11,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 34,
+                  "endLine": 9,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8604",
+          "level": "warning",
+          "message": "Possible null reference argument for parameter 'board' in 'void Drawer.DrawLocations(Graphics g, int width, int height, Board board)'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Drawer.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 53,
+                  "endLine": 29,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8622",
+          "level": "warning",
+          "message": "Nullability of reference types in type of parameter 'sender' of 'void Home.sandboxNav_Click(object sender, EventArgs e)' doesn't match the target delegate 'EventHandler' (possibly because of nullability attributes).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 28,
+                  "endLine": 44,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8622",
+          "level": "warning",
+          "message": "Nullability of reference types in type of parameter 'sender' of 'void Home.shapePage_Click(object sender, EventArgs e)' doesn't match the target delegate 'EventHandler' (possibly because of nullability attributes).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 28,
+                  "endLine": 52,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8622",
+          "level": "warning",
+          "message": "Nullability of reference types in type of parameter 'sender' of 'void Sandbox.ExecutionWay_SelectedIndexChanged(object sender, EventArgs e)' doesn't match the target delegate 'EventHandler' (possibly because of nullability attributes).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 115,
+                  "startColumn": 71,
+                  "endLine": 115,
+                  "endColumn": 104
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8622",
+          "level": "warning",
+          "message": "Nullability of reference types in type of parameter 'sender' of 'void Sandbox.ExecutionWay_SelectedIndexChanged(object sender, EventArgs e)' doesn't match the target delegate 'EventHandler' (possibly because of nullability attributes).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 117,
+                  "startColumn": 71,
+                  "endLine": 117,
+                  "endColumn": 104
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field 'instance' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 28,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 28,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field 'playerImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 29,
+                  "endLine": 7,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 29,
+                  "endLine": 7,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable field 'backgroundButtonImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the field as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 42,
+                  "endLine": 7,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 42,
+                  "endLine": 7,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8622",
+          "level": "warning",
+          "message": "Nullability of reference types in type of parameter 'sender' of 'void Sandbox.ExecutionWay_SelectedIndexChanged(object sender, EventArgs e)' doesn't match the target delegate 'EventHandler' (possibly because of nullability attributes).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 196,
+                  "startColumn": 75,
+                  "endLine": 196,
+                  "endColumn": 108
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8622",
+          "level": "warning",
+          "message": "Nullability of reference types in type of parameter 'sender' of 'void Sandbox.ExecutionWay_SelectedIndexChanged(object sender, EventArgs e)' doesn't match the target delegate 'EventHandler' (possibly because of nullability attributes).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 199,
+                  "startColumn": 75,
+                  "endLine": 199,
+                  "endColumn": 108
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 226,
+                  "startColumn": 28,
+                  "endLine": 226,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS0169",
+          "level": "warning",
+          "message": "The field 'Shape.checkShape' is never used",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.Designer.cs",
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 24,
+                  "endLine": 151,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "CS0169",
+          "level": "warning",
+          "message": "The field 'Shape.button1' is never used",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.Designer.cs",
+                "region": {
+                  "startLine": 154,
+                  "startColumn": 24,
+                  "endLine": 154,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "CA2211",
+          "level": "note",
+          "message": "Non-constant fields should not be visible",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 28,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 28,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2223",
+          "level": "warning",
+          "message": "Change the visibility of 'instance' or make it 'const' or 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 28,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2211",
+          "level": "note",
+          "message": "Non-constant fields should not be visible",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 29,
+                  "endLine": 7,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 29,
+                  "endLine": 7,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2223",
+          "level": "warning",
+          "message": "Change the visibility of 'playerImage' or make it 'const' or 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 29,
+                  "endLine": 7,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2223",
+          "level": "warning",
+          "message": "Change the visibility of 'backgroundButtonImage' or make it 'const' or 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 42,
+                  "endLine": 7,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA2211",
+          "level": "note",
+          "message": "Non-constant fields should not be visible",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 42,
+                  "endLine": 7,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Import' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 60,
+                  "startColumn": 22,
+                  "endLine": 60,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 26,
+                  "endLine": 82,
+                  "endColumn": 34
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 180,
+                  "startColumn": 38,
+                  "endLine": 180,
+                  "endColumn": 46
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 198,
+                  "startColumn": 41,
+                  "endLine": 198,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1192",
+          "level": "warning",
+          "message": "Define a constant instead of using this literal 'Write your own' 4 times.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 22,
+                  "endLine": 62,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 26,
+                  "endLine": 96,
+                  "endColumn": 42
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 188,
+                  "startColumn": 43,
+                  "endLine": 188,
+                  "endColumn": 59
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Sandbox.cs",
+                "region": {
+                  "startLine": 240,
+                  "startColumn": 38,
+                  "endLine": 240,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null,
+              "1": null,
+              "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S3010",
+          "level": "warning",
+          "message": "Remove this assignment of 'instance' or initialize it statically.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 13,
+                  "endLine": 14,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 28,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
+            }
+          }
+        },
+        {
+          "ruleId": "S3010",
+          "level": "warning",
+          "message": "Remove this assignment of 'playerImage' or initialize it statically.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 17,
+                  "endLine": 20,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 29,
+                  "endLine": 7,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
+            }
+          }
+        },
+        {
+          "ruleId": "S3010",
+          "level": "warning",
+          "message": "Remove this assignment of 'backgroundButtonImage' or initialize it statically.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 17,
+                  "endLine": 26,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 42,
+                  "endLine": 7,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
+            }
+          }
+        },
+        {
+          "ruleId": "SYSLIB1054",
+          "level": "note",
+          "message": "Mark the method 'AllocConsole' with 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Program.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 28,
+                  "endLine": 29,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "CharSet": "None",
+              "ExactSpelling": "False",
+              "MayRequireAdditionalWork": "False"
+            }
+          }
+        },
+        {
+          "ruleId": "S1186",
+          "level": "warning",
+          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 22,
+                  "endLine": 75,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 22,
+                  "endLine": 94,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 13,
+                  "endLine": 96,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 17,
+                  "endLine": 100,
+                  "endColumn": 20
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 21,
+                  "endLine": 102,
+                  "endColumn": 24
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 25,
+                  "endLine": 104,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 59,
+                  "endLine": 104,
+                  "endColumn": 61
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 108,
+                  "startColumn": 25,
+                  "endLine": 108,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 114,
+                  "startColumn": 17,
+                  "endLine": 114,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.cs",
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 17,
+                  "endLine": 118,
+                  "endColumn": 21
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+2 (incl 1 for nesting)",
+              "2": "+3 (incl 2 for nesting)",
+              "3": "+4 (incl 3 for nesting)",
+              "4": "+1",
+              "5": "+4 (incl 3 for nesting)",
+              "6": "+2 (incl 1 for nesting)",
+              "7": "+1"
+            }
+          }
+        },
+        {
+          "ruleId": "CA1824",
+          "level": "note",
+          "message": "Mark assemblies with NeutralResourcesLanguageAttribute",
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1824": {
+          "id": "CA1824",
+          "shortDescription": "Mark assemblies with NeutralResourcesLanguageAttribute",
+          "fullDescription": "The NeutralResourcesLanguage attribute informs the ResourceManager of the language that was used to display the resources of a neutral culture for an assembly. This improves lookup performance for the first resource that you load and can reduce your working set.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1824",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode",
+              "CompilationEnd"
+            ]
+          }
+        },
+        "CA2211": {
+          "id": "CA2211",
+          "shortDescription": "Non-constant fields should not be visible",
+          "fullDescription": "Static fields that are neither constants nor read-only are not thread-safe. Access to such a field must be carefully controlled and requires advanced programming techniques to synchronize access to the class object.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2211",
+          "properties": {
+            "category": "Usage",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS0169": {
+          "id": "CS0169",
+          "shortDescription": "Field is never used",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0169)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS1998": {
+          "id": "CS1998",
+          "shortDescription": "Async method lacks 'await' operators and will run synchronously",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS1998)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8604": {
+          "id": "CS8604",
+          "shortDescription": "Possible null reference argument.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8604)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8622": {
+          "id": "CS8622",
+          "shortDescription": "Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8622)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1104": {
+          "id": "S1104",
+          "shortDescription": "Fields should not have public accessibility",
+          "fullDescription": "Public fields in public classes do not respect the encapsulation principle and have three main disadvantages:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1104",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1186": {
+          "id": "S1186",
+          "shortDescription": "Methods should not be empty",
+          "fullDescription": "An empty method is generally considered bad practice and can lead to confusion, readability, and maintenance issues. Empty methods bring no functionality and are misleading to others as they might think the method implementation fulfills a specific and identified requirement.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1186",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1192": {
+          "id": "S1192",
+          "shortDescription": "String literals should not be duplicated",
+          "fullDescription": "Duplicated string literals make the process of refactoring complex and error-prone, as any change would need to be propagated on all occurrences.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1192",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2223": {
+          "id": "S2223",
+          "shortDescription": "Non-constant static fields should not be visible",
+          "fullDescription": "Unlike instance fields, which can only be accessed by code having a hold on the instance, static fields can be accessed by any code having visibility of the field and its type.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2223",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3010": {
+          "id": "S3010",
+          "shortDescription": "Static fields should not be updated in constructors",
+          "fullDescription": "Assigning a value to a static field in a constructor could cause unreliable behavior at runtime since it will change the value for all instances of the class.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3010",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3776": {
+          "id": "S3776",
+          "shortDescription": "Cognitive Complexity of methods should not be too high",
+          "fullDescription": "This rule raises an issue when the code cognitive complexity of a function is above a certain threshold.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3776",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "SYSLIB1054": {
+          "id": "SYSLIB1054",
+          "shortDescription": "Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time",
+          "fullDescription": "Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/syslib-diagnostics/syslib1054",
+          "properties": {
+            "category": "Interoperability",
+            "isEnabledByDefault": true
+          }
+        }
+      }
+    }
+  ]
+}

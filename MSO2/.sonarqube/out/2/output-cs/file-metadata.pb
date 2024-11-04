@@ -1,0 +1,15 @@
+Û
+ÏC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\obj\Debug\net8.0-windows\System.Windows.Forms.Analyzers.CSharp\System.Windows.Forms.Generators.ApplicationConfigurationGenerator\ApplicationConfiguration.g.csutf-8i
+^C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\obj\Debug\net8.0-windows\MSO3.AssemblyInfo.csutf-8ƒ
+xC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\obj\Debug\net8.0-windows\.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8k
+`C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\obj\Debug\net8.0-windows\MSO3.GlobalUsings.g.csutf-8M
+BC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Shape.Designer.csutf-8B
+9C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Shape.csutf-8O
+DC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Sandbox.Designer.csutf-8D
+;C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Sandbox.csutf-8\
+QC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Properties\Resources.Designer.csutf-8D
+;C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Program.csutf-8L
+AC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Home.Designer.csutf-8A
+8C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Home.csutf-8C
+:C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Drawer.csutf-8E
+<C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\BaseForm.csutf-8
