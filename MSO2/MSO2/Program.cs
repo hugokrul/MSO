@@ -1,5 +1,8 @@
-﻿namespace MSO2
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace MSO2
 {
+    [ExcludeFromCodeCoverageAttribute]
     public static class Program
     {
         public static List<string[]> AvailablePrograms { get; private set; } =
