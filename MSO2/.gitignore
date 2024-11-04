@@ -16,6 +16,7 @@ x64/
 
 # .vs map
 .vs/
+.sonarqube/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

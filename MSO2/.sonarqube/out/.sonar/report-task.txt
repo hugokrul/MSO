@@ -2,5 +2,5 @@ projectKey=automated-MSO
 serverUrl=http://localhost:9000
 serverVersion=10.7.0.96327
 dashboardUrl=http://localhost:9000/dashboard?id=automated-MSO
-ceTaskId=de59de50-5e45-467e-bc55-fbb3db7b827f
-ceTaskUrl=http://localhost:9000/api/ce/task?id=de59de50-5e45-467e-bc55-fbb3db7b827f
+ceTaskId=e8554451-6c95-40eb-a32c-333001f6db70
+ceTaskUrl=http://localhost:9000/api/ce/task?id=e8554451-6c95-40eb-a32c-333001f6db70
