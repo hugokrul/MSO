@@ -66,6 +66,7 @@ namespace MSO3
         private void importBoard_Click_1(object sender, EventArgs e)
         {
             string? boardFile = Interaction.InputBox("Give the full path of the file where the board is stored", "Board file");
+            if (boardFile == "") return;
             string[] boardArray = File.ReadAllLines(boardFile);
 
 
