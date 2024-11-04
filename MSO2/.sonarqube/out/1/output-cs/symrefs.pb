@@ -13,9 +13,10 @@ DC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\ParserTests.cs
  : ? 
  #' /
 
- +
- : ? 
- #' /Ð
+ +(
+ : ?. 3 
+
+ #Ð
 BC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\MoveTests.cs
 
 		 

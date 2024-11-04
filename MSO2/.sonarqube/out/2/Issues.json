@@ -318,27 +318,6 @@
         {
           "ruleId": "CS0169",
           "level": "warning",
-          "message": "The field 'Shape.checkShape' is never used",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.Designer.cs",
-                "region": {
-                  "startLine": 151,
-                  "startColumn": 24,
-                  "endLine": 151,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 3
-          }
-        },
-        {
-          "ruleId": "CS0169",
-          "level": "warning",
           "message": "The field 'Shape.button1' is never used",
           "locations": [
             {
@@ -358,6 +337,27 @@
           }
         },
         {
+          "ruleId": "CS0169",
+          "level": "warning",
+          "message": "The field 'Shape.checkShape' is never used",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Shape.Designer.cs",
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 24,
+                  "endLine": 151,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
           "ruleId": "CA2211",
           "level": "note",
           "message": "Non-constant fields should not be visible",
@@ -366,10 +366,10 @@
               "resultFile": {
                 "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
                 "region": {
-                  "startLine": 5,
-                  "startColumn": 28,
-                  "endLine": 5,
-                  "endColumn": 36
+                  "startLine": 7,
+                  "startColumn": 29,
+                  "endLine": 7,
+                  "endColumn": 40
                 }
               }
             }
@@ -379,9 +379,9 @@
           }
         },
         {
-          "ruleId": "S1104",
-          "level": "warning",
-          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "ruleId": "CA2211",
+          "level": "note",
+          "message": "Non-constant fields should not be visible",
           "locations": [
             {
               "resultFile": {
@@ -409,9 +409,51 @@
                 "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
                 "region": {
                   "startLine": 7,
+                  "startColumn": 42,
+                  "endLine": 7,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
                   "startColumn": 29,
                   "endLine": 7,
                   "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 28,
+                  "endLine": 5,
+                  "endColumn": 36
                 }
               }
             }
@@ -433,27 +475,6 @@
                   "startColumn": 28,
                   "endLine": 5,
                   "endColumn": 36
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1104",
-          "level": "warning",
-          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 29,
-                  "endLine": 7,
-                  "endColumn": 40
                 }
               }
             }
@@ -502,164 +523,6 @@
           ],
           "properties": {
             "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CA2211",
-          "level": "note",
-          "message": "Non-constant fields should not be visible",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 42,
-                  "endLine": 7,
-                  "endColumn": 63
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3010",
-          "level": "warning",
-          "message": "Remove this assignment of 'instance' or initialize it statically.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
-                "region": {
-                  "startLine": 14,
-                  "startColumn": 13,
-                  "endLine": 14,
-                  "endColumn": 23
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
-                "region": {
-                  "startLine": 5,
-                  "startColumn": 28,
-                  "endLine": 5,
-                  "endColumn": 36
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": null
-            }
-          }
-        },
-        {
-          "ruleId": "SYSLIB1054",
-          "level": "note",
-          "message": "Mark the method 'AllocConsole' with 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Program.cs",
-                "region": {
-                  "startLine": 29,
-                  "startColumn": 28,
-                  "endLine": 29,
-                  "endColumn": 40
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "CharSet": "None",
-              "ExactSpelling": "False",
-              "MayRequireAdditionalWork": "False"
-            }
-          }
-        },
-        {
-          "ruleId": "S3010",
-          "level": "warning",
-          "message": "Remove this assignment of 'playerImage' or initialize it statically.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 17,
-                  "endLine": 20,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 29,
-                  "endLine": 7,
-                  "endColumn": 40
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": null
-            }
-          }
-        },
-        {
-          "ruleId": "S3010",
-          "level": "warning",
-          "message": "Remove this assignment of 'backgroundButtonImage' or initialize it statically.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
-                "region": {
-                  "startLine": 26,
-                  "startColumn": 17,
-                  "endLine": 26,
-                  "endColumn": 40
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 42,
-                  "endLine": 7,
-                  "endColumn": 63
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1,
-            "customProperties": {
-              "0": null
-            }
           }
         },
         {
@@ -781,6 +644,117 @@
               "0": null,
               "1": null,
               "2": null
+            }
+          }
+        },
+        {
+          "ruleId": "S3010",
+          "level": "warning",
+          "message": "Remove this assignment of 'instance' or initialize it statically.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 13,
+                  "endLine": 14,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 28,
+                  "endLine": 5,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
+            }
+          }
+        },
+        {
+          "ruleId": "S3010",
+          "level": "warning",
+          "message": "Remove this assignment of 'playerImage' or initialize it statically.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 17,
+                  "endLine": 20,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 29,
+                  "endLine": 7,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
+            }
+          }
+        },
+        {
+          "ruleId": "S3010",
+          "level": "warning",
+          "message": "Remove this assignment of 'backgroundButtonImage' or initialize it statically.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 17,
+                  "endLine": 26,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Home.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 42,
+                  "endLine": 7,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
             }
           }
         },
@@ -923,6 +897,32 @@
               "5": "+4 (incl 3 for nesting)",
               "6": "+2 (incl 1 for nesting)",
               "7": "+1"
+            }
+          }
+        },
+        {
+          "ruleId": "SYSLIB1054",
+          "level": "note",
+          "message": "Mark the method 'AllocConsole' with 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/hugok/Documents/code/MSO/MSO2/MSO2/MSO3/Program.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 28,
+                  "endLine": 29,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "CharSet": "None",
+              "ExactSpelling": "False",
+              "MayRequireAdditionalWork": "False"
             }
           }
         },

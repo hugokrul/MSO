@@ -1,4 +1,4 @@
-›
+·
 DC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\ParserTests.cs
  
  
@@ -57,7 +57,7 @@ DC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\ParserTests.cs
 ­ ½
 ¿ Î
 Ð Ø
-Ú å  & 3 ¢
+Ú å  & 3  ' 7¢
 
 BC:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2XUnit\MoveTests.cs
  

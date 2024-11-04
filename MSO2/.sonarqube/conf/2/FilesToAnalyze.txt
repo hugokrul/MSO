@@ -12,10 +12,11 @@ C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Properties\Resources.resx
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Sandbox.resx
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Shape.resx
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\board.txt
+C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\coverage.xml
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\firstTest.txt
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Resources\gradient_img (7).png
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Resources\gradient_img (7)1.png
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Resources\img-1LlP4Z5Xynf1T0gnygl9I-removebg-preview.png
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\Resources\_whiteRobot.png
 C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\RoboLogic.ico
-C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\test.txt
+C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO3\sonarqubesteps.txt
