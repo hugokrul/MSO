@@ -16,7 +16,7 @@ namespace MSO2
             {
                 string line = commandStrings[i].Trim();
 
-                if (line.StartsWith("Repeat"))
+                if (line.StartsWith("repeat"))
                 {
                     int j = i + 1;
                     try
@@ -36,14 +36,14 @@ namespace MSO2
 
                     i = j;  // Move index to the end of the block.
                 }
-                else if (line.StartsWith("Move"))
+                else if (line.StartsWith("move"))
                 {
                     // Create a MoveCommand and add it to the result list.
                     try { commandResult.Add(new MoveCommand(int.Parse(line.Split(' ')[1]))); }
                     catch { /* do nothing */ }
                     i++;
                 }
-                else if (line.StartsWith("Turn"))
+                else if (line.StartsWith("turn"))
                 {
                     // Create a TurnCommand and add it to the result list.
                     try { commandResult.Add(new TurnCommand(line.Split(' ')[1])); }

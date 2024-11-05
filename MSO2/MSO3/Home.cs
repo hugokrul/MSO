@@ -88,20 +88,16 @@ namespace MSO3
 
         private void SandboxNav_Click(object sender, EventArgs e)
         {
-            Sandbox sandboxPage = new()
-            {
-                StartPosition = FormStartPosition.CenterScreen
-            };
+            Sandbox sandboxPage = Sandbox.GetInstance();
+            StartPosition = FormStartPosition.CenterScreen;
             sandboxPage.Show();
             this.Hide();
         }
 
         private void ShapePage_Click(object sender, EventArgs e)
         {
-            Shape shapePage = new()
-            {
-                StartPosition = FormStartPosition.CenterScreen
-            };
+            Shape shapePage = Shape.GetInstance();
+            shapePage.StartPosition = FormStartPosition.CenterScreen;
             shapePage.Show();
             this.Hide();
         }

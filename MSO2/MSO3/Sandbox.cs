@@ -18,10 +18,20 @@ namespace MSO3
         private List<string> originalCommands = [];
         private string? previousExecutionWay;
         private Board board = new(10, 10);
+        private static Sandbox instance;
 
-        public Sandbox() : base()
+        private Sandbox() : base()
         {
             InitializeComponent();
+        }
+
+        public static Sandbox GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Sandbox();
+            }
+            return instance;
         }
 
         private void BoardPanel_Paint(object sender, PaintEventArgs e)
@@ -52,16 +62,16 @@ namespace MSO3
             switch (choice)
             {
                 case "Basic":
-                    return MSO2.Program.AvailablePrograms[0].Skip(1).ToList();
+                    return MSO2.Program.AvailablePrograms[0].Skip(1).ToList().ConvertAll(c => c.ToLower());
                 case "Hard":
-                    return MSO2.Program.AvailablePrograms[1].Skip(1).ToList();
+                    return MSO2.Program.AvailablePrograms[1].Skip(1).ToList().ConvertAll(c => c.ToLower());
                 case "Advanced":
-                    return MSO2.Program.AvailablePrograms[2].Skip(1).ToList();
+                    return MSO2.Program.AvailablePrograms[2].Skip(1).ToList().ConvertAll(c => c.ToLower());
                 case "Import":
-                    return RunImportedProgram();
+                    return RunImportedProgram().ConvertAll(character => character.ToLower());
                 case "Write your own":
                     ownProgram.ReadOnly = false;
-                    return ownProgram.Text.Split('\n').ToList();
+                    return ownProgram.Text.Split('\n').ToList().ConvertAll(character => character.ToLower());
             }
             return new List<string>();
         }
@@ -74,7 +84,8 @@ namespace MSO3
             }
             string path = filePathInput.Text;
             file = path;
-            return File.ReadAllLines(path).ToList();
+            List<string> result = File.ReadAllLines(path).ToList();
+            return result;
         }
 
         public void UpdateButtons(string input)
