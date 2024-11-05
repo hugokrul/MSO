@@ -27,7 +27,7 @@ namespace MSO3
             if (board != null)
             {
                 Graphics? g = e.Graphics;
-                Pen? whitepen = new Pen(Color.White, 1);
+                Pen? whitepen = new(Color.White, 1);
 
                 Drawer.DrawBoard((Panel)sender, g, whitepen, board, false);
             }
@@ -86,8 +86,10 @@ namespace MSO3
             }
 
             (int, int) playerPosition = FindStartPosition(tempBoard);
-            board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
-            board.BoardArray = tempBoard;
+            board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1)
+            {
+                BoardArray = tempBoard
+            };
 
             boardPanel.Invalidate();
         }
@@ -128,8 +130,10 @@ namespace MSO3
             if (board != null)
             {
                 (int, int) playerPosition = FindStartPosition(tempBoard);
-                board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
-                board.BoardArray = tempBoard;
+                board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1)
+                {
+                    BoardArray = tempBoard
+                };
 
                 string[] commandArray = ownProgram.Text.Split('\n');
                 List<ICommand>? commands = CommandParser.Parse(commandArray);

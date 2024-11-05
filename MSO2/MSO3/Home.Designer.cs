@@ -70,7 +70,7 @@
             QuitButton.TabIndex = 6;
             QuitButton.Text = "Quit";
             QuitButton.UseVisualStyleBackColor = true;
-            QuitButton.Click += button1_Click;
+            QuitButton.Click += Button1_Click;
             // 
             // Home
             // 

@@ -27,7 +27,7 @@ namespace MSO3
         private void BoardPanel_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen whitePen = new Pen(Color.White, 1);
+            Pen whitePen = new(Color.White, 1);
 
             Drawer.DrawBoard((Panel)sender, g, whitePen, board);
         }
@@ -144,7 +144,7 @@ namespace MSO3
         {
             board = new Board(10, 10);
             file = null;
-            this.Text = $"Robologic {board.Name}";
+            Text = $"Robologic {board.Name}";
             switch (board.Name)
             {
                 case "BasicProgram":
@@ -239,7 +239,7 @@ namespace MSO3
 
             if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
 
-            ShowMetrics(originalCommands.ToArray());
+            ShowMetrics([.. originalCommands]);
         }
     }
 }
