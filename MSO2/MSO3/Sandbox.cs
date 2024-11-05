@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MSO2;
 using Microsoft.VisualBasic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MSO3
 {
+    [ExcludeFromCodeCoverage]
     public partial class Sandbox : BaseForm
     {
         private string? file;

@@ -1,8 +1,10 @@
 using MSO2;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace MSO3
 {
+    [ExcludeFromCodeCoverage]
     internal static class Program
     {
         /// <summary>

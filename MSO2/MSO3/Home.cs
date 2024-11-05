@@ -1,5 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace MSO3
 {
+    [ExcludeFromCodeCoverage]
     public partial class Home : BaseForm
     {
         private static Home? instance;

@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MSO3
 {
+    [ExcludeFromCodeCoverage]
     internal static class Drawer
     {
         public static void DrawBoard(Panel panel, Graphics g, Pen p, Board board, bool characterVisible = true)
