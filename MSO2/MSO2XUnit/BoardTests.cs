@@ -7,14 +7,6 @@ namespace MSO2XUnit
 {
     public class BoardTests
     {
-        private readonly ITestOutputHelper output;
-
-        public BoardTests(ITestOutputHelper output)
-        {
-            this.output = output;
-        }
-
-
         [Fact]
         public void OutOfLowerBounds()
         {

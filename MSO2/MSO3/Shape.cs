@@ -16,7 +16,7 @@ namespace MSO3
     {
         private Board? board;
         string[,] tempBoard = { { } };
-        private static Shape instance;
+        private static Shape? instance;
 
         private Shape() : base()
         {
@@ -30,6 +30,11 @@ namespace MSO3
                 instance = new Shape();
             }
             return instance;
+        }
+
+        public static void DeleteInstance()
+        {
+            instance = null;
         }
 
         private void BoardPanel_Paint(object sender, PaintEventArgs e)
@@ -145,8 +150,7 @@ namespace MSO3
                     BoardArray = tempBoard
                 };
 
-                List<string> commandArrayList = ownProgram.Text.Split('\n').ToList();
-                string[] commandArray = commandArrayList.ConvertAll(c => c.ToLower()).ToArray();
+                string[] commandArray = ownProgram.Text.Split('\n').ToArray();
                 List<ICommand>? commands = CommandParser.Parse(commandArray);
                 board.PlayBoard(commands);
 

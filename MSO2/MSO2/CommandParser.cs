@@ -11,6 +11,7 @@ namespace MSO2
         {
             List<ICommand> commandResult = [];
             int i = startIndex;
+            commandStrings = [.. commandStrings.ToList().ConvertAll(c => c.ToLower())];
 
             while (i < (endIndex == -1 ? commandStrings.Length : endIndex))
             {

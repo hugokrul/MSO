@@ -10,9 +10,9 @@ namespace MSO2XUnit
         [Fact]
         public void UnchangedFacing()
         {
-            Board board = new Board(10, 10);
+            Board board = new(10, 10);
 
-            List<ICommand> Commands = new List<ICommand>() { };
+            List<ICommand> Commands = [];
 
             string result = board.PlayBoard(Commands);
 
@@ -27,9 +27,8 @@ namespace MSO2XUnit
         [Fact]
         public void FacingMoveInSquare()
         {
-            Board board = new Board(10, 10);
-
-            List<ICommand> Commands = CommandParser.Parse(File.ReadAllText(@"..\..\..\moveCommands\testFacingSquare.txt").Split('\n'));
+            Board board = new(10, 10);
+            List<ICommand> Commands = CommandParser.Parse(TestCommands.TestFacingSquare);
 
             string result = board.PlayBoard(Commands);
 

@@ -12,10 +12,10 @@ namespace MSO2XUnit
         [Fact]
         public void RepeatTest()
         {
-            Board board = new Board(10, 10);
+            Board board = new(10, 10);
 
-            List<ICommand> CommandsWithoutRepeat = CommandParser.Parse(File.ReadAllText(@"..\..\..\moveCommands\testMoveNoRepeat.txt").Split('\n'));
-            List<ICommand> CommandsWithRepeat = CommandParser.Parse(File.ReadAllText(@"..\..\..\moveCommands\testMoveWithRepeat.txt").Split('\n'));
+            List<ICommand> CommandsWithoutRepeat = CommandParser.Parse(TestCommands.TestMoveNoRepeat);
+            List<ICommand> CommandsWithRepeat = CommandParser.Parse(TestCommands.TestMoveWithRepeat);
 
             string resultWithoutRepeat = board.PlayBoard(CommandsWithoutRepeat);
             
@@ -29,9 +29,9 @@ namespace MSO2XUnit
         [Fact]
         public void MoveTest()
         {
-            Board board = new Board(10, 10);
+            Board board = new(10, 10);
 
-            List<ICommand> Commands = CommandParser.Parse(File.ReadAllText(@"..\..\..\moveCommands\testMoveNoRepeat.txt").Split('\n'));
+            List<ICommand> Commands = CommandParser.Parse(TestCommands.TestMoveNoRepeat);
 
             string result = board.PlayBoard(Commands);
 
@@ -45,8 +45,8 @@ namespace MSO2XUnit
         [Fact]
         public void ToStringTest()
         {
-            Board board = new Board(10, 10);
-            List<ICommand> Commands = CommandParser.Parse(File.ReadAllText(@"..\..\..\moveCommands\testMoveWithRepeat.txt").Split('\n'));
+            Board board = new(10, 10);
+            List<ICommand> Commands = CommandParser.Parse(TestCommands.TestMoveWithRepeat);
 
             StringBuilder sb = new StringBuilder();
             foreach (ICommand command in Commands)
@@ -54,13 +54,9 @@ namespace MSO2XUnit
                 sb.Append($"{command.ToString()}, ");
             }
 
-            Console.WriteLine(sb.ToString());
-
             string result = "Turn left, Repeat 4 times: Move 10, Turn right, ";
 
             Assert.Equal(result, sb.ToString());
-
-            
         }
     }
 }

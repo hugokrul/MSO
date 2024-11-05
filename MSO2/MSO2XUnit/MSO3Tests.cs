@@ -15,7 +15,7 @@ namespace MSO2XUnit
         [InlineData("Basic")]
         public void chosenProgramTest(string choice)
         {
-            Sandbox sandbox = new Sandbox();
+            Sandbox sandbox = Sandbox.GetInstance();
             List<string> result = sandbox.ChosenProgram(choice);
 
             int index = 0;
@@ -32,9 +32,10 @@ namespace MSO2XUnit
                     break;
             }
 
-            List<string> expected = MSO2.Program.AvailablePrograms[index].Skip(1).ToList();
+            List<string> expected = MSO2.Program.AvailablePrograms[index].Skip(1).ToList().ConvertAll(c => c.ToLower());
 
             Assert.Equal(expected, result);
+            Sandbox.DeleteInstance();
         }
 
         [Fact]

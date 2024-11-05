@@ -18,7 +18,7 @@ namespace MSO3
         private List<string> originalCommands = [];
         private string? previousExecutionWay;
         private Board board = new(10, 10);
-        private static Sandbox instance;
+        private static Sandbox? instance;
 
         private Sandbox() : base()
         {
@@ -32,6 +32,11 @@ namespace MSO3
                 instance = new Sandbox();
             }
             return instance;
+        }
+
+        public static void DeleteInstance()
+        {
+            instance = null;
         }
 
         private void BoardPanel_Paint(object sender, PaintEventArgs e)
@@ -62,16 +67,16 @@ namespace MSO3
             switch (choice)
             {
                 case "Basic":
-                    return MSO2.Program.AvailablePrograms[0].Skip(1).ToList().ConvertAll(c => c.ToLower());
+                    return MSO2.Program.AvailablePrograms[0].Skip(1).ToList();
                 case "Hard":
-                    return MSO2.Program.AvailablePrograms[1].Skip(1).ToList().ConvertAll(c => c.ToLower());
+                    return MSO2.Program.AvailablePrograms[1].Skip(1).ToList();
                 case "Advanced":
-                    return MSO2.Program.AvailablePrograms[2].Skip(1).ToList().ConvertAll(c => c.ToLower());
+                    return MSO2.Program.AvailablePrograms[2].Skip(1).ToList();
                 case "Import":
-                    return RunImportedProgram().ConvertAll(character => character.ToLower());
+                    return RunImportedProgram();
                 case "Write your own":
                     ownProgram.ReadOnly = false;
-                    return ownProgram.Text.Split('\n').ToList().ConvertAll(character => character.ToLower());
+                    return ownProgram.Text.Split('\n').ToList();
             }
             return new List<string>();
         }
