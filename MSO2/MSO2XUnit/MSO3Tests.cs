@@ -13,10 +13,10 @@ namespace MSO2XUnit
         [InlineData("Hard")]
         [InlineData("Advanced")]
         [InlineData("Basic")]
-        public void chosenProgramTest(string choice)
+        public void ChosenProgramTest(string choice)
         {
             Sandbox sandbox = Sandbox.GetInstance();
-            List<string> result = sandbox.ChosenProgram(choice);
+            List<string> result = sandbox.ChosenProgram(choice).ConvertAll(c => c.ToLower());
 
             int index = 0;
             switch (choice)
@@ -39,7 +39,7 @@ namespace MSO2XUnit
         }
 
         [Fact]
-        public void startPositionTestEmptyBoard()
+        public void StartPositionTestEmptyBoard()
         {
             string[,] emptyBoard = { { } };
             (int, int) expected = (-1, -1);
@@ -48,7 +48,7 @@ namespace MSO2XUnit
         }
 
         [Fact]
-        public void startPositionTestNoStartBoard()
+        public void StartPositionTestNoStartBoard()
         {
             string[,] noStartPositionBoard = 
             {
@@ -63,7 +63,8 @@ namespace MSO2XUnit
             Assert.Equal(expected, result);
         }
 
-        public void startPositionTestMiddleBoard()
+        [Fact]
+        public void StartPositionTestMiddleBoard()
         {
             string[,] middleStartPositionBoard =
             {
