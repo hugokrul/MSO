@@ -19,36 +19,18 @@ namespace MSO2
 
                 if (line.StartsWith("repeat"))
                 {
-                    int j = i + 1;
-                    try
-                    {
-                        // Parse repeat count and find block of commands to repeat.
-                        string[] parts = line.Split(' ');
-                        int repeatCount = int.Parse(parts[1]);
-
-                        while (j < commandStrings.Length && commandStrings[j].StartsWith(' ')) j++;
-
-                        // Recursivly iterates through the commandStrings to add the commands from the repeat command to the commandResults
-                        List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
-
-                        commandResult.Add(new RepeatCommand(blockActions, repeatCount)); 
-                    }
-                    catch { /* do nothing */ }
-
-                    i = j;  // Move index to the end of the block.
+                    i = HandleRepeatCommand(commandStrings, commandResult, i);
                 }
                 else if (line.StartsWith("move"))
                 {
                     // Create a MoveCommand and add it to the result list.
-                    try { commandResult.Add(new MoveCommand(int.Parse(line.Split(' ')[1]))); }
-                    catch { /* do nothing */ }
+                    AddMoveCommand(commandResult, line);
                     i++;
                 }
                 else if (line.StartsWith("turn"))
                 {
                     // Create a TurnCommand and add it to the result list.
-                    try { commandResult.Add(new TurnCommand(line.Split(' ')[1])); }
-                    catch { /* do nothing */ }
+                    AddTurnCommand(commandResult, line);
                     i++;
                 }
                 else
@@ -58,6 +40,48 @@ namespace MSO2
             }
 
             return commandResult;  // Return the list of commands.
+        }
+        private static int HandleRepeatCommand(string[] commandStrings, List<ICommand> commandResult, int index)
+        {
+            string line = commandStrings[index];
+            string[] parts = line.Split(' ');
+            int repeatCount;
+
+            if (!int.TryParse(parts.ElementAtOrDefault(1), out repeatCount))
+                return index + 1;  // Skip if repeat count is invalid.
+
+            int endIndex = FindBlockEnd(commandStrings, index + 1);
+            if (endIndex <= index)
+                return index + 1;  // No valid block found, skip this line.
+
+            List<ICommand> blockActions = Parse(commandStrings, index + 1, endIndex);
+            commandResult.Add(new RepeatCommand(blockActions, repeatCount));
+            return endIndex;
+        }
+
+        private static int FindBlockEnd(string[] commandStrings, int startIndex)
+        {
+            int i = startIndex;
+            while (i < commandStrings.Length && commandStrings[i].StartsWith(' '))
+                i++;
+            return i;
+        }
+
+        private static void AddMoveCommand(List<ICommand> commandResult, string line)
+        {
+            if (int.TryParse(line.Split(' ').ElementAtOrDefault(1), out int steps))
+            {
+                commandResult.Add(new MoveCommand(steps));
+            }
+        }
+
+        private static void AddTurnCommand(List<ICommand> commandResult, string line)
+        {
+            string direction = line.Split(' ').ElementAtOrDefault(1);
+            if (direction != null)
+            {
+                commandResult.Add(new TurnCommand(direction));
+            }
         }
     }
 }
