@@ -89,15 +89,15 @@ namespace MSO3
             menuStrip.Items.Add(item2);
         }
 
-        private void SandboxNav_Click(object sender, EventArgs e)
+        private void SandboxNav_Click(object? sender, EventArgs e)
         {
             Sandbox sandboxPage = Sandbox.GetInstance();
-            StartPosition = FormStartPosition.CenterScreen;
+            sandboxPage.StartPosition = FormStartPosition.CenterScreen;
             sandboxPage.Show();
             this.Hide();
         }
 
-        private void ShapePage_Click(object sender, EventArgs e)
+        private void ShapePage_Click(object? sender, EventArgs e)
         {
             Shape shapePage = Shape.GetInstance();
             shapePage.StartPosition = FormStartPosition.CenterScreen;
@@ -112,7 +112,14 @@ namespace MSO3
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            menuStrip.Show(PlayButton, PlayButton.Width, 0);
+            if (menuStrip == null)
+            {
+                AddPlayMenuStrip();
+            }
+            else
+            {
+                menuStrip.Show(PlayButton, PlayButton.Width, 0);
+            }
             
         }
     }
