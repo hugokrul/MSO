@@ -18,30 +18,36 @@ namespace MSO2
 
                 if (line.StartsWith("Repeat"))
                 {
-                    // Parse repeat count and find block of commands to repeat.
-                    string[] parts = line.Split(' ');
-                    int repeatCount = int.Parse(parts[1]);
-
                     int j = i + 1;
-                    while (j < commandStrings.Length && commandStrings[j].StartsWith(' ')) j++;
+                    try
+                    {
+                        // Parse repeat count and find block of commands to repeat.
+                        string[] parts = line.Split(' ');
+                        int repeatCount = int.Parse(parts[1]);
 
-                    // Recursivly iterates through the commandStrings to add the commands from the repeat command to the commandResults
-                    List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
+                        while (j < commandStrings.Length && commandStrings[j].StartsWith(' ')) j++;
 
-                    commandResult.Add(new RepeatCommand(blockActions, repeatCount));
+                        // Recursivly iterates through the commandStrings to add the commands from the repeat command to the commandResults
+                        List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
+
+                        commandResult.Add(new RepeatCommand(blockActions, repeatCount)); 
+                    }
+                    catch { /* do nothing */ }
 
                     i = j;  // Move index to the end of the block.
                 }
                 else if (line.StartsWith("Move"))
                 {
                     // Create a MoveCommand and add it to the result list.
-                    commandResult.Add(new MoveCommand(int.Parse(line.Split(' ')[1])));
+                    try { commandResult.Add(new MoveCommand(int.Parse(line.Split(' ')[1]))); }
+                    catch { /* do nothing */ }
                     i++;
                 }
                 else if (line.StartsWith("Turn"))
                 {
                     // Create a TurnCommand and add it to the result list.
-                    commandResult.Add(new TurnCommand(line.Split(' ')[1]));
+                    try { commandResult.Add(new TurnCommand(line.Split(' ')[1])); }
+                    catch { /* do nothing */ }
                     i++;
                 }
                 else
