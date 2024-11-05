@@ -47,7 +47,7 @@ namespace MSO3
             }
         }
 
-        private List<string> ChosenProgram(string? choice)
+        public List<string> ChosenProgram(string? choice)
         {
             switch (choice)
             {
@@ -77,7 +77,7 @@ namespace MSO3
             return File.ReadAllLines(path).ToList();
         }
 
-        private void UpdateButtons(string input)
+        public void UpdateButtons(string input)
         {
             if (input == "Import")
             {
@@ -162,7 +162,7 @@ namespace MSO3
             }
         }
 
-        private bool ProgramChanged()
+        public bool ProgramChanged()
         {
             if (ownProgram.Text == "") return false;
             if (ownProgram.ReadOnly) return false;
@@ -211,7 +211,7 @@ namespace MSO3
         {
             if (!ProgramChanged())
             {
-                Home homePage = Home.instance;
+                Home homePage = Home.GetInstance();
                 homePage.StartPosition = FormStartPosition.CenterScreen;
                 homePage.Show();
                 this.Hide();

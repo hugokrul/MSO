@@ -2,37 +2,61 @@ namespace MSO3
 {
     public partial class Home : BaseForm
     {
-        public static Home instance;
+        private static Home? instance;
 
-        public static Image playerImage, backgroundButtonImage;
+        private static Image? playerImage, backgroundButtonImage;
 
-        private ContextMenuStrip menuStrip;
+        private ContextMenuStrip? menuStrip;
 
-        public Home() : base()
+        private Home() : base()
         {
             InitializeComponent();
-            instance = this;
 
-            //Load image from resources folder
-            byte[] imageData = Properties.Resources._whiteRobot;
-            using (MemoryStream ms = new MemoryStream(imageData))
-            {
-                playerImage = Image.FromStream(ms);
-            }
-
-            byte[] imageData1 = Properties.Resources.gradient;
-            using (MemoryStream ms = new MemoryStream(imageData1))
-            {
-                backgroundButtonImage = Image.FromStream(ms);
-            }
+            GetPlayerImage();
+            GetBackgroundButtonImage();
 
             AddPlayMenuStrip();
+        }
+
+        public static Image GetPlayerImage()
+        {
+            if (playerImage == null)
+            {
+                byte[] imageData = Properties.Resources._whiteRobot;
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    playerImage = Image.FromStream(ms);
+                }
+            }
+            return playerImage;
+        }
+
+        private static Image GetBackgroundButtonImage()
+        {
+            if (backgroundButtonImage == null)
+            {
+                byte[] imageData1 = Properties.Resources.gradient;
+                using (MemoryStream ms = new MemoryStream(imageData1))
+                {
+                    backgroundButtonImage = Image.FromStream(ms);
+                }
+            }
+            return backgroundButtonImage;
+        }
+
+        public static Home GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Home();
+            }
+            return instance;
         }
 
         private void AddPlayMenuStrip()
         {
             menuStrip = new ContextMenuStrip();
-            menuStrip.BackgroundImage = backgroundButtonImage;
+            menuStrip.BackgroundImage = GetBackgroundButtonImage();
             menuStrip.BackgroundImageLayout = ImageLayout.Stretch;
 
             //Add item 1
@@ -70,11 +94,6 @@ namespace MSO3
             shapePage.StartPosition = FormStartPosition.CenterScreen;
             shapePage.Show();
             this.Hide();
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)

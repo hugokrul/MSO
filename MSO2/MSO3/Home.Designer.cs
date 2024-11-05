@@ -83,7 +83,6 @@
             Controls.Add(labelRoboLogic);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Home";
-            Load += Home_Load;
             ResumeLayout(false);
             PerformLayout();
         }

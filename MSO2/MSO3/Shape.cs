@@ -33,7 +33,7 @@ namespace MSO3
             }
         }
 
-        private static (int, int) FindStartPosition(string[,] b)
+        public static (int, int) FindStartPosition(string[,] b)
         {
             for (int i = 0; i < b.GetLength(0); i++)
             {
@@ -48,7 +48,7 @@ namespace MSO3
             return (-1, -1);
         }
 
-        private static bool SameShapes(List<(int, int)> list1, List<(int, int)> list2)
+        public static bool SameShapes(List<(int, int)> list1, List<(int, int)> list2)
         {
             list1.Sort();
             list2.Sort();
@@ -58,8 +58,9 @@ namespace MSO3
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
-            Home.instance.StartPosition = FormStartPosition.CenterScreen;
-            Home.instance.Show();
+            Home home = Home.GetInstance();
+            home.StartPosition = FormStartPosition.CenterScreen;
+            home.Show();
             this.Hide();
         }
 

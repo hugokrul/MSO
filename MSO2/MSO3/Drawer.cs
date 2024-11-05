@@ -72,7 +72,7 @@ namespace MSO3
                     break;
             }
 
-            DrawImageWithRotation(g, Home.playerImage, angle, Posx, Posy, width, height);
+            DrawImageWithRotation(g, Home.GetPlayerImage(), angle, Posx, Posy, width, height);
         }
 
         public static void DrawImageWithRotation(Graphics g, Image image, float angle, int PosX, int Posy, int cellWidth, int CellHeight)
