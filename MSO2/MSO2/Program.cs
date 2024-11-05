@@ -7,7 +7,7 @@ namespace MSO2
     {
         public static List<string[]> AvailablePrograms { get; private set; } =
         [
-            // Basic program
+             //Basic program
             [
                 "Name: BasicProgram",
                 "Turn left", "Move 1", "Turn right", "Move 1",

@@ -45,14 +45,14 @@ namespace MSO2
         {
             string line = commandStrings[index];
             string[] parts = line.Split(' ');
-            int repeatCount;
 
-            if (!int.TryParse(parts.ElementAtOrDefault(1), out repeatCount))
+            if (!int.TryParse(parts.ElementAtOrDefault(1), out int repeatCount))
+            {
+                Console.WriteLine("in");
                 return index + 1;  // Skip if repeat count is invalid.
+            }
 
             int endIndex = FindBlockEnd(commandStrings, index + 1);
-            if (endIndex <= index)
-                return index + 1;  // No valid block found, skip this line.
 
             List<ICommand> blockActions = Parse(commandStrings, index + 1, endIndex);
             commandResult.Add(new RepeatCommand(blockActions, repeatCount));
