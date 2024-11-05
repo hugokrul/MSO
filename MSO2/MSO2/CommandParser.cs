@@ -77,7 +77,7 @@ namespace MSO2
 
         private static void AddTurnCommand(List<ICommand> commandResult, string line)
         {
-            string direction = line.Split(' ').ElementAtOrDefault(1);
+            string? direction = line.Split(' ').ElementAtOrDefault(1);
             if (direction != null)
             {
                 commandResult.Add(new TurnCommand(direction));

@@ -50,7 +50,7 @@ namespace MSO3
             }
         }
 
-        public static (int, int) FindStartPosition(string[,] b)
+        private static (int, int) FindStartPosition(string[,] b)
         {
             for (int i = 0; i < b.GetLength(0); i++)
             {
