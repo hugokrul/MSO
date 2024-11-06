@@ -36,6 +36,7 @@
             importBoard = new Button();
             checkBoard = new Button();
             ExecuteBoard = new Button();
+            CalculateMetricsButton = new Button();
             SuspendLayout();
             // 
             // boardPanel
@@ -125,12 +126,26 @@
             ExecuteBoard.UseVisualStyleBackColor = true;
             ExecuteBoard.Click += ExecuteBoard_Click_1;
             // 
+            // CalculateMetricsButton
+            // 
+            CalculateMetricsButton.BackgroundImage = Properties.Resources.gradient_img__7_;
+            CalculateMetricsButton.Font = new Font("Snap ITC", 12.2F);
+            CalculateMetricsButton.ForeColor = Color.FromArgb(223, 230, 233);
+            CalculateMetricsButton.Location = new Point(669, 328);
+            CalculateMetricsButton.Name = "CalculateMetricsButton";
+            CalculateMetricsButton.Size = new Size(119, 47);
+            CalculateMetricsButton.TabIndex = 16;
+            CalculateMetricsButton.Text = "Metrics";
+            CalculateMetricsButton.UseVisualStyleBackColor = true;
+            CalculateMetricsButton.Click += CalculateMetricsButton_Click;
+            // 
             // Shape
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.gradient_img__7_;
             ClientSize = new Size(800, 450);
+            Controls.Add(CalculateMetricsButton);
             Controls.Add(ExecuteBoard);
             Controls.Add(checkBoard);
             Controls.Add(importBoard);
@@ -154,5 +169,6 @@
         private Button button1;
         private Button checkBoard;
         private Button ExecuteBoard;
+        private Button CalculateMetricsButton;
     }
 }

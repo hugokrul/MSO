@@ -51,17 +51,12 @@ namespace MSO3
 
         public static void ShowMetrics(string[] commands)
         {
-            DialogResult calculateMetrics = MessageBox.Show("Do you want to see the metrics", "Calculate metrics", MessageBoxButtons.YesNo);
-
-            if (calculateMetrics == DialogResult.Yes)
-            {
-                CalculateMetrics.calculateMetrics(commands);
-                MessageBox.Show(
-                        $"Number of commands: {CalculateMetrics.NumberOfCommands}\n" +
-                        $"Nesting level: {CalculateMetrics.NestingLevel}\n" +
-                        $"Number of Repeats: {CalculateMetrics.NumberOfRepeat}"
-                    );
-            }
+            CalculateMetrics.calculateMetrics(commands);
+            MessageBox.Show(
+                    $"Number of commands: {CalculateMetrics.NumberOfCommands}\n" +
+                    $"Nesting level: {CalculateMetrics.NestingLevel}\n" +
+                    $"Number of Repeats: {CalculateMetrics.NumberOfRepeat}"
+                );
         }
 
         public List<string> ChosenProgram(string? choice)
@@ -257,6 +252,10 @@ namespace MSO3
 
             if (executionWay.Text != "Write your own") ownProgram.Text = string.Join(Environment.NewLine, originalCommands);
 
+        }
+
+        private void CalculateMetricsButton_Click(object sender, EventArgs e)
+        {
             ShowMetrics([.. originalCommands]);
         }
     }

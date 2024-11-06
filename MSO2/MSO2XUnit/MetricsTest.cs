@@ -20,6 +20,17 @@ namespace MSO2XUnit
         }
 
         [Fact]
+        public void TestEmptyCommands()
+        {
+            int expected = 0;
+            CalculateMetrics.calculateMetrics([]);
+
+            int result = CalculateMetrics.NumberOfCommands;
+
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
         public void TestNumberOfRepeats()
         {
             int expected = 4;

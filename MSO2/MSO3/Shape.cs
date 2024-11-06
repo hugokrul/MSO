@@ -140,26 +140,35 @@ namespace MSO3
             }
         }
 
-        private void ExecuteBoard_Click_1(object sender, EventArgs e)
+        private void RunBoard(bool showMetrics = false)
         {
             if (board != null)
             {
                 (int, int) playerPosition = FindStartPosition(tempBoard);
                 board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
                 Board.BoardArray = tempBoard;
+                string[] commandArray = [.. ownProgram.Text.Split('\n')];
 
-                string[] commandArray = ownProgram.Text.Split('\n').ToArray();
                 List<ICommand>? commands = CommandParser.Parse(commandArray);
                 board.PlayBoard(commands);
 
                 boardPanel.Invalidate();
-
-                Sandbox.ShowMetrics(commandArray);
+                if (showMetrics) Sandbox.ShowMetrics(commandArray);
             }
             else
             {
                 MessageBox.Show("Import a board first.");
             }
+        }
+
+        private void ExecuteBoard_Click_1(object sender, EventArgs e)
+        {
+            RunBoard();
+        }
+
+        private void CalculateMetricsButton_Click(object sender, EventArgs e)
+        {
+            RunBoard(true);
         }
     }
 }

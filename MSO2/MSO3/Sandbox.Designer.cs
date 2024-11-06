@@ -38,6 +38,7 @@
             saveProgram = new Button();
             executeBoard = new Button();
             chooseaprogram = new Label();
+            CalculateMetricsButton = new Button();
             SuspendLayout();
             // 
             // pageNameSandbox
@@ -153,12 +154,26 @@
             chooseaprogram.TabIndex = 11;
             chooseaprogram.Text = "Choose a program!";
             // 
+            // CalculateMetricsButton
+            // 
+            CalculateMetricsButton.BackgroundImage = Properties.Resources.gradient_img__7_;
+            CalculateMetricsButton.Font = new Font("Snap ITC", 12.2F);
+            CalculateMetricsButton.ForeColor = Color.FromArgb(223, 230, 233);
+            CalculateMetricsButton.Location = new Point(669, 338);
+            CalculateMetricsButton.Name = "CalculateMetricsButton";
+            CalculateMetricsButton.Size = new Size(119, 47);
+            CalculateMetricsButton.TabIndex = 12;
+            CalculateMetricsButton.Text = "Metrics";
+            CalculateMetricsButton.UseVisualStyleBackColor = true;
+            CalculateMetricsButton.Click += CalculateMetricsButton_Click;
+            // 
             // Sandbox
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.gradient_img__7_;
             ClientSize = new Size(800, 450);
+            Controls.Add(CalculateMetricsButton);
             Controls.Add(chooseaprogram);
             Controls.Add(executeBoard);
             Controls.Add(saveProgram);
@@ -185,5 +200,6 @@
         private Button HomeButton;
         private Button saveProgram;
         private Label chooseaprogram;
+        private Button CalculateMetricsButton;
     }
 }
