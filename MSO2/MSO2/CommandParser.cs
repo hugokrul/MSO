@@ -78,10 +78,10 @@ namespace MSO2
         }
 
         // Parses command strings and returns a list of ICommand objects.
-        public static List<ICommand> Parse(string[] commandStrings , int startIndex = 0, int endIndex = -1)
+        public static List<ICommand> Parse(string[] commandStrings)
         {
             int index = 0;
-            return ParseCommandBlock(commandStrings, ref index, 0);
+            return ParseCommandBlock([.. commandStrings.ToList().ConvertAll(c => c.ToLower())], ref index, 0);
         }
 
         private static int GetIndentLevel(string command)
@@ -100,16 +100,6 @@ namespace MSO2
                 "gridedge" => RepeatUntilFunctions.GridEdge,
                 _ => null,
             };
-        }
-
-        private static int FindBlockEnd(string[] commandStrings, int startIndex)
-        {
-            int i = startIndex;
-            while (i < commandStrings.Length && commandStrings[i].StartsWith("    "))
-            {
-                i++;
-            }
-            return i;
         }
 
         private static List<ICommand> AddMoveCommand(List<ICommand> commandList, string line)

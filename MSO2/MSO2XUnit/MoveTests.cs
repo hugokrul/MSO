@@ -53,7 +53,7 @@ namespace MSO2XUnit
                 sb.Append($"{command.ToString()}, ");
             }
 
-            string result = "Turn left, Repeat 4 times: Move 10, Turn right, ";
+            string result = "Turn left, Repeat 4 times: [Move 10, Turn right], ";
 
             Assert.Equal(result, sb.ToString());
         }
