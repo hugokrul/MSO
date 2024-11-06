@@ -11,13 +11,7 @@ namespace MSO2
         public static bool WallAhead(Creature creature)
         {
             HashSet<Position>? wallPositions = GetWallPositions();
-
-
             Position nextPosition = creature.Position.GetNextPosition(creature.CurrentFacing);
-
-            Console.WriteLine(string.Join(", ", wallPositions));
-            Console.WriteLine(nextPosition);
-            Console.WriteLine(wallPositions.Contains(nextPosition));
             return wallPositions.Contains(nextPosition) || GridEdge(creature);
         }
 
