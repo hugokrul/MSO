@@ -10,8 +10,8 @@ namespace MSO2XUnit
         [Fact]
         public void OutOfLowerBounds()
         {
-            (int, int) newPosition = Board.BoardBounds((-1, -1));
-            Assert.Equal(newPosition, (0, 0));
+            Position newPosition = Board.BoardBounds(new Position(-1, -1));
+            Assert.Equal(newPosition, new Position(0, 0));
         }
 
         [Fact]

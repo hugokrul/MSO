@@ -26,10 +26,8 @@ namespace MSO3
             if (playerImage == null)
             {
                 byte[] imageData = Properties.Resources._whiteRobot;
-                using (MemoryStream ms = new MemoryStream(imageData))
-                {
-                    playerImage = Image.FromStream(ms);
-                }
+                using MemoryStream ms = new(imageData);
+                playerImage = Image.FromStream(ms);
             }
             return playerImage;
         }
@@ -39,10 +37,8 @@ namespace MSO3
             if (backgroundButtonImage == null)
             {
                 byte[] imageData1 = Properties.Resources.gradient;
-                using (MemoryStream ms = new MemoryStream(imageData1))
-                {
-                    backgroundButtonImage = Image.FromStream(ms);
-                }
+                using MemoryStream ms = new(imageData1);
+                backgroundButtonImage = Image.FromStream(ms);
             }
             return backgroundButtonImage;
         }

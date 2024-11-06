@@ -45,7 +45,6 @@ namespace MSO2XUnit
         [Fact]
         public void ToStringTest()
         {
-            Board board = new(10, 10);
             List<ICommand> Commands = CommandParser.Parse(TestCommands.TestMoveWithRepeat);
 
             StringBuilder sb = new StringBuilder();
