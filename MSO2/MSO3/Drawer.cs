@@ -65,10 +65,10 @@ namespace MSO3
                     angle = 0;
                     break;
                 case Creature.Facing.West:
-                    angle = 270;
+                    angle = 90;
                     break;
                 case Creature.Facing.East:
-                    angle = 90;
+                    angle = -90;
                     break;
             }
 
