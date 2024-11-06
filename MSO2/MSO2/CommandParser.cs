@@ -9,76 +9,87 @@ namespace MSO2
 {
     public static class CommandParser
     {
-        // Parses command strings and returns a list of ICommand objects.
-        public static List<ICommand> Parse(string[] commandStrings, int startIndex = 0, int endIndex = -1)
+        public static List<ICommand> ParseCommandBlock(string[] commands, ref int index, int indentLevel)
         {
-            List<ICommand> commandResult = [];
-            int i = startIndex;
-            commandStrings = [.. commandStrings.ToList().ConvertAll(c => c.ToLower())];
+            List<ICommand> commandList = [];
 
-            while (i < (endIndex == -1 ? commandStrings.Length : endIndex))
+            while (index < commands.Length)
             {
-                string line = commandStrings[i].Trim();
+                string command = commands[index];
+                int currentIndent = GetIndentLevel(command);
 
-                if (line.StartsWith("repeatuntil"))
+                if (currentIndent < indentLevel)
                 {
-                    int j = i + 1;
-                    string[] parts = line.Split(' ');
-
-                    Func<Creature, bool>? _predicate = WhatPredicate(parts[1]);
-
-                    if (_predicate == null)
-                    {
-                        i++;
-                        continue;
-                    }
-
-                    j = FindBlockEnd(commandStrings, j);
-
-                    List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
-                    commandResult.Add(new RepeatUntilCommand(blockActions, _predicate));
-                    i = j;
+                    break;
                 }
-                else if (line.StartsWith("repeat"))
+
+                if (currentIndent > indentLevel)
                 {
-                    int j = i + 1;
-                    // Parse repeat count and find block of commands to repeat.
-                    string[] parts = line.Split(' ');
-
-                    if (!int.TryParse(parts.ElementAtOrDefault(1), out int repeatCount))
-                    {
-                        i++;  // Skip if repeat count is invalid.
-                        continue;
-                    }
-
-                    j = FindBlockEnd(commandStrings, j);
-
-                    // Recursivly iterates through the commandStrings to add the commands from the repeat command to the commandResults
-                    List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
-
-                    commandResult.Add(new RepeatCommand(blockActions, repeatCount)); 
-                    
-                    i = j;  // Move index to the end of the block.
-                }
-                else if (line.StartsWith("move"))
-                {
-                    // Create a MoveCommand and add it to the result list.
-                    AddMoveCommand(commandResult, line);
-                    i++;
-                }
-                else if (line.StartsWith("turn"))
-                {
-                    // Create a TurnCommand and add it to the result list.
-                    AddTurnCommand(commandResult, line);
-                    i++;
+                    index++;
+                    commandList.AddRange(ParseCommandBlock(commands, ref index, currentIndent));
                 }
                 else
                 {
-                    i++;  // Skip unrecognized lines.
+                    command = command.Trim();
+
+                    if (command.StartsWith("repeatuntil"))
+                    {
+                        Func<Creature, bool>? _predicate = WhatPredicate(command.Split(' ').ElementAtOrDefault(1));
+
+                        if (_predicate == null)
+                        {
+                            index++;
+                            continue;
+                        }
+                        index++;
+                        List<ICommand> nestedCommands = ParseCommandBlock(commands, ref index, currentIndent + 1);
+                        commandList.Add(new RepeatUntilCommand(nestedCommands, _predicate));
+                    }
+                    else if (command.StartsWith("repeat"))
+                    {
+                        if (!int.TryParse(command.Split(' ').ElementAtOrDefault(1), out int repeatCount))
+                        {
+                            index++;  // Skip if repeat count is invalid.
+                            continue;
+                        }
+                        index++;
+                        List<ICommand> nestedCommands = ParseCommandBlock(commands, ref index, currentIndent + 1);
+                        commandList.Add(new RepeatCommand(nestedCommands, repeatCount));
+                    }
+                    else if (command.StartsWith("move"))
+                    {
+                        commandList = AddMoveCommand(commandList, command);
+                        index++;
+                    }
+                    else if (command.StartsWith("turn"))
+                    {
+                        commandList = AddTurnCommand(commandList, command);
+                        index++;
+                    }
+                    else
+                    {
+                        index++;
+                    }
                 }
             }
 
-            return commandResult;  // Return the list of commands.
+            return commandList;
+
+        }
+
+        // Parses command strings and returns a list of ICommand objects.
+        public static List<ICommand> Parse(string[] commandStrings , int startIndex = 0, int endIndex = -1)
+        {
+            int index = 0;
+            return ParseCommandBlock(commandStrings, ref index, 0);
+        }
+
+        private static int GetIndentLevel(string command)
+        {
+            int indent = 0;
+            while (indent < command.Length && command[indent] == ' ')
+                indent++;
+            return indent / 4; // assuming 4 spaces per indentation level
         }
 
         private static Func<Creature, bool>? WhatPredicate(string? input)
@@ -101,21 +112,25 @@ namespace MSO2
             return i;
         }
 
-        private static void AddMoveCommand(List<ICommand> commandResult, string line)
+        private static List<ICommand> AddMoveCommand(List<ICommand> commandList, string line)
         {
             if (int.TryParse(line.Split(' ').ElementAtOrDefault(1), out int steps))
             {
-                commandResult.Add(new MoveCommand(steps));
+                commandList.Add(new MoveCommand(steps));
             }
+
+            return commandList;
         }
 
-        private static void AddTurnCommand(List<ICommand> commandResult, string line)
+        private static List<ICommand> AddTurnCommand(List<ICommand> commandList, string line)
         {
             string? direction = line.Split(' ').ElementAtOrDefault(1);
             if (direction != null)
             {
-                commandResult.Add(new TurnCommand(direction));
+                commandList.Add(new TurnCommand(direction));
             }
+
+            return commandList;
         }
     }
 }

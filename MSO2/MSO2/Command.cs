@@ -59,6 +59,11 @@ namespace MSO2
                 }
             }
         }
+
+        public override string ToString()
+        {
+            return $"RepeatUntil : [{string.Join(", ", _commandList)}]";
+        }
     }
 
     public class RepeatCommand(List<ICommand> commandList, int amount) : ICommand
@@ -79,7 +84,7 @@ namespace MSO2
 
         public override string ToString()
         {
-            return $"Repeat {_amount} times: {string.Join(", ", _commandList)}";
+            return $"Repeat {_amount} times: [{string.Join(", ", _commandList)}]";
         }
     }
 }
