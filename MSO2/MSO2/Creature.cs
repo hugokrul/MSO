@@ -5,12 +5,12 @@ namespace MSO2
 {
     public abstract class Creature
     {
-        public (int, int) Position { get; set; }  // Current position
+        public Position Position { get; set; }  // Current position
 
         public enum Facing { North, East, South, West };
         public Facing CurrentFacing { get; protected set; }
 
-        public List<(int, int)> VisitedPositions { get; protected set; } = []; // Tracks all visited positions
+        public List<Position> VisitedPositions { get; protected set; } = []; // Tracks all visited positions
         protected List<string> Log { get; set; } = [];  // Logs actions
 
         /// <summary>
@@ -40,21 +40,7 @@ namespace MSO2
         {
             for (int i = 0; i < amountOfSteps; i++)
             {
-                switch (CurrentFacing)
-                {
-                    case Facing.North:
-                        Position = Board.BoardBounds((Position.Item1, Position.Item2 - 1));
-                        break;
-                    case Facing.South:
-                        Position = Board.BoardBounds((Position.Item1, Position.Item2 + 1));
-                        break;
-                    case Facing.East:
-                        Position = Board.BoardBounds((Position.Item1 + 1, Position.Item2));
-                        break;
-                    case Facing.West:
-                        Position = Board.BoardBounds((Position.Item1 - 1, Position.Item2));
-                        break;
-                }
+                Position = Board.BoardBounds(Position.GetNextPosition(CurrentFacing));
                 VisitedPositions.Add(Position);
             }
             Log.Add($"Move {amountOfSteps}");

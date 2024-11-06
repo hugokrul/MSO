@@ -55,7 +55,6 @@ namespace MSO2
             {
                 foreach(ICommand command in _commandList)
                 {
-                    Console.WriteLine(command.ToString());
                     command.Execute(creature);
                 }
             }

@@ -24,7 +24,7 @@ namespace MSO3
                 for (int j = 0; j < boardHeight; j++)
                 {
                     g.DrawRectangle(p, i * gridWidth, j * gridHeight, gridWidth - 1, gridHeight - 1);
-                    if (board != null && board.BoardArray[i, j] == "+") g.FillRectangle(new SolidBrush(Color.Orange), i * gridWidth, j * gridHeight, gridWidth - 1, gridHeight - 1);
+                    if (board != null && Board.BoardArray[j, i] == "+") g.FillRectangle(new SolidBrush(Color.Orange), i * gridWidth, j * gridHeight, gridWidth - 1, gridHeight - 1);
                 }
             }
 
@@ -34,7 +34,7 @@ namespace MSO3
 
         public static void DrawLocations(Graphics g, int width, int height, Board board)
         {
-            List<(int, int)> visitedPositions = board.Player.VisitedPositions;
+            List<(int, int)> visitedPositions = board.Player.VisitedPositions.ConvertAll(c => (c.X, c.Y));
 
             for (int i = 0; i < visitedPositions.Count - 1; i++)
             {
@@ -52,10 +52,8 @@ namespace MSO3
 
         public static void DrawPlayer(Graphics g, int width, int height, Board board)
         {
-            (int, int) playerPosition = board.Player.Position;
-
-            int Posx = playerPosition.Item1 * width;
-            int Posy = playerPosition.Item2 * height;
+            int Posx = board.Player.Position.X * width;
+            int Posy = board.Player.Position.Y * height;
             float angle = 0;
 
             switch (board.Player.CurrentFacing)

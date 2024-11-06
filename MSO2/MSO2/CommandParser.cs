@@ -93,32 +93,11 @@ namespace MSO2
 
         private static int FindBlockEnd(string[] commandStrings, int startIndex)
         {
-            //int i = startIndex;
-            //while (i < commandStrings.Length && commandStrings[i].StartsWith("    "))
-            //{
-            //    i++;
-            //}
-            //return i;
-
             int i = startIndex;
-            int initialIndentationLevel = commandStrings[startIndex].TakeWhile(char.IsWhiteSpace).Count();
-
-            while (i < commandStrings.Length)
+            while (i < commandStrings.Length && commandStrings[i].StartsWith("    "))
             {
-                // Calculate the indentation level of the current line
-                int currentIndentationLevel = commandStrings[i].TakeWhile(char.IsWhiteSpace).Count();
-
-                // If we find a line with less indentation, it means the block has ended
-                if (currentIndentationLevel < initialIndentationLevel || i == commandStrings.Length)
-                {
-                    break;
-                }
-
-                Console.WriteLine(currentIndentationLevel);
-
                 i++;
             }
-
             return i;
         }
 

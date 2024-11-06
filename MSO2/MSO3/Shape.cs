@@ -103,10 +103,8 @@ namespace MSO3
             }
 
             (int, int) playerPosition = FindStartPosition(tempBoard);
-            board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1)
-            {
-                BoardArray = tempBoard
-            };
+            board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
+            Board.BoardArray = tempBoard;
 
             boardPanel.Invalidate();
         }
@@ -117,21 +115,21 @@ namespace MSO3
             {
                 List<(int, int)>? correctVisitedPlaces = new List<(int, int)>();
                 (int, int) startPosition = (0, 0);
-                for (int i = 0; i < board.BoardArray.GetLength(0); i++)
+                for (int i = 0; i < Board.BoardArray.GetLength(0); i++)
                 {
-                    for (int j = 0; j < board.BoardArray.GetLength(1); j++)
+                    for (int j = 0; j < Board.BoardArray.GetLength(1); j++)
                     {
-                        if (board.BoardArray[i, j] == "s" || board.BoardArray[i, j] == "o")
+                        if (Board.BoardArray[i, j] == "s" || Board.BoardArray[i, j] == "o")
                         {
                             correctVisitedPlaces.Add((j, i));
                         }
-                        if (board.BoardArray[i, j] == "s") startPosition = (j, i);
+                        if (Board.BoardArray[i, j] == "s") startPosition = (j, i);
                     }
                 }
 
                 correctVisitedPlaces.Add(startPosition);
 
-                if (SameShapes(board.Player.VisitedPositions, correctVisitedPlaces))
+                if (SameShapes(board.Player.VisitedPositions.ConvertAll(c => (c.X, c.Y)), correctVisitedPlaces))
                 {
                     MessageBox.Show("Shape is correct!");
                 }
@@ -147,10 +145,8 @@ namespace MSO3
             if (board != null)
             {
                 (int, int) playerPosition = FindStartPosition(tempBoard);
-                board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1)
-                {
-                    BoardArray = tempBoard
-                };
+                board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.Item2, playerPosition.Item1);
+                Board.BoardArray = tempBoard;
 
                 string[] commandArray = ownProgram.Text.Split('\n').ToArray();
                 List<ICommand>? commands = CommandParser.Parse(commandArray);
