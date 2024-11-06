@@ -62,7 +62,7 @@ namespace MSO2
 
         public override string ToString()
         {
-            return $"RepeatUntil : [{string.Join(", ", _commandList)}]";
+            return $"Repeat until: [{string.Join(", ", _commandList)}]";
         }
     }
 

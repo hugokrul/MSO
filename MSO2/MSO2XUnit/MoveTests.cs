@@ -8,6 +8,21 @@ namespace MSO2XUnit
 {
     public class MoveTests
     {
+        [Fact]
+        public void RepeatUntilTest()
+        {
+            Board boardGrid = new(10, 10);
+
+            List<ICommand> commandsGridedge = CommandParser.Parse(new string[]{ "repeatuntil gridedge", "    move 1" });
+            boardGrid.PlayBoard(commandsGridedge);
+
+            Board boardWall = new(10, 10);
+
+            List<ICommand> commandsWallahead = CommandParser.Parse(new string[] { "repeatuntil wallahead", "    move 1" });
+            boardWall.PlayBoard(commandsWallahead);
+
+            Assert.Equal(boardWall.Player.Position, boardGrid.Player.Position);
+        }
 
         [Fact]
         public void RepeatTest()
@@ -45,17 +60,25 @@ namespace MSO2XUnit
         [Fact]
         public void ToStringTest()
         {
-            List<ICommand> Commands = CommandParser.Parse(TestCommands.TestMoveWithRepeat);
+            List<ICommand> Commands = CommandParser.Parse(TestCommands.TestMoveWithRepeatUntil);
 
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new ();
             foreach (ICommand command in Commands)
             {
                 sb.Append($"{command.ToString()}, ");
             }
 
-            string result = "Turn left, Repeat 4 times: [Move 10, Turn right], ";
+            string result = "Repeat 4 times: [Repeat until: [Move 1], Turn left], ";
 
             Assert.Equal(result, sb.ToString());
+        }
+
+        [Fact]
+        public void TestPositionNotEqual()
+        {
+            Position pos1 = new Position(0, 1);
+            Position pos2 = new Position(0, 0);
+            Assert.NotEqual(pos1, pos2);
         }
     }
 }

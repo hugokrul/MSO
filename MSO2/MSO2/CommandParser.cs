@@ -92,7 +92,7 @@ namespace MSO2
             return indent / 4; // assuming 4 spaces per indentation level
         }
 
-        private static Func<Creature, bool>? WhatPredicate(string? input)
+        public static Func<Creature, bool>? WhatPredicate(string? input)
         {
             return (input?.Trim()) switch
             {

@@ -36,5 +36,13 @@ namespace MSO2XUnit
             "    Move 10",
             "    Turn right"
         };
+
+        public static readonly string[] TestMoveWithRepeatUntil =
+        {
+            "Repeat 4 times",
+            "    Repeatuntill gridEdge",
+            "        Move 1",
+            "    Turn left"
+        };
     }
 }

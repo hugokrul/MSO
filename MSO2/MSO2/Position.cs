@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,7 @@ namespace MSO2
             return false;
         }
 
+        [ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {
             // Combine X and Y into a unique hash code
