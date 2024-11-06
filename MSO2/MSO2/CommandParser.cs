@@ -1,6 +1,9 @@
 ﻿using MSO2;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MSO2
 {
@@ -17,9 +20,45 @@ namespace MSO2
             {
                 string line = commandStrings[i].Trim();
 
-                if (line.StartsWith("repeat"))
+                if (line.StartsWith("repeatuntil"))
                 {
-                    i = HandleRepeatCommand(commandStrings, commandResult, i);
+                    int j = i + 1;
+                    string[] parts = line.Split(' ');
+
+                    Func<Creature, bool>? _predicate = WhatPredicate(parts[1]);
+
+                    if (_predicate == null)
+                    {
+                        i++;
+                        continue;
+                    }
+
+                    j = FindBlockEnd(commandStrings, j);
+
+                    List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
+                    commandResult.Add(new RepeatUntilCommand(blockActions, _predicate));
+                    i = j;
+                }
+                else if (line.StartsWith("repeat"))
+                {
+                    int j = i + 1;
+                    // Parse repeat count and find block of commands to repeat.
+                    string[] parts = line.Split(' ');
+
+                    if (!int.TryParse(parts.ElementAtOrDefault(1), out int repeatCount))
+                    {
+                        i++;  // Skip if repeat count is invalid.
+                        continue;
+                    }
+
+                    j = FindBlockEnd(commandStrings, j);
+
+                    // Recursivly iterates through the commandStrings to add the commands from the repeat command to the commandResults
+                    List<ICommand> blockActions = Parse(commandStrings, i + 1, j);
+
+                    commandResult.Add(new RepeatCommand(blockActions, repeatCount)); 
+                    
+                    i = j;  // Move index to the end of the block.
                 }
                 else if (line.StartsWith("move"))
                 {
@@ -41,29 +80,45 @@ namespace MSO2
 
             return commandResult;  // Return the list of commands.
         }
-        private static int HandleRepeatCommand(string[] commandStrings, List<ICommand> commandResult, int index)
+
+        private static Func<Creature, bool>? WhatPredicate(string? input)
         {
-            string line = commandStrings[index];
-            string[] parts = line.Split(' ');
-
-            if (!int.TryParse(parts.ElementAtOrDefault(1), out int repeatCount))
+            return (input?.Trim()) switch
             {
-                Console.WriteLine("in");
-                return index + 1;  // Skip if repeat count is invalid.
-            }
-
-            int endIndex = FindBlockEnd(commandStrings, index + 1);
-
-            List<ICommand> blockActions = Parse(commandStrings, index + 1, endIndex);
-            commandResult.Add(new RepeatCommand(blockActions, repeatCount));
-            return endIndex;
+                "wallahead" => RepeatUntilFunctions.WallAhead,
+                "gridedge" => RepeatUntilFunctions.GridEdge,
+                _ => null,
+            };
         }
 
         private static int FindBlockEnd(string[] commandStrings, int startIndex)
         {
+            //int i = startIndex;
+            //while (i < commandStrings.Length && commandStrings[i].StartsWith("    "))
+            //{
+            //    i++;
+            //}
+            //return i;
+
             int i = startIndex;
-            while (i < commandStrings.Length && commandStrings[i].StartsWith(' '))
+            int initialIndentationLevel = commandStrings[startIndex].TakeWhile(char.IsWhiteSpace).Count();
+
+            while (i < commandStrings.Length)
+            {
+                // Calculate the indentation level of the current line
+                int currentIndentationLevel = commandStrings[i].TakeWhile(char.IsWhiteSpace).Count();
+
+                // If we find a line with less indentation, it means the block has ended
+                if (currentIndentationLevel < initialIndentationLevel || i == commandStrings.Length)
+                {
+                    break;
+                }
+
+                Console.WriteLine(currentIndentationLevel);
+
                 i++;
+            }
+
             return i;
         }
 

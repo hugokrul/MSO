@@ -2,7 +2,7 @@
 
 namespace MSO2
 {
-    [ExcludeFromCodeCoverageAttribute]
+    [ExcludeFromCodeCoverage]
     public static class Program
     {
         public static List<string[]> AvailablePrograms { get; private set; } =

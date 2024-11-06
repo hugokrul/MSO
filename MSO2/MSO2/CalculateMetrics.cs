@@ -42,7 +42,7 @@ namespace MSO2
             int count = 0;
             foreach (string command in commands)
             {
-                if (command.Trim().Split()[0] == "Repeat") count++;
+                if (command.Trim().Split()[0].ToLower() == "repeat" || command.Trim().Split()[0].ToLower() == "repeatuntil") count++;
             }
             return count;
         }

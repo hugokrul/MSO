@@ -43,6 +43,25 @@ namespace MSO2
         }
     }
 
+    public class RepeatUntilCommand(List<ICommand> commandList, Func<Creature, bool> predicate) : ICommand
+    {
+        private readonly List<ICommand> _commandList = commandList;
+        private readonly Func<Creature, bool> _predicate = predicate;
+
+        public void Execute(Creature creature)
+        {
+            if (_commandList.Count == 0) { return; }
+            while (!_predicate(creature))
+            {
+                foreach(ICommand command in _commandList)
+                {
+                    Console.WriteLine(command.ToString());
+                    command.Execute(creature);
+                }
+            }
+        }
+    }
+
     public class RepeatCommand(List<ICommand> commandList, int amount) : ICommand
     {
         private readonly List<ICommand> _commandList = commandList;
