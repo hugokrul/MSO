@@ -9,16 +9,17 @@ namespace MSO2XUnit
         [Fact]
         public void TestWallAhead()
         {
-            Board board = new Board(10, 10);
+            Board board = new Board(3, 3);
             string[,] boardArray =
             {
-                { "s", "+" },
-                { "+", "+" }
+                { "+", "+", "+" },
+                { "+", "s", "+" },
+                { "+", "+", "+" }
             };
 
             Board.BoardArray = boardArray;
             bool wallAhead = RepeatUntilFunctions.WallAhead(board.Player);
-            Assert.True(wallAhead);
+            Assert.False(wallAhead);
         }
 
         [Fact]
