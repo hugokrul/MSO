@@ -19,7 +19,7 @@ namespace MSO2XUnit
 
             Board.BoardArray = boardArray;
             bool wallAhead = RepeatUntilFunctions.WallAhead(board.Player);
-            Assert.False(wallAhead);
+            Assert.True(wallAhead);
         }
 
         [Fact]
