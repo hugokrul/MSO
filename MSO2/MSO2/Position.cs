@@ -60,6 +60,24 @@ namespace MSO2
             return new Position(-1, -1);
         }
 
+        public static bool InWall(string[,] b, Position position)
+        {
+            List<Position> wallPositions = new List<Position>();
+
+            for (int i = 0; i < b.GetLength(0); ++i)
+            {
+                for (int j = 0; j < b.GetLength(1); j++)
+                {
+                    if (b[i, j] == "+")
+                    {
+                        wallPositions.Add(new Position(j, i));
+                    }
+                }
+            }
+
+            return wallPositions.Contains(position);
+        }
+
         public static Position FindEndPosition(string[,] b)
         {
             for (int i = 0; i < b.GetLength(0); i++)

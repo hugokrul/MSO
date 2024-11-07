@@ -57,7 +57,7 @@ namespace MSO2
             return lowerBounds; // Returns the constrained position.
         }
 
-        public static void printBoard()
+        public void printBoard()
         {
             for (int i = 0; i < BoardWidth; i++)
             {

@@ -70,6 +70,12 @@ namespace MSO3
                 List<ICommand>? commands = CommandParser.Parse(commandArray);
                 board.PlayBoard(commands);
 
+                if (board.Player.RanInWall)
+                {
+                    MessageBox.Show("You ran into a wall! be more carefull next time");
+                    return;
+                }
+
                 boardPanel.Invalidate();
                 if (showMetrics) Sandbox.ShowMetrics(commandArray);
             }

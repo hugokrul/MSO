@@ -13,6 +13,8 @@ namespace MSO2
         public List<Position> VisitedPositions { get; protected set; } = []; // Tracks all visited positions
         protected List<string> Log { get; set; } = [];  // Logs actions
 
+        public bool RanInWall { get; protected set; } = false;
+
         /// <summary>
         /// Turns the creature left or right and logs the action.
         /// </summary>
@@ -40,8 +42,15 @@ namespace MSO2
         {
             for (int i = 0; i < amountOfSteps; i++)
             {
-                Position = Board.BoardBounds(Position.GetNextPosition(CurrentFacing));
-                VisitedPositions.Add(Position);
+                if (!Position.InWall(Board.BoardArray, Position.GetNextPosition(CurrentFacing)))
+                {
+                    Position = Board.BoardBounds(Position.GetNextPosition(CurrentFacing));
+                    VisitedPositions.Add(Position);
+                }
+                else
+                {
+                    RanInWall = true;
+                }
             }
             Log.Add($"Move {amountOfSteps}");
         }
