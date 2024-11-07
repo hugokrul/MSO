@@ -80,5 +80,21 @@ namespace MSO2XUnit
             Position pos2 = new Position(0, 0);
             Assert.NotEqual(pos1, pos2);
         }
+
+        [Theory]
+        [InlineData("Move 100")]
+        [InlineData("Turn left,Move 100")]
+        [InlineData("Turn right,Move 100")]
+        [InlineData("Turn right,Turn right,Move 100")]
+        public void RanIntoWall(string commands)
+        {
+            List<ICommand> commandList = CommandParser.Parse(commands.Split(','));
+            Board board = new Board(10, 10);
+
+            board.PlayBoard(commandList);
+
+            bool result = board.Player.RanInWall;
+            Assert.True(result);
+        }
     }
 }

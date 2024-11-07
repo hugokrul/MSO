@@ -42,15 +42,11 @@ namespace MSO2
         {
             for (int i = 0; i < amountOfSteps; i++)
             {
-                if (!Position.InWall(Board.BoardArray, Position.GetNextPosition(CurrentFacing)))
-                {
-                    Position = Board.BoardBounds(Position.GetNextPosition(CurrentFacing));
-                    VisitedPositions.Add(Position);
-                }
-                else
-                {
-                    RanInWall = true;
-                }
+                Position nextPosition = Position.GetNextPosition(CurrentFacing);
+                Position newPosition = Board.BoardBounds(nextPosition);
+                if (newPosition.Equals(Position) || Position.InWall(Board.BoardArray, nextPosition)) RanInWall = true;
+                Position = newPosition;
+                VisitedPositions.Add(Position);
             }
             Log.Add($"Move {amountOfSteps}");
         }
