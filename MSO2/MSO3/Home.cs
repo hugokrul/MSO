@@ -80,9 +80,19 @@ namespace MSO3
             };
             item2.Click += ShapePage_Click;
 
+            ToolStripMenuItem item3 = new("Pathfinding")
+            {
+                Font = new Font("Snap ITC", 9, FontStyle.Regular),
+                ForeColor = Color.White,
+                Image = playerImage,
+                BackColor = Color.FromArgb(9, 132, 227)
+            };
+            item3.Click += PathfindingPage_Click;
+
             //Add both items
             menuStrip.Items.Add(item1);
             menuStrip.Items.Add(item2);
+            menuStrip.Items.Add(item3);
         }
 
         private void SandboxNav_Click(object? sender, EventArgs e)
@@ -98,6 +108,14 @@ namespace MSO3
             Shape shapePage = Shape.GetInstance();
             shapePage.StartPosition = FormStartPosition.CenterScreen;
             shapePage.Show();
+            this.Hide();
+        }
+
+        private void PathfindingPage_Click(object? sender, EventArgs e)
+        {
+            Pathfinding pathfindingPage = Pathfinding.GetInstance();
+            pathfindingPage.StartPosition = FormStartPosition.CenterScreen;
+            pathfindingPage.Show();
             this.Hide();
         }
 

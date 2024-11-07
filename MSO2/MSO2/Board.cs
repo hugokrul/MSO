@@ -21,6 +21,23 @@ namespace MSO2
             Player = new Player(new Position(playerx, playery)); // Create a player instance.
         }
 
+        public static string[,] MakeBoardArray(string[] boardArray)
+        {
+            int rows = boardArray.Length;
+            int cols = boardArray[0].Length;
+            string[,] tempBoard = new string[rows, cols];
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    tempBoard[i, j] = boardArray[i][j].ToString();
+                }
+            }
+
+            return tempBoard;
+        }
+
         // Executes a list of commands on the player. And returns endstate
         public string PlayBoard(List<ICommand> commands)
         {
@@ -40,7 +57,7 @@ namespace MSO2
             return lowerBounds; // Returns the constrained position.
         }
 
-        public void printBoard()
+        public static void printBoard()
         {
             for (int i = 0; i < BoardWidth; i++)
             {

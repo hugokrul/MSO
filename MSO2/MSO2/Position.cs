@@ -29,6 +29,51 @@ namespace MSO2
                 _ => this
             };
         }
+        public static Position FindStartPosition(string[,] b)
+        {
+            for (int i = 0; i < b.GetLength(0); i++)
+            {
+                for (int j = 0; j < b.GetLength(1); j++)
+                {
+                    if (b[i, j] == "s")
+                    {
+                        return new Position(j, i); // Return the position as a tuple
+                    }
+                }
+            }
+            // return the most top left position
+            return FindTopLeftPosition(b);
+        }
+
+        public static Position FindTopLeftPosition(string[,] b)
+        {
+            for (int i = 0; i < b.GetLength(0); i++)
+            {
+                for (int j = 0; j < b.GetLength(1); j++)
+                {
+                    if (b[i, j] == "o")
+                    {
+                        return new Position(j, i);
+                    }
+                }
+            }
+            return new Position(-1, -1);
+        }
+
+        public static Position FindEndPosition(string[,] b)
+        {
+            for (int i = 0; i < b.GetLength(0); i++)
+            {
+                for (int j = 0; j < b.GetLength(1); j++)
+                {
+                    if (b[i, j] == "x")
+                    {
+                        return new Position(j, i);
+                    }
+                }
+            }
+            return new Position(-1, -1);
+        }
 
         public override string ToString()
         {

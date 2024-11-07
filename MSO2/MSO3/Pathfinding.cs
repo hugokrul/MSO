@@ -1,35 +1,32 @@
-﻿using System;
+﻿using MSO2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
-using MSO2;
 
 namespace MSO3
 {
-    [ExcludeFromCodeCoverage]
-    public partial class Shape : BaseForm
+    public partial class Pathfinding : Form
     {
         private Board? board;
-        private string[,] tempBoard;
-        private static Shape? instance;
+        string[,] tempBoard = { { } };
+        private static Pathfinding? instance;
 
-        private Shape() : base()
+        private Pathfinding()
         {
             InitializeComponent();
         }
 
-        public static Shape GetInstance()
+        public static Pathfinding GetInstance()
         {
             if (instance == null)
             {
-                instance = new Shape();
+                instance = new Pathfinding();
             }
             return instance;
         }
@@ -37,25 +34,6 @@ namespace MSO3
         public static void DeleteInstance()
         {
             instance = null;
-        }
-
-        private void BoardPanel_Paint(object sender, PaintEventArgs e)
-        {
-            if (board != null)
-            {
-                Graphics? g = e.Graphics;
-                Pen? whitepen = new(Color.White, 1);
-
-                Drawer.DrawBoard((Panel)sender, g, whitepen, board, false);
-            }
-        }
-
-        public static bool SameShapes(List<(int, int)> list1, List<(int, int)> list2)
-        {
-            list1.Sort();
-            list2.Sort();
-
-            return list1.SequenceEqual(list2);
         }
 
         private void HomeButton_Click(object sender, EventArgs e)
@@ -66,7 +44,7 @@ namespace MSO3
             this.Hide();
         }
 
-        private void importBoard_Click_1(object sender, EventArgs e)
+        private void importBoard_Click(object sender, EventArgs e)
         {
             string[]? boardArrayStrings = ImportFile.ImportBoardArrayByPath();
             if (boardArrayStrings != null)
@@ -77,37 +55,6 @@ namespace MSO3
                 Board.BoardArray = tempBoard;
 
                 boardPanel.Invalidate();
-            }
-        }
-
-        private void checkBoard_Click(object sender, EventArgs e)
-        {
-            if (board != null)
-            {
-                List<(int, int)>? correctVisitedPlaces = new List<(int, int)>();
-                (int, int) startPosition = (0, 0);
-                for (int i = 0; i < tempBoard.GetLength(0); i++)
-                {
-                    for (int j = 0; j < tempBoard.GetLength(1); j++)
-                    {
-                        if (tempBoard[i, j] == "s" || tempBoard[i, j] == "o")
-                        {
-                            correctVisitedPlaces.Add((j, i));
-                        }
-                        if (tempBoard[i, j] == "s") startPosition = (j, i);
-                    }
-                }
-
-                correctVisitedPlaces.Add(startPosition);
-
-                if (SameShapes(board.Player.VisitedPositions.ConvertAll(c => (c.X, c.Y)), correctVisitedPlaces))
-                {
-                    MessageBox.Show("Shape is correct!");
-                }
-                else
-                {
-                    MessageBox.Show("Shape is incorrect!");
-                }
             }
         }
 
@@ -132,7 +79,18 @@ namespace MSO3
             }
         }
 
-        private void ExecuteBoard_Click_1(object sender, EventArgs e)
+        private void boardPanel_Paint(object sender, PaintEventArgs e)
+        {
+            if (board != null)
+            {
+                Graphics? g = e.Graphics;
+                Pen? whitepen = new(Color.White, 1);
+
+                Drawer.DrawBoard((Panel)sender, g, whitepen, board, false);
+            }
+        }
+
+        private void ExecuteBoard_Click(object sender, EventArgs e)
         {
             RunBoard();
         }
@@ -140,6 +98,28 @@ namespace MSO3
         private void CalculateMetricsButton_Click(object sender, EventArgs e)
         {
             RunBoard(true);
+        }
+
+        private void checkBoard_Click(object sender, EventArgs e)
+        {
+            if (board != null)
+            {
+                Position playerPosition = board.Player.Position;
+                Position endPosition = Position.FindEndPosition(tempBoard);
+
+                if (playerPosition.Equals(endPosition))
+                {
+                    MessageBox.Show("Shape is correct!");
+                }
+                else if (endPosition.Equals(new Position(-1, -1)))
+                {
+                    MessageBox.Show("There is no end position found, insert a different board");
+                }
+                else
+                {
+                    MessageBox.Show("Shape is incorrect!");
+                }
+            }
         }
     }
 }
