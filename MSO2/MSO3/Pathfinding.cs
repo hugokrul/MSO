@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MSO3
 {
-    public partial class Pathfinding : Form
+    public partial class Pathfinding : BaseForm
     {
         private Board? board;
         string[,] tempBoard = { { } };

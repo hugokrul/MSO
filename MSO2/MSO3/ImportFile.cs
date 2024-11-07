@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MSO3
 {
@@ -15,6 +16,20 @@ namespace MSO3
             if (boardFile == "") return null;
             if (File.Exists(boardFile)) return File.ReadAllLines(boardFile);
             else return null;
+        }
+
+        public static string ExportWriteYourOwn(string name, string text)
+        {
+            string file = @"..\..\..\" + name + ".txt";
+            File.Create(file).Close();
+            File.WriteAllText(file, text);
+            return Path.GetFullPath(file);
+        }
+
+        public static bool CheckExistence(string file)
+        {
+            string[] allowedFiles = { ".txt" };
+            return File.Exists(file) || allowedFiles.Contains(Path.GetExtension(file));
         }
     }
 }

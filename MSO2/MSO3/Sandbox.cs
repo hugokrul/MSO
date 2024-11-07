@@ -96,7 +96,6 @@ namespace MSO3
             {
                 FileExistence();
                 filePathInput.Visible = true;
-                saveProgram.Visible = true;
             }
             else
             {
@@ -138,18 +137,17 @@ namespace MSO3
 
         private void FileExistence()
         {
-            string[] allowedFiles = { ".txt" };
-            if (!File.Exists(filePathInput.Text) || !allowedFiles.Contains(Path.GetExtension(filePathInput.Text)))
-            {
-                saveProgram.Visible = false;
-                ownProgram.ReadOnly = true;
-                executeBoard.Visible = false;
-            }
-            else
+            if (ImportFile.CheckExistence(filePathInput.Text))
             {
                 saveProgram.Visible = true;
                 ownProgram.ReadOnly = false;
                 executeBoard.Visible = true;
+            }
+            else
+            {
+                saveProgram.Visible = false;
+                ownProgram.ReadOnly = true;
+                executeBoard.Visible = false;
             }
         }
 
@@ -203,9 +201,7 @@ namespace MSO3
                 string name = Interaction.InputBox("Title of the program", "Save", "Name...");
                 if (name != "")
                 {
-                    File.Create(@"..\..\..\" + name + ".txt").Close();
-                    file = Path.GetFullPath(@"..\..\..\" + name + ".txt");
-                    File.WriteAllText(file, ownProgram.Text);
+                    file = ImportFile.ExportWriteYourOwn(name, ownProgram.Text);
                     executionWay.SelectedIndexChanged -= new EventHandler(ExecutionWay_SelectedIndexChanged);
                     filePathInput.Visible = true;
                     executionWay.Text = "Import";

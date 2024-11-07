@@ -127,6 +127,7 @@
             saveProgram.TabIndex = 9;
             saveProgram.Text = "Save";
             saveProgram.UseVisualStyleBackColor = true;
+            saveProgram.Visible = false;
             saveProgram.Click += SaveButton_Click;
             // 
             // executeBoard
