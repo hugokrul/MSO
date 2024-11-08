@@ -34,7 +34,7 @@ namespace MSO2
 
                     if (command.StartsWith("repeatuntil"))
                     {
-                        Func<Creature, bool>? _predicate = WhatPredicate(command.Split(' ').ElementAtOrDefault(1));
+                        Func<Creature, bool>? _predicate = RepeatUntilFunctions.WhatPredicate(command.Split(' ').ElementAtOrDefault(1));
 
                         if (_predicate == null)
                         {
@@ -90,16 +90,6 @@ namespace MSO2
             while (indent < command.Length && command[indent] == ' ')
                 indent++;
             return indent / 4; // assuming 4 spaces per indentation level
-        }
-
-        public static Func<Creature, bool>? WhatPredicate(string? input)
-        {
-            return (input?.Trim()) switch
-            {
-                "wallahead" => RepeatUntilFunctions.WallAhead,
-                "gridedge" => RepeatUntilFunctions.GridEdge,
-                _ => null,
-            };
         }
 
         private static List<ICommand> AddMoveCommand(List<ICommand> commandList, string line)

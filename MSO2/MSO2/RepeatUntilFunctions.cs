@@ -54,5 +54,15 @@ namespace MSO2
                     return false;
             }
         }
+
+        public static Func<Creature, bool>? WhatPredicate(string? input)
+        {
+            return (input?.Trim()) switch
+            {
+                "wallahead" => WallAhead,
+                "gridedge" =>  GridEdge,
+                _ => null,
+            };
+        }
     }
 }

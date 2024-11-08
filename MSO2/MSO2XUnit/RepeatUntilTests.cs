@@ -9,6 +9,7 @@ namespace MSO2XUnit
         [Fact]
         public void TestWallAhead()
         {
+            Board.BoardArray = new string[,]{ { } };
             Board board = new Board(3, 3);
             string[,] boardArray =
             {
