@@ -30,10 +30,10 @@ namespace MSO2
             int maxIndent = 0;
             foreach (string command in commands)
             {
-                int currentIndent = command.Length - command.TrimStart().Length;
+                int currentIndent = CommandParser.GetIndentLevel(command);
                 maxIndent = Math.Max(maxIndent, currentIndent);
             }
-            return maxIndent / 4;
+            return maxIndent;
         }
 
         // Counts how many 'RepeatCommand' commands are in the list.

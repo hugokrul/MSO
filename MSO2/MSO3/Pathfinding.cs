@@ -22,6 +22,7 @@ namespace MSO3
             InitializeComponent();
         }
 
+        // used for the singleton pattern
         public static Pathfinding GetInstance()
         {
             if (instance == null)
@@ -36,6 +37,7 @@ namespace MSO3
             instance = null;
         }
 
+        // retrieves the home pages, opens it and closes this page
         private void HomeButton_Click(object sender, EventArgs e)
         {
             Home home = Home.GetInstance();
@@ -44,6 +46,7 @@ namespace MSO3
             this.Hide();
         }
 
+        // imports a boardarray and connects that boardarray to the board
         private void importBoard_Click(object sender, EventArgs e)
         {
             string[]? boardArrayStrings = ImportFile.ImportBoardArrayByPath();
@@ -54,10 +57,12 @@ namespace MSO3
                 board = new Board(tempBoard.GetLength(0), tempBoard.GetLength(1), playerPosition.X, playerPosition.Y);
                 Board.BoardArray = tempBoard;
 
+                // repaints the board
                 boardPanel.Invalidate();
             }
         }
 
+        // runs the board
         private void RunBoard(bool showMetrics = false)
         {
             if (board != null)
@@ -70,12 +75,14 @@ namespace MSO3
                 List<ICommand>? commands = CommandParser.Parse(commandArray);
                 board.PlayBoard(commands);
 
+                // doesn't run the board if the player hits the wall
                 if (board.Player.RanInWall)
                 {
                     MessageBox.Show("You ran into a wall! be more carefull next time");
                     return;
                 }
 
+                // repaints the board and shows the metrics if necessary
                 boardPanel.Invalidate();
                 if (showMetrics) Sandbox.ShowMetrics(commandArray);
             }
@@ -85,6 +92,7 @@ namespace MSO3
             }
         }
 
+        // paints the board to the panel
         private void boardPanel_Paint(object sender, PaintEventArgs e)
         {
             if (board != null)
@@ -101,11 +109,13 @@ namespace MSO3
             RunBoard();
         }
 
+        // runs the board and tells it to calculate the metrics
         private void CalculateMetricsButton_Click(object sender, EventArgs e)
         {
             RunBoard(true);
         }
 
+        // checks if the client entered the correct path
         private void checkBoard_Click(object sender, EventArgs e)
         {
             if (board != null)
@@ -115,7 +125,7 @@ namespace MSO3
 
                 if (playerPosition.Equals(endPosition))
                 {
-                    MessageBox.Show("Shape is correct!");
+                    MessageBox.Show("Path is correct!");
                 }
                 else if (endPosition.Equals(new Position(-1, -1)))
                 {
@@ -123,7 +133,7 @@ namespace MSO3
                 }
                 else
                 {
-                    MessageBox.Show("Shape is incorrect!");
+                    MessageBox.Show("Path is incorrect!");
                 }
             }
         }

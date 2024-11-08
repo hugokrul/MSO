@@ -1,4 +1,0 @@
-turn left
-repeat 4 times
-    move 10
-    turn right

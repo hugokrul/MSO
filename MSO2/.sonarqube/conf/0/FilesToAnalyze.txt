@@ -1,8 +1,0 @@
-﻿C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Board.cs
-C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\CalculateMetrics.cs
-C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Command.cs
-C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\CommandParser.cs
-C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Creature.cs
-C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Player.cs
-C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Program.cs
-C:\Users\hugok\Documents\code\MSO\MSO2\MSO2\MSO2\Hard.txt

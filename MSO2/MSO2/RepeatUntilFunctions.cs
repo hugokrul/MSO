@@ -8,6 +8,7 @@ namespace MSO2
 {
     public static class RepeatUntilFunctions
     {
+        // this function gives back if a creature is eather facing a wall or the edge
         public static bool WallAhead(Creature creature)
         {
             HashSet<Position>? wallPositions = GetWallPositions();
@@ -15,6 +16,7 @@ namespace MSO2
             return wallPositions.Contains(nextPosition) || GridEdge(creature);
         }
 
+        // returns alls the wallpositions of a boardarray
         private static HashSet<Position>? GetWallPositions()
         {
             HashSet<Position> wallPositions = [];
@@ -33,6 +35,8 @@ namespace MSO2
             return wallPositions;
         }
 
+
+        // returns if the player is facing the edge
         public static bool GridEdge(Creature creature)
         {
             int playerX = creature.Position.X;

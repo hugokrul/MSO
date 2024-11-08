@@ -12,7 +12,7 @@ namespace MSO2
         public string Name { get; set; } = "";
         public Player Player { get; private set; }
 
-        // Constructor to initialize board dimensions and player.
+        // Constructor to initialize board dimensions and player coordinates, these are optional.
         public Board(int width, int height, int playerx = 0, int playery = 0)
         {
             BoardArray = new string[width, height]; // Initialize the board.
@@ -21,6 +21,7 @@ namespace MSO2
             Player = new Player(new Position(playerx, playery)); // Create a player instance.
         }
 
+        // converts a 1D array into a 2D array for the Shape, SandBox and drawer classes to use.
         public static string[,] MakeBoardArray(string[] boardArray)
         {
             int rows = boardArray.Length;

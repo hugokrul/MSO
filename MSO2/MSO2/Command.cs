@@ -45,11 +45,14 @@ namespace MSO2
 
     public class RepeatUntilCommand(List<ICommand> commandList, Func<Creature, bool> predicate) : ICommand
     {
+        // The list of commands, which it needs to execute.
         private readonly List<ICommand> _commandList = commandList;
+        // A predicate for when the execution of the _commandList needs to stop.
         private readonly Func<Creature, bool> _predicate = predicate;
 
         public void Execute(Creature creature)
         {
+            // If there are no commands to execute, the _predicate will almost always hold resulting in an infinate loop.
             if (_commandList.Count == 0) { return; }
             while (!_predicate(creature))
             {
@@ -68,7 +71,9 @@ namespace MSO2
 
     public class RepeatCommand(List<ICommand> commandList, int amount) : ICommand
     {
+        // The list of command, which it needs to execute.
         private readonly List<ICommand> _commandList = commandList;
+        // The amount of time the list needs to execute.
         private readonly int _amount = amount;
 
         public void Execute(Creature creature)

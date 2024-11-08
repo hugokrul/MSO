@@ -11,6 +11,9 @@ namespace MSO3
     [ExcludeFromCodeCoverage]
     internal static class Drawer
     {
+        // draws the board
+        // if the boardarray includes walls, it draws those orange
+        // if the character is not visible (for shape and pathfinding exercise) it does not draw it.
         public static void DrawBoard(Panel panel, Graphics g, Pen p, Board board, bool characterVisible = true)
         {
             int boardHeight = Board.BoardHeight;
@@ -32,24 +35,26 @@ namespace MSO3
             if (characterVisible) DrawPlayer(g, gridWidth, gridHeight, board);
         }
 
+        // Draws all the locations in which the player has been with lines. from the old position to the new position
         public static void DrawLocations(Graphics g, int width, int height, Board board)
         {
-            List<(int, int)> visitedPositions = board.Player.VisitedPositions.ConvertAll(c => (c.X, c.Y));
+            List<Position> visitedPositions = board.Player.VisitedPositions;
 
             for (int i = 0; i < visitedPositions.Count - 1; i++)
             {
-                (int, int) oldPosition = visitedPositions[i];
-                int oldX = (oldPosition.Item1 * width) + (width / 2);
-                int oldY = (oldPosition.Item2 * height) + (height / 2);
+                Position oldPosition = visitedPositions[i];
+                int oldX = (oldPosition.X * width) + (width / 2);
+                int oldY = (oldPosition.Y * height) + (height / 2);
 
-                (int, int) currentPosition = visitedPositions[i + 1];
-                int currentX = (currentPosition.Item1 * width) + (width / 2);
-                int currentY = (currentPosition.Item2 * height) + (height / 2);
+                Position currentPosition = visitedPositions[i + 1];
+                int currentX = (currentPosition.X * width) + (width / 2);
+                int currentY = (currentPosition.Y * height) + (height / 2);
 
                 g.DrawLine(new Pen(Color.FromArgb(253, 203, 110), 5), new Point(oldX, oldY), new Point(currentX, currentY));
             }
         }
 
+        // draws the player with the corresponding facing.
         public static void DrawPlayer(Graphics g, int width, int height, Board board)
         {
             int Posx = board.Player.Position.X * width;
@@ -75,6 +80,7 @@ namespace MSO3
             DrawImageWithRotation(g, Home.GetPlayerImage(), angle, Posx, Posy, width, height);
         }
 
+        // retrieves the playerImage and rotates it
         public static void DrawImageWithRotation(Graphics g, Image image, float angle, int PosX, int Posy, int cellWidth, int CellHeight)
         {
             var originalTransform = g.Transform; //Save current graphics transform

@@ -10,6 +10,7 @@ namespace MSO3
 {
     public static class ImportFile
     {
+        // imports the boardarray with a path that is filled in from an inputbox
         public static string[]? ImportBoardArrayByPath()
         {
             string? boardFile = Interaction.InputBox("Give the full path of the file where the board is stored", "Board file");
@@ -18,6 +19,7 @@ namespace MSO3
             else return null;
         }
 
+        // exports the text to a sepcified name and gives back the full path
         public static string ExportWriteYourOwn(string name, string text)
         {
             string file = @"..\..\..\" + name + ".txt";
@@ -26,6 +28,7 @@ namespace MSO3
             return Path.GetFullPath(file);
         }
 
+        // checks for the existence of .txt files, this way it is open for multiple allowed extensions
         public static bool CheckExistence(string file)
         {
             string[] allowedFiles = { ".txt" };

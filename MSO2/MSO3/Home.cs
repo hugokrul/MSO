@@ -21,6 +21,7 @@ namespace MSO3
             AddPlayMenuStrip();
         }
 
+        // retrieves the playerImage
         public static Image GetPlayerImage()
         {
             if (playerImage == null)
@@ -32,6 +33,7 @@ namespace MSO3
             return playerImage;
         }
 
+        // retrieves the backgroundImage
         private static Image GetBackgroundButtonImage()
         {
             if (backgroundButtonImage == null)
@@ -43,6 +45,7 @@ namespace MSO3
             return backgroundButtonImage;
         }
 
+        // used for the singleton pattern
         public static Home GetInstance()
         {
             if (instance == null)
@@ -52,6 +55,7 @@ namespace MSO3
             return instance;
         }
 
+        // adds a menustrip with the choices of programs.
         private void AddPlayMenuStrip()
         {
             menuStrip = new ContextMenuStrip
@@ -68,7 +72,7 @@ namespace MSO3
                 Image = playerImage,
                 BackColor = Color.FromArgb(9, 132, 227)
             };
-            item1.Click += SandboxNav_Click;
+            item1.Click += SandBoxPage_Click;
 
             //Add item 2
             ToolStripMenuItem item2 = new("Shape")
@@ -95,13 +99,16 @@ namespace MSO3
             menuStrip.Items.Add(item3);
         }
 
-        private void SandboxNav_Click(object? sender, EventArgs e)
+        // retrieves the instance of the sandbox page, opens it and closes the home page
+        private void SandBoxPage_Click(object? sender, EventArgs e)
         {
             Sandbox sandboxPage = Sandbox.GetInstance();
             sandboxPage.StartPosition = FormStartPosition.CenterScreen;
             sandboxPage.Show();
             this.Hide();
         }
+
+        // retrieves the instance of the shape page, opens it and closes the home page
 
         private void ShapePage_Click(object? sender, EventArgs e)
         {
@@ -111,6 +118,7 @@ namespace MSO3
             this.Hide();
         }
 
+        // retrieves the instance of the pathfinding page, opens it and closes the home page
         private void PathfindingPage_Click(object? sender, EventArgs e)
         {
             Pathfinding pathfindingPage = Pathfinding.GetInstance();
@@ -119,11 +127,13 @@ namespace MSO3
             this.Hide();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        // exits the program
+        private void QuitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        // opens the playMenu
         private void PlayButton_Click(object sender, EventArgs e)
         {
             if (menuStrip == null)

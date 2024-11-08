@@ -13,8 +13,8 @@ namespace MSO3
         [STAThread]
         static void Main()
         {
-            AllocConsole();
-
+            // AllocConsole() is a function that shows the console for debugging
+            //AllocConsole();
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

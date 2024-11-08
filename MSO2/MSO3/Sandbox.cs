@@ -27,6 +27,7 @@ namespace MSO3
             InitializeComponent();
         }
 
+        // used for the singleton pattern
         public static Sandbox GetInstance()
         {
             if (instance == null)
@@ -41,6 +42,7 @@ namespace MSO3
             instance = null;
         }
 
+        // paints the board
         private void BoardPanel_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -49,6 +51,7 @@ namespace MSO3
             Drawer.DrawBoard((Panel)sender, g, whitePen, board);
         }
 
+        // shows the metrics of the program, this function cannot be pulled up to CaclulateMetrics, because it has to show the MessageBox.
         public static void ShowMetrics(string[] commands)
         {
             CalculateMetrics.calculateMetrics(commands);
@@ -59,6 +62,8 @@ namespace MSO3
                 );
         }
 
+        // gives back the list with string commands when a specific choice is given
+        // returns [] if an incorrect choice is given
         public List<string> ChosenProgram(string? choice)
         {
             switch (choice)
@@ -78,6 +83,7 @@ namespace MSO3
             return new List<string>();
         }
 
+        // gives back the string command of a specified filepath
         private List<string> RunImportedProgram()
         {
             if (file != null && ownProgram.Text != "")
@@ -90,6 +96,7 @@ namespace MSO3
             return result;
         }
 
+        // shows or hides buttons depending on the executionway
         public void UpdateButtons(string input)
         {
             if (input == "Import")
@@ -112,6 +119,7 @@ namespace MSO3
             }
         }
 
+        // if the program is changed, it warns the user, if says they want to go back, the last executionway is retrieved
         private void ExecutionWay_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!ProgramChanged())
@@ -135,6 +143,7 @@ namespace MSO3
             FileExistence();
         }
 
+        // checks if a file exists and updates those buttons
         private void FileExistence()
         {
             if (ImportFile.CheckExistence(filePathInput.Text))
@@ -151,6 +160,7 @@ namespace MSO3
             }
         }
 
+        // executes when opening this page
         private void Sandbox_Load(object sender, EventArgs e)
         {
             board = new Board(10, 10);
@@ -173,6 +183,7 @@ namespace MSO3
             }
         }
 
+        // checks if the program is changed by comparing the current program to the last saved program. (originalCommands)
         public bool ProgramChanged()
         {
             if (ownProgram.Text == "") return false;
@@ -186,6 +197,8 @@ namespace MSO3
             else return false;
         }
 
+        // saves the text with a specified way of execution
+        // it also updates the last save program (original commands)
         private void Save()
         {
             if (executionWay.Text == "Import")
@@ -216,6 +229,7 @@ namespace MSO3
             }
         }
 
+        // goes back to the homepage
         private void HomeButton_Click(object sender, EventArgs e)
         {
             if (!ProgramChanged())
@@ -232,6 +246,7 @@ namespace MSO3
             Save();
         }
 
+        // executes the board
         private async void executeBoard_Click_1(object sender, EventArgs e)
         {
             board = new Board(10, 10);

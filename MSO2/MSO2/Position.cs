@@ -18,6 +18,8 @@ namespace MSO2
             X = x;
             Y = y;
         }
+
+        // Returns the next position of a creature dependend on its facing
         public Position GetNextPosition(Creature.Facing facing)
         {
             return facing switch
@@ -29,6 +31,9 @@ namespace MSO2
                 _ => this
             };
         }
+
+        // Returns the startposition of a board array
+        // if there is no startposition found, it returns the most top left open posiiton.
         public static Position FindStartPosition(string[,] b)
         {
             for (int i = 0; i < b.GetLength(0); i++)
@@ -45,6 +50,8 @@ namespace MSO2
             return FindTopLeftPosition(b);
         }
 
+        // finds the most top left position of a boardarray
+        // if there is none found, the posision is set to (-1, -1)
         public static Position FindTopLeftPosition(string[,] b)
         {
             for (int i = 0; i < b.GetLength(0); i++)
@@ -60,6 +67,7 @@ namespace MSO2
             return new Position(-1, -1);
         }
 
+        // Calculates if a player has hit the wall.
         public static bool InWall(string[,] b, Position position)
         {
             List<Position> wallPositions = new List<Position>();
@@ -78,6 +86,8 @@ namespace MSO2
             return wallPositions.Contains(position);
         }
 
+        // finds the endposition of a board array,
+        // if none is found it returns (-1, -1)
         public static Position FindEndPosition(string[,] b)
         {
             for (int i = 0; i < b.GetLength(0); i++)
@@ -98,6 +108,7 @@ namespace MSO2
             return (X, Y).ToString();
         }
 
+        // overrides so it is possible to compare this datatype
         public override bool Equals(object obj)
         {
             if (obj is Position other)
@@ -107,6 +118,7 @@ namespace MSO2
             return false;
         }
 
+        // for the function which compares the two hashsets of positions
         [ExcludeFromCodeCoverage]
         public override int GetHashCode()
         {

@@ -25,6 +25,7 @@ namespace MSO3
             InitializeComponent();
         }
 
+        // used by the singleton pattern
         public static Shape GetInstance()
         {
             if (instance == null)
@@ -39,6 +40,7 @@ namespace MSO3
             instance = null;
         }
 
+        // paints the board, only if it exists
         private void BoardPanel_Paint(object sender, PaintEventArgs e)
         {
             if (board != null)
@@ -49,7 +51,8 @@ namespace MSO3
                 Drawer.DrawBoard((Panel)sender, g, whitepen, board, false);
             }
         }
-
+        
+        // checks if the two lists are the same
         public static bool SameShapes(List<(int, int)> list1, List<(int, int)> list2)
         {
             list1.Sort();
@@ -58,6 +61,7 @@ namespace MSO3
             return list1.SequenceEqual(list2);
         }
 
+        // goes back to the homepage
         private void HomeButton_Click(object sender, EventArgs e)
         {
             Home home = Home.GetInstance();
@@ -66,6 +70,7 @@ namespace MSO3
             this.Hide();
         }
 
+        // imports a boardarray and connects it to the board
         private void importBoard_Click_1(object sender, EventArgs e)
         {
             string[]? boardArrayStrings = ImportFile.ImportBoardArrayByPath();
@@ -80,6 +85,7 @@ namespace MSO3
             }
         }
 
+        // evaluates if the shapes are the same by comparing the visited positions of the player with the available positions in the shape
         private void checkBoard_Click(object sender, EventArgs e)
         {
             if (board != null)
@@ -111,6 +117,7 @@ namespace MSO3
             }
         }
 
+        // runs the board
         private void RunBoard(bool showMetrics = false)
         {
             if (board != null)
@@ -123,6 +130,7 @@ namespace MSO3
                 List<ICommand>? commands = CommandParser.Parse(commandArray);
                 board.PlayBoard(commands);
 
+                // if a player ran into a wall, the played board is not shown.
                 if (board.Player.RanInWall)
                 {
                     MessageBox.Show("You ran into a wall! be more carefull next time");
